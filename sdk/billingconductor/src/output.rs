@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingRulesAssociatedToPricingPlanOutput {
+pub struct ListPricingRulesAssociatedToPricingPlanOutput  {
     /// <p> The billing period for which the pricing rule associations are listed. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct ListPricingRulesAssociatedToPricingPlanOutput {
 }
 impl ListPricingRulesAssociatedToPricingPlanOutput {
     /// <p> The billing period for which the pricing rule associations are listed. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are listed.</p>
-    pub fn pricing_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn pricing_plan_arn(&self) -> std::option::Option<& str> {
         self.pricing_plan_arn.as_deref()
     }
     /// <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
-    pub fn pricing_rule_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pricing_rule_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.pricing_rule_arns.as_deref()
     }
     /// <p> The pagination token to be used on subsequent calls. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput).
 pub mod list_pricing_rules_associated_to_pricing_plan_output {
-
+    
     /// A builder for [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -52,12 +52,8 @@ pub mod list_pricing_rules_associated_to_pricing_plan_output {
             self
         }
         /// <p> The billing period for which the pricing rule associations are listed. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are listed.</p>
         pub fn pricing_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,12 +61,8 @@ pub mod list_pricing_rules_associated_to_pricing_plan_output {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are listed.</p>
-        pub fn set_pricing_plan_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pricing_plan_arn = input;
-            self
+        pub fn set_pricing_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pricing_plan_arn = input; self
         }
         /// Appends an item to `pricing_rule_arns`.
         ///
@@ -79,17 +71,13 @@ pub mod list_pricing_rules_associated_to_pricing_plan_output {
         /// <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
         pub fn pricing_rule_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pricing_rule_arns.unwrap_or_default();
-            v.push(input.into());
-            self.pricing_rule_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.pricing_rule_arns = Some(v);
+                            self
         }
         /// <p> A list containing pricing rules that are associated with the requested pricing plan. </p>
-        pub fn set_pricing_rule_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.pricing_rule_arns = input;
-            self
+        pub fn set_pricing_rule_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.pricing_rule_arns = input; self
         }
         /// <p> The pagination token to be used on subsequent calls. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,24 +86,28 @@ pub mod list_pricing_rules_associated_to_pricing_plan_output {
         }
         /// <p> The pagination token to be used on subsequent calls. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput).
         pub fn build(self) -> crate::output::ListPricingRulesAssociatedToPricingPlanOutput {
             crate::output::ListPricingRulesAssociatedToPricingPlanOutput {
-                billing_period: self.billing_period,
-                pricing_plan_arn: self.pricing_plan_arn,
-                pricing_rule_arns: self.pricing_rule_arns,
-                next_token: self.next_token,
+                billing_period: self.billing_period
+                ,
+                pricing_plan_arn: self.pricing_plan_arn
+                ,
+                pricing_rule_arns: self.pricing_rule_arns
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPricingRulesAssociatedToPricingPlanOutput {
     /// Creates a new builder-style object to manufacture [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput).
-    pub fn builder() -> crate::output::list_pricing_rules_associated_to_pricing_plan_output::Builder
-    {
+    pub fn builder() -> crate::output::list_pricing_rules_associated_to_pricing_plan_output::Builder {
         crate::output::list_pricing_rules_associated_to_pricing_plan_output::Builder::default()
     }
 }
@@ -123,7 +115,7 @@ impl ListPricingRulesAssociatedToPricingPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingRulesOutput {
+pub struct ListPricingRulesOutput  {
     /// <p> The billing period for which the described pricing rules are applicable. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -136,27 +128,26 @@ pub struct ListPricingRulesOutput {
 }
 impl ListPricingRulesOutput {
     /// <p> The billing period for which the described pricing rules are applicable. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> A list containing the described pricing rules. </p>
-    pub fn pricing_rules(&self) -> std::option::Option<&[crate::model::PricingRuleListElement]> {
+    pub fn pricing_rules(&self) -> std::option::Option<& [crate::model::PricingRuleListElement]> {
         self.pricing_rules.as_deref()
     }
     /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPricingRulesOutput`](crate::output::ListPricingRulesOutput).
 pub mod list_pricing_rules_output {
-
+    
     /// A builder for [`ListPricingRulesOutput`](crate::output::ListPricingRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
-        pub(crate) pricing_rules:
-            std::option::Option<std::vec::Vec<crate::model::PricingRuleListElement>>,
+        pub(crate) pricing_rules: std::option::Option<std::vec::Vec<crate::model::PricingRuleListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -166,12 +157,8 @@ pub mod list_pricing_rules_output {
             self
         }
         /// <p> The billing period for which the described pricing rules are applicable. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// Appends an item to `pricing_rules`.
         ///
@@ -180,17 +167,13 @@ pub mod list_pricing_rules_output {
         /// <p> A list containing the described pricing rules. </p>
         pub fn pricing_rules(mut self, input: crate::model::PricingRuleListElement) -> Self {
             let mut v = self.pricing_rules.unwrap_or_default();
-            v.push(input);
-            self.pricing_rules = Some(v);
-            self
+                            v.push(input);
+                            self.pricing_rules = Some(v);
+                            self
         }
         /// <p> A list containing the described pricing rules. </p>
-        pub fn set_pricing_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PricingRuleListElement>>,
-        ) -> Self {
-            self.pricing_rules = input;
-            self
+        pub fn set_pricing_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::PricingRuleListElement>>) -> Self {
+            self.pricing_rules = input; self
         }
         /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,18 +182,22 @@ pub mod list_pricing_rules_output {
         }
         /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPricingRulesOutput`](crate::output::ListPricingRulesOutput).
         pub fn build(self) -> crate::output::ListPricingRulesOutput {
             crate::output::ListPricingRulesOutput {
-                billing_period: self.billing_period,
-                pricing_rules: self.pricing_rules,
-                next_token: self.next_token,
+                billing_period: self.billing_period
+                ,
+                pricing_rules: self.pricing_rules
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPricingRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListPricingRulesOutput`](crate::output::ListPricingRulesOutput).
@@ -222,20 +209,20 @@ impl ListPricingRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePricingRuleOutput {
+pub struct CreatePricingRuleOutput  {
     /// <p> The Amazon Resource Name (ARN) of the created pricing rule. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreatePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the created pricing rule. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput).
 pub mod create_pricing_rule_output {
-
+    
     /// A builder for [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -249,14 +236,18 @@ pub mod create_pricing_rule_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the created pricing rule. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput).
         pub fn build(self) -> crate::output::CreatePricingRuleOutput {
-            crate::output::CreatePricingRuleOutput { arn: self.arn }
+            crate::output::CreatePricingRuleOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreatePricingRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput).
@@ -268,20 +259,20 @@ impl CreatePricingRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePricingRuleOutput {
+pub struct DeletePricingRuleOutput  {
     /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeletePricingRuleOutput`](crate::output::DeletePricingRuleOutput).
 pub mod delete_pricing_rule_output {
-
+    
     /// A builder for [`DeletePricingRuleOutput`](crate::output::DeletePricingRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -295,14 +286,18 @@ pub mod delete_pricing_rule_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeletePricingRuleOutput`](crate::output::DeletePricingRuleOutput).
         pub fn build(self) -> crate::output::DeletePricingRuleOutput {
-            crate::output::DeletePricingRuleOutput { arn: self.arn }
+            crate::output::DeletePricingRuleOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeletePricingRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeletePricingRuleOutput`](crate::output::DeletePricingRuleOutput).
@@ -314,7 +309,7 @@ impl DeletePricingRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePricingRuleOutput {
+pub struct UpdatePricingRuleOutput  {
     /// <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -351,23 +346,23 @@ pub struct UpdatePricingRuleOutput {
 }
 impl UpdatePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The new description for the pricing rule. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-    pub fn scope(&self) -> std::option::Option<&crate::model::PricingRuleScope> {
+    pub fn scope(&self) -> std::option::Option<& crate::model::PricingRuleScope> {
         self.scope.as_ref()
     }
     /// <p> The new pricing rule type. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PricingRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PricingRuleType> {
         self.r#type.as_ref()
     }
     /// <p> The new modifier to show pricing plan rates as a percentage. </p>
@@ -375,7 +370,7 @@ impl UpdatePricingRuleOutput {
         self.modifier_percentage
     }
     /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p> The pricing plans count that this pricing rule is associated with. </p>
@@ -387,15 +382,15 @@ impl UpdatePricingRuleOutput {
         self.last_modified_time
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn billing_entity(&self) -> std::option::Option<&str> {
+    pub fn billing_entity(&self) -> std::option::Option<& str> {
         self.billing_entity.as_deref()
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn tiering(&self) -> std::option::Option<&crate::model::UpdateTieringInput> {
+    pub fn tiering(&self) -> std::option::Option<& crate::model::UpdateTieringInput> {
         self.tiering.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePricingRuleOutput {
+impl  std::fmt::Debug for UpdatePricingRuleOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePricingRuleOutput");
         formatter.field("arn", &self.arn);
@@ -405,10 +400,7 @@ impl std::fmt::Debug for UpdatePricingRuleOutput {
         formatter.field("r#type", &self.r#type);
         formatter.field("modifier_percentage", &self.modifier_percentage);
         formatter.field("service", &self.service);
-        formatter.field(
-            "associated_pricing_plan_count",
-            &self.associated_pricing_plan_count,
-        );
+        formatter.field("associated_pricing_plan_count", &self.associated_pricing_plan_count);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("billing_entity", &self.billing_entity);
         formatter.field("tiering", &self.tiering);
@@ -417,7 +409,7 @@ impl std::fmt::Debug for UpdatePricingRuleOutput {
 }
 /// See [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput).
 pub mod update_pricing_rule_output {
-
+    
     /// A builder for [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -441,8 +433,7 @@ pub mod update_pricing_rule_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -451,8 +442,7 @@ pub mod update_pricing_rule_output {
         }
         /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The new description for the pricing rule. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -461,8 +451,7 @@ pub mod update_pricing_rule_output {
         }
         /// <p> The new description for the pricing rule. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
         pub fn scope(mut self, input: crate::model::PricingRuleScope) -> Self {
@@ -470,12 +459,8 @@ pub mod update_pricing_rule_output {
             self
         }
         /// <p> The scope of pricing rule that indicates if it's globally applicable, or it's service-specific. </p>
-        pub fn set_scope(
-            mut self,
-            input: std::option::Option<crate::model::PricingRuleScope>,
-        ) -> Self {
-            self.scope = input;
-            self
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::PricingRuleScope>) -> Self {
+            self.scope = input; self
         }
         /// <p> The new pricing rule type. </p>
         pub fn r#type(mut self, input: crate::model::PricingRuleType) -> Self {
@@ -483,12 +468,8 @@ pub mod update_pricing_rule_output {
             self
         }
         /// <p> The new pricing rule type. </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PricingRuleType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PricingRuleType>) -> Self {
+            self.r#type = input; self
         }
         /// <p> The new modifier to show pricing plan rates as a percentage. </p>
         pub fn modifier_percentage(mut self, input: f64) -> Self {
@@ -497,8 +478,7 @@ pub mod update_pricing_rule_output {
         }
         /// <p> The new modifier to show pricing plan rates as a percentage. </p>
         pub fn set_modifier_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.modifier_percentage = input;
-            self
+            self.modifier_percentage = input; self
         }
         /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
         pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -507,8 +487,7 @@ pub mod update_pricing_rule_output {
         }
         /// <p> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// <p> The pricing plans count that this pricing rule is associated with. </p>
         pub fn associated_pricing_plan_count(mut self, input: i64) -> Self {
@@ -516,12 +495,8 @@ pub mod update_pricing_rule_output {
             self
         }
         /// <p> The pricing plans count that this pricing rule is associated with. </p>
-        pub fn set_associated_pricing_plan_count(
-            mut self,
-            input: std::option::Option<i64>,
-        ) -> Self {
-            self.associated_pricing_plan_count = input;
-            self
+        pub fn set_associated_pricing_plan_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.associated_pricing_plan_count = input; self
         }
         /// <p> The most recent time the pricing rule was modified. </p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -530,8 +505,7 @@ pub mod update_pricing_rule_output {
         }
         /// <p> The most recent time the pricing rule was modified. </p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_time = input;
-            self
+            self.last_modified_time = input; self
         }
         /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
         pub fn billing_entity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -539,12 +513,8 @@ pub mod update_pricing_rule_output {
             self
         }
         /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-        pub fn set_billing_entity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_entity = input;
-            self
+        pub fn set_billing_entity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_entity = input; self
         }
         /// <p> The set of tiering configurations for the pricing rule. </p>
         pub fn tiering(mut self, input: crate::model::UpdateTieringInput) -> Self {
@@ -552,29 +522,36 @@ pub mod update_pricing_rule_output {
             self
         }
         /// <p> The set of tiering configurations for the pricing rule. </p>
-        pub fn set_tiering(
-            mut self,
-            input: std::option::Option<crate::model::UpdateTieringInput>,
-        ) -> Self {
-            self.tiering = input;
-            self
+        pub fn set_tiering(mut self, input: std::option::Option<crate::model::UpdateTieringInput>) -> Self {
+            self.tiering = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput).
         pub fn build(self) -> crate::output::UpdatePricingRuleOutput {
             crate::output::UpdatePricingRuleOutput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                scope: self.scope,
-                r#type: self.r#type,
-                modifier_percentage: self.modifier_percentage,
-                service: self.service,
-                associated_pricing_plan_count: self
-                    .associated_pricing_plan_count
-                    .unwrap_or_default(),
-                last_modified_time: self.last_modified_time.unwrap_or_default(),
-                billing_entity: self.billing_entity,
-                tiering: self.tiering,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                scope: self.scope
+                ,
+                r#type: self.r#type
+                ,
+                modifier_percentage: self.modifier_percentage
+                ,
+                service: self.service
+                ,
+                associated_pricing_plan_count: self.associated_pricing_plan_count
+                    .unwrap_or_default()
+                ,
+                last_modified_time: self.last_modified_time
+                    .unwrap_or_default()
+                ,
+                billing_entity: self.billing_entity
+                ,
+                tiering: self.tiering
+                ,
             }
         }
     }
@@ -588,16 +565,15 @@ pub mod update_pricing_rule_output {
             formatter.field("r#type", &self.r#type);
             formatter.field("modifier_percentage", &self.modifier_percentage);
             formatter.field("service", &self.service);
-            formatter.field(
-                "associated_pricing_plan_count",
-                &self.associated_pricing_plan_count,
-            );
+            formatter.field("associated_pricing_plan_count", &self.associated_pricing_plan_count);
             formatter.field("last_modified_time", &self.last_modified_time);
             formatter.field("billing_entity", &self.billing_entity);
             formatter.field("tiering", &self.tiering);
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdatePricingRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput).
@@ -609,20 +585,20 @@ impl UpdatePricingRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociatePricingRulesOutput {
+pub struct DisassociatePricingRulesOutput  {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that the pricing rules successfully disassociated from. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DisassociatePricingRulesOutput {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that the pricing rules successfully disassociated from. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DisassociatePricingRulesOutput`](crate::output::DisassociatePricingRulesOutput).
 pub mod disassociate_pricing_rules_output {
-
+    
     /// A builder for [`DisassociatePricingRulesOutput`](crate::output::DisassociatePricingRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -636,14 +612,18 @@ pub mod disassociate_pricing_rules_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the pricing plan that the pricing rules successfully disassociated from. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DisassociatePricingRulesOutput`](crate::output::DisassociatePricingRulesOutput).
         pub fn build(self) -> crate::output::DisassociatePricingRulesOutput {
-            crate::output::DisassociatePricingRulesOutput { arn: self.arn }
+            crate::output::DisassociatePricingRulesOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DisassociatePricingRulesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociatePricingRulesOutput`](crate::output::DisassociatePricingRulesOutput).
@@ -655,20 +635,20 @@ impl DisassociatePricingRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatePricingRulesOutput {
+pub struct AssociatePricingRulesOutput  {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl AssociatePricingRulesOutput {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`AssociatePricingRulesOutput`](crate::output::AssociatePricingRulesOutput).
 pub mod associate_pricing_rules_output {
-
+    
     /// A builder for [`AssociatePricingRulesOutput`](crate::output::AssociatePricingRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -682,14 +662,18 @@ pub mod associate_pricing_rules_output {
         }
         /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`AssociatePricingRulesOutput`](crate::output::AssociatePricingRulesOutput).
         pub fn build(self) -> crate::output::AssociatePricingRulesOutput {
-            crate::output::AssociatePricingRulesOutput { arn: self.arn }
+            crate::output::AssociatePricingRulesOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl AssociatePricingRulesOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePricingRulesOutput`](crate::output::AssociatePricingRulesOutput).
@@ -701,7 +685,7 @@ impl AssociatePricingRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingPlansAssociatedWithPricingRuleOutput {
+pub struct ListPricingPlansAssociatedWithPricingRuleOutput  {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -717,25 +701,25 @@ pub struct ListPricingPlansAssociatedWithPricingRuleOutput {
 }
 impl ListPricingPlansAssociatedWithPricingRuleOutput {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    pub fn pricing_rule_arn(&self) -> std::option::Option<&str> {
+    pub fn pricing_rule_arn(&self) -> std::option::Option<& str> {
         self.pricing_rule_arn.as_deref()
     }
     /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
-    pub fn pricing_plan_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pricing_plan_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.pricing_plan_arns.as_deref()
     }
     /// <p> The pagination token to be used on subsequent calls. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput).
 pub mod list_pricing_plans_associated_with_pricing_rule_output {
-
+    
     /// A builder for [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -751,12 +735,8 @@ pub mod list_pricing_plans_associated_with_pricing_rule_output {
             self
         }
         /// <p> The pricing plan billing period for which associations will be listed. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
         pub fn pricing_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -764,12 +744,8 @@ pub mod list_pricing_plans_associated_with_pricing_rule_output {
             self
         }
         /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-        pub fn set_pricing_rule_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pricing_rule_arn = input;
-            self
+        pub fn set_pricing_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pricing_rule_arn = input; self
         }
         /// Appends an item to `pricing_plan_arns`.
         ///
@@ -778,17 +754,13 @@ pub mod list_pricing_plans_associated_with_pricing_rule_output {
         /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
         pub fn pricing_plan_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pricing_plan_arns.unwrap_or_default();
-            v.push(input.into());
-            self.pricing_plan_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.pricing_plan_arns = Some(v);
+                            self
         }
         /// <p> The list containing pricing plans that are associated with the requested pricing rule. </p>
-        pub fn set_pricing_plan_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.pricing_plan_arns = input;
-            self
+        pub fn set_pricing_plan_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.pricing_plan_arns = input; self
         }
         /// <p> The pagination token to be used on subsequent calls. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -797,24 +769,28 @@ pub mod list_pricing_plans_associated_with_pricing_rule_output {
         }
         /// <p> The pagination token to be used on subsequent calls. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput).
         pub fn build(self) -> crate::output::ListPricingPlansAssociatedWithPricingRuleOutput {
             crate::output::ListPricingPlansAssociatedWithPricingRuleOutput {
-                billing_period: self.billing_period,
-                pricing_rule_arn: self.pricing_rule_arn,
-                pricing_plan_arns: self.pricing_plan_arns,
-                next_token: self.next_token,
+                billing_period: self.billing_period
+                ,
+                pricing_rule_arn: self.pricing_rule_arn
+                ,
+                pricing_plan_arns: self.pricing_plan_arns
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPricingPlansAssociatedWithPricingRuleOutput {
     /// Creates a new builder-style object to manufacture [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput).
-    pub fn builder(
-    ) -> crate::output::list_pricing_plans_associated_with_pricing_rule_output::Builder {
+    pub fn builder() -> crate::output::list_pricing_plans_associated_with_pricing_rule_output::Builder {
         crate::output::list_pricing_plans_associated_with_pricing_rule_output::Builder::default()
     }
 }
@@ -822,7 +798,7 @@ impl ListPricingPlansAssociatedWithPricingRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingPlansOutput {
+pub struct ListPricingPlansOutput  {
     /// <p> The billing period for which the described pricing plans are applicable. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -835,27 +811,26 @@ pub struct ListPricingPlansOutput {
 }
 impl ListPricingPlansOutput {
     /// <p> The billing period for which the described pricing plans are applicable. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
-    pub fn pricing_plans(&self) -> std::option::Option<&[crate::model::PricingPlanListElement]> {
+    pub fn pricing_plans(&self) -> std::option::Option<& [crate::model::PricingPlanListElement]> {
         self.pricing_plans.as_deref()
     }
     /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPricingPlansOutput`](crate::output::ListPricingPlansOutput).
 pub mod list_pricing_plans_output {
-
+    
     /// A builder for [`ListPricingPlansOutput`](crate::output::ListPricingPlansOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) billing_period: std::option::Option<std::string::String>,
-        pub(crate) pricing_plans:
-            std::option::Option<std::vec::Vec<crate::model::PricingPlanListElement>>,
+        pub(crate) pricing_plans: std::option::Option<std::vec::Vec<crate::model::PricingPlanListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -865,12 +840,8 @@ pub mod list_pricing_plans_output {
             self
         }
         /// <p> The billing period for which the described pricing plans are applicable. </p>
-        pub fn set_billing_period(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_period = input;
-            self
+        pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_period = input; self
         }
         /// Appends an item to `pricing_plans`.
         ///
@@ -879,17 +850,13 @@ pub mod list_pricing_plans_output {
         /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
         pub fn pricing_plans(mut self, input: crate::model::PricingPlanListElement) -> Self {
             let mut v = self.pricing_plans.unwrap_or_default();
-            v.push(input);
-            self.pricing_plans = Some(v);
-            self
+                            v.push(input);
+                            self.pricing_plans = Some(v);
+                            self
         }
         /// <p>A list of <code>PricingPlanListElement</code> retrieved. </p>
-        pub fn set_pricing_plans(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PricingPlanListElement>>,
-        ) -> Self {
-            self.pricing_plans = input;
-            self
+        pub fn set_pricing_plans(mut self, input: std::option::Option<std::vec::Vec<crate::model::PricingPlanListElement>>) -> Self {
+            self.pricing_plans = input; self
         }
         /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -898,18 +865,22 @@ pub mod list_pricing_plans_output {
         }
         /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPricingPlansOutput`](crate::output::ListPricingPlansOutput).
         pub fn build(self) -> crate::output::ListPricingPlansOutput {
             crate::output::ListPricingPlansOutput {
-                billing_period: self.billing_period,
-                pricing_plans: self.pricing_plans,
-                next_token: self.next_token,
+                billing_period: self.billing_period
+                ,
+                pricing_plans: self.pricing_plans
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPricingPlansOutput {
     /// Creates a new builder-style object to manufacture [`ListPricingPlansOutput`](crate::output::ListPricingPlansOutput).
@@ -921,20 +892,20 @@ impl ListPricingPlansOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePricingPlanOutput {
+pub struct CreatePricingPlanOutput  {
     /// <p>The Amazon Resource Name (ARN) of the created pricing plan.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreatePricingPlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the created pricing plan.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreatePricingPlanOutput`](crate::output::CreatePricingPlanOutput).
 pub mod create_pricing_plan_output {
-
+    
     /// A builder for [`CreatePricingPlanOutput`](crate::output::CreatePricingPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -948,14 +919,18 @@ pub mod create_pricing_plan_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the created pricing plan.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreatePricingPlanOutput`](crate::output::CreatePricingPlanOutput).
         pub fn build(self) -> crate::output::CreatePricingPlanOutput {
-            crate::output::CreatePricingPlanOutput { arn: self.arn }
+            crate::output::CreatePricingPlanOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreatePricingPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreatePricingPlanOutput`](crate::output::CreatePricingPlanOutput).
@@ -967,20 +942,20 @@ impl CreatePricingPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePricingPlanOutput {
+pub struct DeletePricingPlanOutput  {
     /// <p> The Amazon Resource Name (ARN) of the deleted pricing plan. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeletePricingPlanOutput {
     /// <p> The Amazon Resource Name (ARN) of the deleted pricing plan. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeletePricingPlanOutput`](crate::output::DeletePricingPlanOutput).
 pub mod delete_pricing_plan_output {
-
+    
     /// A builder for [`DeletePricingPlanOutput`](crate::output::DeletePricingPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -994,14 +969,18 @@ pub mod delete_pricing_plan_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the deleted pricing plan. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeletePricingPlanOutput`](crate::output::DeletePricingPlanOutput).
         pub fn build(self) -> crate::output::DeletePricingPlanOutput {
-            crate::output::DeletePricingPlanOutput { arn: self.arn }
+            crate::output::DeletePricingPlanOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeletePricingPlanOutput {
     /// Creates a new builder-style object to manufacture [`DeletePricingPlanOutput`](crate::output::DeletePricingPlanOutput).
@@ -1013,7 +992,7 @@ impl DeletePricingPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePricingPlanOutput {
+pub struct UpdatePricingPlanOutput  {
     /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1032,15 +1011,15 @@ pub struct UpdatePricingPlanOutput {
 }
 impl UpdatePricingPlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The new description for the pricing rule. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
@@ -1052,7 +1031,7 @@ impl UpdatePricingPlanOutput {
         self.last_modified_time
     }
 }
-impl std::fmt::Debug for UpdatePricingPlanOutput {
+impl  std::fmt::Debug for UpdatePricingPlanOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePricingPlanOutput");
         formatter.field("arn", &self.arn);
@@ -1065,7 +1044,7 @@ impl std::fmt::Debug for UpdatePricingPlanOutput {
 }
 /// See [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
 pub mod update_pricing_plan_output {
-
+    
     /// A builder for [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1083,8 +1062,7 @@ pub mod update_pricing_plan_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1093,8 +1071,7 @@ pub mod update_pricing_plan_output {
         }
         /// <p> The name of the pricing plan. The name must be unique to each pricing plan. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The new description for the pricing rule. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1103,8 +1080,7 @@ pub mod update_pricing_plan_output {
         }
         /// <p> The new description for the pricing rule. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
         pub fn size(mut self, input: i64) -> Self {
@@ -1113,8 +1089,7 @@ pub mod update_pricing_plan_output {
         }
         /// <p> The pricing rules count that's currently associated with this pricing plan list. </p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// <p> The most recent time when the pricing plan was modified. </p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -1123,17 +1098,23 @@ pub mod update_pricing_plan_output {
         }
         /// <p> The most recent time when the pricing plan was modified. </p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_time = input;
-            self
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
         pub fn build(self) -> crate::output::UpdatePricingPlanOutput {
             crate::output::UpdatePricingPlanOutput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                size: self.size.unwrap_or_default(),
-                last_modified_time: self.last_modified_time.unwrap_or_default(),
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                size: self.size
+                    .unwrap_or_default()
+                ,
+                last_modified_time: self.last_modified_time
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -1148,6 +1129,8 @@ pub mod update_pricing_plan_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdatePricingPlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
@@ -1159,46 +1142,39 @@ impl UpdatePricingPlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesAssociatedToCustomLineItemOutput {
+pub struct ListResourcesAssociatedToCustomLineItemOutput  {
     /// <p> The custom line item ARN for which the resource associations are listed. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
     #[doc(hidden)]
-    pub associated_resources: std::option::Option<
-        std::vec::Vec<crate::model::ListResourcesAssociatedToCustomLineItemResponseElement>,
-    >,
+    pub associated_resources: std::option::Option<std::vec::Vec<crate::model::ListResourcesAssociatedToCustomLineItemResponseElement>>,
     /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesAssociatedToCustomLineItemOutput {
     /// <p> The custom line item ARN for which the resource associations are listed. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
-    pub fn associated_resources(
-        &self,
-    ) -> std::option::Option<&[crate::model::ListResourcesAssociatedToCustomLineItemResponseElement]>
-    {
+    pub fn associated_resources(&self) -> std::option::Option<& [crate::model::ListResourcesAssociatedToCustomLineItemResponseElement]> {
         self.associated_resources.as_deref()
     }
     /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourcesAssociatedToCustomLineItemOutput`](crate::output::ListResourcesAssociatedToCustomLineItemOutput).
 pub mod list_resources_associated_to_custom_line_item_output {
-
+    
     /// A builder for [`ListResourcesAssociatedToCustomLineItemOutput`](crate::output::ListResourcesAssociatedToCustomLineItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) associated_resources: std::option::Option<
-            std::vec::Vec<crate::model::ListResourcesAssociatedToCustomLineItemResponseElement>,
-        >,
+        pub(crate) associated_resources: std::option::Option<std::vec::Vec<crate::model::ListResourcesAssociatedToCustomLineItemResponseElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1209,32 +1185,22 @@ pub mod list_resources_associated_to_custom_line_item_output {
         }
         /// <p> The custom line item ARN for which the resource associations are listed. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `associated_resources`.
         ///
         /// To override the contents of this collection use [`set_associated_resources`](Self::set_associated_resources).
         ///
         /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
-        pub fn associated_resources(
-            mut self,
-            input: crate::model::ListResourcesAssociatedToCustomLineItemResponseElement,
-        ) -> Self {
+        pub fn associated_resources(mut self, input: crate::model::ListResourcesAssociatedToCustomLineItemResponseElement) -> Self {
             let mut v = self.associated_resources.unwrap_or_default();
-            v.push(input);
-            self.associated_resources = Some(v);
-            self
+                            v.push(input);
+                            self.associated_resources = Some(v);
+                            self
         }
         /// <p> A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for each resource association retrieved. </p>
-        pub fn set_associated_resources(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListResourcesAssociatedToCustomLineItemResponseElement>,
-            >,
-        ) -> Self {
-            self.associated_resources = input;
-            self
+        pub fn set_associated_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListResourcesAssociatedToCustomLineItemResponseElement>>) -> Self {
+            self.associated_resources = input; self
         }
         /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1243,23 +1209,26 @@ pub mod list_resources_associated_to_custom_line_item_output {
         }
         /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemOutput`](crate::output::ListResourcesAssociatedToCustomLineItemOutput).
         pub fn build(self) -> crate::output::ListResourcesAssociatedToCustomLineItemOutput {
             crate::output::ListResourcesAssociatedToCustomLineItemOutput {
-                arn: self.arn,
-                associated_resources: self.associated_resources,
-                next_token: self.next_token,
+                arn: self.arn
+                ,
+                associated_resources: self.associated_resources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourcesAssociatedToCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesAssociatedToCustomLineItemOutput`](crate::output::ListResourcesAssociatedToCustomLineItemOutput).
-    pub fn builder() -> crate::output::list_resources_associated_to_custom_line_item_output::Builder
-    {
+    pub fn builder() -> crate::output::list_resources_associated_to_custom_line_item_output::Builder {
         crate::output::list_resources_associated_to_custom_line_item_output::Builder::default()
     }
 }
@@ -1267,35 +1236,31 @@ impl ListResourcesAssociatedToCustomLineItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomLineItemVersionsOutput {
+pub struct ListCustomLineItemVersionsOutput  {
     /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
     #[doc(hidden)]
-    pub custom_line_item_versions:
-        std::option::Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>>,
+    pub custom_line_item_versions: std::option::Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>>,
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomLineItemVersionsOutput {
     /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
-    pub fn custom_line_item_versions(
-        &self,
-    ) -> std::option::Option<&[crate::model::CustomLineItemVersionListElement]> {
+    pub fn custom_line_item_versions(&self) -> std::option::Option<& [crate::model::CustomLineItemVersionListElement]> {
         self.custom_line_item_versions.as_deref()
     }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
 pub mod list_custom_line_item_versions_output {
-
+    
     /// A builder for [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) custom_line_item_versions:
-            std::option::Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>>,
+        pub(crate) custom_line_item_versions: std::option::Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1304,24 +1269,15 @@ pub mod list_custom_line_item_versions_output {
         /// To override the contents of this collection use [`set_custom_line_item_versions`](Self::set_custom_line_item_versions).
         ///
         /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
-        pub fn custom_line_item_versions(
-            mut self,
-            input: crate::model::CustomLineItemVersionListElement,
-        ) -> Self {
+        pub fn custom_line_item_versions(mut self, input: crate::model::CustomLineItemVersionListElement) -> Self {
             let mut v = self.custom_line_item_versions.unwrap_or_default();
-            v.push(input);
-            self.custom_line_item_versions = Some(v);
-            self
+                            v.push(input);
+                            self.custom_line_item_versions = Some(v);
+                            self
         }
         /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
-        pub fn set_custom_line_item_versions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::CustomLineItemVersionListElement>,
-            >,
-        ) -> Self {
-            self.custom_line_item_versions = input;
-            self
+        pub fn set_custom_line_item_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>>) -> Self {
+            self.custom_line_item_versions = input; self
         }
         /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1330,17 +1286,20 @@ pub mod list_custom_line_item_versions_output {
         }
         /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
         pub fn build(self) -> crate::output::ListCustomLineItemVersionsOutput {
             crate::output::ListCustomLineItemVersionsOutput {
-                custom_line_item_versions: self.custom_line_item_versions,
-                next_token: self.next_token,
+                custom_line_item_versions: self.custom_line_item_versions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomLineItemVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
@@ -1352,40 +1311,32 @@ impl ListCustomLineItemVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisassociateResourcesFromCustomLineItemOutput {
+pub struct BatchDisassociateResourcesFromCustomLineItemOutput  {
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
     #[doc(hidden)]
-    pub successfully_disassociated_resources:
-        std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
+    pub successfully_disassociated_resources: std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
     #[doc(hidden)]
-    pub failed_disassociated_resources:
-        std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
+    pub failed_disassociated_resources: std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemOutput {
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
-    pub fn successfully_disassociated_resources(
-        &self,
-    ) -> std::option::Option<&[crate::model::DisassociateResourceResponseElement]> {
+    pub fn successfully_disassociated_resources(&self) -> std::option::Option<& [crate::model::DisassociateResourceResponseElement]> {
         self.successfully_disassociated_resources.as_deref()
     }
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
-    pub fn failed_disassociated_resources(
-        &self,
-    ) -> std::option::Option<&[crate::model::DisassociateResourceResponseElement]> {
+    pub fn failed_disassociated_resources(&self) -> std::option::Option<& [crate::model::DisassociateResourceResponseElement]> {
         self.failed_disassociated_resources.as_deref()
     }
 }
 /// See [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::output::BatchDisassociateResourcesFromCustomLineItemOutput).
 pub mod batch_disassociate_resources_from_custom_line_item_output {
-
+    
     /// A builder for [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::output::BatchDisassociateResourcesFromCustomLineItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) successfully_disassociated_resources:
-            std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
-        pub(crate) failed_disassociated_resources:
-            std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
+        pub(crate) successfully_disassociated_resources: std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
+        pub(crate) failed_disassociated_resources: std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
     }
     impl Builder {
         /// Appends an item to `successfully_disassociated_resources`.
@@ -1393,64 +1344,47 @@ pub mod batch_disassociate_resources_from_custom_line_item_output {
         /// To override the contents of this collection use [`set_successfully_disassociated_resources`](Self::set_successfully_disassociated_resources).
         ///
         /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
-        pub fn successfully_disassociated_resources(
-            mut self,
-            input: crate::model::DisassociateResourceResponseElement,
-        ) -> Self {
-            let mut v = self
-                .successfully_disassociated_resources
-                .unwrap_or_default();
-            v.push(input);
-            self.successfully_disassociated_resources = Some(v);
-            self
+        pub fn successfully_disassociated_resources(mut self, input: crate::model::DisassociateResourceResponseElement) -> Self {
+            let mut v = self.successfully_disassociated_resources.unwrap_or_default();
+                            v.push(input);
+                            self.successfully_disassociated_resources = Some(v);
+                            self
         }
         /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
-        pub fn set_successfully_disassociated_resources(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DisassociateResourceResponseElement>,
-            >,
-        ) -> Self {
-            self.successfully_disassociated_resources = input;
-            self
+        pub fn set_successfully_disassociated_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>) -> Self {
+            self.successfully_disassociated_resources = input; self
         }
         /// Appends an item to `failed_disassociated_resources`.
         ///
         /// To override the contents of this collection use [`set_failed_disassociated_resources`](Self::set_failed_disassociated_resources).
         ///
         /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
-        pub fn failed_disassociated_resources(
-            mut self,
-            input: crate::model::DisassociateResourceResponseElement,
-        ) -> Self {
+        pub fn failed_disassociated_resources(mut self, input: crate::model::DisassociateResourceResponseElement) -> Self {
             let mut v = self.failed_disassociated_resources.unwrap_or_default();
-            v.push(input);
-            self.failed_disassociated_resources = Some(v);
-            self
+                            v.push(input);
+                            self.failed_disassociated_resources = Some(v);
+                            self
         }
         /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that failed disassociation from a percentage custom line item. </p>
-        pub fn set_failed_disassociated_resources(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DisassociateResourceResponseElement>,
-            >,
-        ) -> Self {
-            self.failed_disassociated_resources = input;
-            self
+        pub fn set_failed_disassociated_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>) -> Self {
+            self.failed_disassociated_resources = input; self
         }
         /// Consumes the builder and constructs a [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::output::BatchDisassociateResourcesFromCustomLineItemOutput).
         pub fn build(self) -> crate::output::BatchDisassociateResourcesFromCustomLineItemOutput {
             crate::output::BatchDisassociateResourcesFromCustomLineItemOutput {
-                successfully_disassociated_resources: self.successfully_disassociated_resources,
-                failed_disassociated_resources: self.failed_disassociated_resources,
+                successfully_disassociated_resources: self.successfully_disassociated_resources
+                ,
+                failed_disassociated_resources: self.failed_disassociated_resources
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDisassociateResourcesFromCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::output::BatchDisassociateResourcesFromCustomLineItemOutput).
-    pub fn builder(
-    ) -> crate::output::batch_disassociate_resources_from_custom_line_item_output::Builder {
+    pub fn builder() -> crate::output::batch_disassociate_resources_from_custom_line_item_output::Builder {
         crate::output::batch_disassociate_resources_from_custom_line_item_output::Builder::default()
     }
 }
@@ -1458,40 +1392,32 @@ impl BatchDisassociateResourcesFromCustomLineItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateResourcesToCustomLineItemOutput {
+pub struct BatchAssociateResourcesToCustomLineItemOutput  {
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
     #[doc(hidden)]
-    pub successfully_associated_resources:
-        std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
+    pub successfully_associated_resources: std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
     #[doc(hidden)]
-    pub failed_associated_resources:
-        std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
+    pub failed_associated_resources: std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
 }
 impl BatchAssociateResourcesToCustomLineItemOutput {
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
-    pub fn successfully_associated_resources(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssociateResourceResponseElement]> {
+    pub fn successfully_associated_resources(&self) -> std::option::Option<& [crate::model::AssociateResourceResponseElement]> {
         self.successfully_associated_resources.as_deref()
     }
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
-    pub fn failed_associated_resources(
-        &self,
-    ) -> std::option::Option<&[crate::model::AssociateResourceResponseElement]> {
+    pub fn failed_associated_resources(&self) -> std::option::Option<& [crate::model::AssociateResourceResponseElement]> {
         self.failed_associated_resources.as_deref()
     }
 }
 /// See [`BatchAssociateResourcesToCustomLineItemOutput`](crate::output::BatchAssociateResourcesToCustomLineItemOutput).
 pub mod batch_associate_resources_to_custom_line_item_output {
-
+    
     /// A builder for [`BatchAssociateResourcesToCustomLineItemOutput`](crate::output::BatchAssociateResourcesToCustomLineItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) successfully_associated_resources:
-            std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
-        pub(crate) failed_associated_resources:
-            std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
+        pub(crate) successfully_associated_resources: std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
+        pub(crate) failed_associated_resources: std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
     }
     impl Builder {
         /// Appends an item to `successfully_associated_resources`.
@@ -1499,62 +1425,47 @@ pub mod batch_associate_resources_to_custom_line_item_output {
         /// To override the contents of this collection use [`set_successfully_associated_resources`](Self::set_successfully_associated_resources).
         ///
         /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
-        pub fn successfully_associated_resources(
-            mut self,
-            input: crate::model::AssociateResourceResponseElement,
-        ) -> Self {
+        pub fn successfully_associated_resources(mut self, input: crate::model::AssociateResourceResponseElement) -> Self {
             let mut v = self.successfully_associated_resources.unwrap_or_default();
-            v.push(input);
-            self.successfully_associated_resources = Some(v);
-            self
+                            v.push(input);
+                            self.successfully_associated_resources = Some(v);
+                            self
         }
         /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
-        pub fn set_successfully_associated_resources(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::AssociateResourceResponseElement>,
-            >,
-        ) -> Self {
-            self.successfully_associated_resources = input;
-            self
+        pub fn set_successfully_associated_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>) -> Self {
+            self.successfully_associated_resources = input; self
         }
         /// Appends an item to `failed_associated_resources`.
         ///
         /// To override the contents of this collection use [`set_failed_associated_resources`](Self::set_failed_associated_resources).
         ///
         /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
-        pub fn failed_associated_resources(
-            mut self,
-            input: crate::model::AssociateResourceResponseElement,
-        ) -> Self {
+        pub fn failed_associated_resources(mut self, input: crate::model::AssociateResourceResponseElement) -> Self {
             let mut v = self.failed_associated_resources.unwrap_or_default();
-            v.push(input);
-            self.failed_associated_resources = Some(v);
-            self
+                            v.push(input);
+                            self.failed_associated_resources = Some(v);
+                            self
         }
         /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that failed association to a percentage custom line item. </p>
-        pub fn set_failed_associated_resources(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::AssociateResourceResponseElement>,
-            >,
-        ) -> Self {
-            self.failed_associated_resources = input;
-            self
+        pub fn set_failed_associated_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>) -> Self {
+            self.failed_associated_resources = input; self
         }
         /// Consumes the builder and constructs a [`BatchAssociateResourcesToCustomLineItemOutput`](crate::output::BatchAssociateResourcesToCustomLineItemOutput).
         pub fn build(self) -> crate::output::BatchAssociateResourcesToCustomLineItemOutput {
             crate::output::BatchAssociateResourcesToCustomLineItemOutput {
-                successfully_associated_resources: self.successfully_associated_resources,
-                failed_associated_resources: self.failed_associated_resources,
+                successfully_associated_resources: self.successfully_associated_resources
+                ,
+                failed_associated_resources: self.failed_associated_resources
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAssociateResourcesToCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateResourcesToCustomLineItemOutput`](crate::output::BatchAssociateResourcesToCustomLineItemOutput).
-    pub fn builder() -> crate::output::batch_associate_resources_to_custom_line_item_output::Builder
-    {
+    pub fn builder() -> crate::output::batch_associate_resources_to_custom_line_item_output::Builder {
         crate::output::batch_associate_resources_to_custom_line_item_output::Builder::default()
     }
 }
@@ -1562,35 +1473,31 @@ impl BatchAssociateResourcesToCustomLineItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomLineItemsOutput {
+pub struct ListCustomLineItemsOutput  {
     /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
     #[doc(hidden)]
-    pub custom_line_items:
-        std::option::Option<std::vec::Vec<crate::model::CustomLineItemListElement>>,
+    pub custom_line_items: std::option::Option<std::vec::Vec<crate::model::CustomLineItemListElement>>,
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomLineItemsOutput {
     /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
-    pub fn custom_line_items(
-        &self,
-    ) -> std::option::Option<&[crate::model::CustomLineItemListElement]> {
+    pub fn custom_line_items(&self) -> std::option::Option<& [crate::model::CustomLineItemListElement]> {
         self.custom_line_items.as_deref()
     }
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomLineItemsOutput`](crate::output::ListCustomLineItemsOutput).
 pub mod list_custom_line_items_output {
-
+    
     /// A builder for [`ListCustomLineItemsOutput`](crate::output::ListCustomLineItemsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) custom_line_items:
-            std::option::Option<std::vec::Vec<crate::model::CustomLineItemListElement>>,
+        pub(crate) custom_line_items: std::option::Option<std::vec::Vec<crate::model::CustomLineItemListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1601,17 +1508,13 @@ pub mod list_custom_line_items_output {
         /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
         pub fn custom_line_items(mut self, input: crate::model::CustomLineItemListElement) -> Self {
             let mut v = self.custom_line_items.unwrap_or_default();
-            v.push(input);
-            self.custom_line_items = Some(v);
-            self
+                            v.push(input);
+                            self.custom_line_items = Some(v);
+                            self
         }
         /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
-        pub fn set_custom_line_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomLineItemListElement>>,
-        ) -> Self {
-            self.custom_line_items = input;
-            self
+        pub fn set_custom_line_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomLineItemListElement>>) -> Self {
+            self.custom_line_items = input; self
         }
         /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1620,17 +1523,20 @@ pub mod list_custom_line_items_output {
         }
         /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomLineItemsOutput`](crate::output::ListCustomLineItemsOutput).
         pub fn build(self) -> crate::output::ListCustomLineItemsOutput {
             crate::output::ListCustomLineItemsOutput {
-                custom_line_items: self.custom_line_items,
-                next_token: self.next_token,
+                custom_line_items: self.custom_line_items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomLineItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemsOutput`](crate::output::ListCustomLineItemsOutput).
@@ -1642,20 +1548,20 @@ impl ListCustomLineItemsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomLineItemOutput {
+pub struct CreateCustomLineItemOutput  {
     /// <p> The Amazon Resource Name (ARN) of the created custom line item. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateCustomLineItemOutput {
     /// <p> The Amazon Resource Name (ARN) of the created custom line item. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateCustomLineItemOutput`](crate::output::CreateCustomLineItemOutput).
 pub mod create_custom_line_item_output {
-
+    
     /// A builder for [`CreateCustomLineItemOutput`](crate::output::CreateCustomLineItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1669,14 +1575,18 @@ pub mod create_custom_line_item_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the created custom line item. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateCustomLineItemOutput`](crate::output::CreateCustomLineItemOutput).
         pub fn build(self) -> crate::output::CreateCustomLineItemOutput {
-            crate::output::CreateCustomLineItemOutput { arn: self.arn }
+            crate::output::CreateCustomLineItemOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomLineItemOutput`](crate::output::CreateCustomLineItemOutput).
@@ -1688,20 +1598,20 @@ impl CreateCustomLineItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomLineItemOutput {
+pub struct DeleteCustomLineItemOutput  {
     /// <p> Then ARN of the deleted custom line item. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteCustomLineItemOutput {
     /// <p> Then ARN of the deleted custom line item. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeleteCustomLineItemOutput`](crate::output::DeleteCustomLineItemOutput).
 pub mod delete_custom_line_item_output {
-
+    
     /// A builder for [`DeleteCustomLineItemOutput`](crate::output::DeleteCustomLineItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1715,14 +1625,18 @@ pub mod delete_custom_line_item_output {
         }
         /// <p> Then ARN of the deleted custom line item. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCustomLineItemOutput`](crate::output::DeleteCustomLineItemOutput).
         pub fn build(self) -> crate::output::DeleteCustomLineItemOutput {
-            crate::output::DeleteCustomLineItemOutput { arn: self.arn }
+            crate::output::DeleteCustomLineItemOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomLineItemOutput`](crate::output::DeleteCustomLineItemOutput).
@@ -1734,7 +1648,7 @@ impl DeleteCustomLineItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateCustomLineItemOutput {
+pub struct UpdateCustomLineItemOutput  {
     /// <p> The ARN of the successfully updated custom line item. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1759,25 +1673,23 @@ pub struct UpdateCustomLineItemOutput {
 }
 impl UpdateCustomLineItemOutput {
     /// <p> The ARN of the successfully updated custom line item. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The ARN of the billing group that the custom line item is applied to. </p>
-    pub fn billing_group_arn(&self) -> std::option::Option<&str> {
+    pub fn billing_group_arn(&self) -> std::option::Option<& str> {
         self.billing_group_arn.as_deref()
     }
     /// <p> The name of the successfully updated custom line item. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The description of the successfully updated custom line item. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-    pub fn charge_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ListCustomLineItemChargeDetails> {
+    pub fn charge_details(&self) -> std::option::Option<& crate::model::ListCustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
     /// <p> The most recent time when the custom line item was modified. </p>
@@ -1789,7 +1701,7 @@ impl UpdateCustomLineItemOutput {
         self.association_size
     }
 }
-impl std::fmt::Debug for UpdateCustomLineItemOutput {
+impl  std::fmt::Debug for UpdateCustomLineItemOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateCustomLineItemOutput");
         formatter.field("arn", &self.arn);
@@ -1804,7 +1716,7 @@ impl std::fmt::Debug for UpdateCustomLineItemOutput {
 }
 /// See [`UpdateCustomLineItemOutput`](crate::output::UpdateCustomLineItemOutput).
 pub mod update_custom_line_item_output {
-
+    
     /// A builder for [`UpdateCustomLineItemOutput`](crate::output::UpdateCustomLineItemOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1812,8 +1724,7 @@ pub mod update_custom_line_item_output {
         pub(crate) billing_group_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) charge_details:
-            std::option::Option<crate::model::ListCustomLineItemChargeDetails>,
+        pub(crate) charge_details: std::option::Option<crate::model::ListCustomLineItemChargeDetails>,
         pub(crate) last_modified_time: std::option::Option<i64>,
         pub(crate) association_size: std::option::Option<i64>,
     }
@@ -1825,8 +1736,7 @@ pub mod update_custom_line_item_output {
         }
         /// <p> The ARN of the successfully updated custom line item. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The ARN of the billing group that the custom line item is applied to. </p>
         pub fn billing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1834,12 +1744,8 @@ pub mod update_custom_line_item_output {
             self
         }
         /// <p> The ARN of the billing group that the custom line item is applied to. </p>
-        pub fn set_billing_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_group_arn = input;
-            self
+        pub fn set_billing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_group_arn = input; self
         }
         /// <p> The name of the successfully updated custom line item. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1848,8 +1754,7 @@ pub mod update_custom_line_item_output {
         }
         /// <p> The name of the successfully updated custom line item. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The description of the successfully updated custom line item. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1858,24 +1763,16 @@ pub mod update_custom_line_item_output {
         }
         /// <p> The description of the successfully updated custom line item. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-        pub fn charge_details(
-            mut self,
-            input: crate::model::ListCustomLineItemChargeDetails,
-        ) -> Self {
+        pub fn charge_details(mut self, input: crate::model::ListCustomLineItemChargeDetails) -> Self {
             self.charge_details = Some(input);
             self
         }
         /// <p> A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the successfully updated custom line item. </p>
-        pub fn set_charge_details(
-            mut self,
-            input: std::option::Option<crate::model::ListCustomLineItemChargeDetails>,
-        ) -> Self {
-            self.charge_details = input;
-            self
+        pub fn set_charge_details(mut self, input: std::option::Option<crate::model::ListCustomLineItemChargeDetails>) -> Self {
+            self.charge_details = input; self
         }
         /// <p> The most recent time when the custom line item was modified. </p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -1884,8 +1781,7 @@ pub mod update_custom_line_item_output {
         }
         /// <p> The most recent time when the custom line item was modified. </p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_time = input;
-            self
+            self.last_modified_time = input; self
         }
         /// <p> The number of resources that are associated to the custom line item. </p>
         pub fn association_size(mut self, input: i64) -> Self {
@@ -1894,19 +1790,27 @@ pub mod update_custom_line_item_output {
         }
         /// <p> The number of resources that are associated to the custom line item. </p>
         pub fn set_association_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.association_size = input;
-            self
+            self.association_size = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCustomLineItemOutput`](crate::output::UpdateCustomLineItemOutput).
         pub fn build(self) -> crate::output::UpdateCustomLineItemOutput {
             crate::output::UpdateCustomLineItemOutput {
-                arn: self.arn,
-                billing_group_arn: self.billing_group_arn,
-                name: self.name,
-                description: self.description,
-                charge_details: self.charge_details,
-                last_modified_time: self.last_modified_time.unwrap_or_default(),
-                association_size: self.association_size.unwrap_or_default(),
+                arn: self.arn
+                ,
+                billing_group_arn: self.billing_group_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                charge_details: self.charge_details
+                ,
+                last_modified_time: self.last_modified_time
+                    .unwrap_or_default()
+                ,
+                association_size: self.association_size
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -1923,6 +1827,8 @@ pub mod update_custom_line_item_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateCustomLineItemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomLineItemOutput`](crate::output::UpdateCustomLineItemOutput).
@@ -1934,20 +1840,20 @@ impl UpdateCustomLineItemOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateAccountsOutput {
+pub struct DisassociateAccountsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs is disassociated from. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DisassociateAccountsOutput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs is disassociated from. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DisassociateAccountsOutput`](crate::output::DisassociateAccountsOutput).
 pub mod disassociate_accounts_output {
-
+    
     /// A builder for [`DisassociateAccountsOutput`](crate::output::DisassociateAccountsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1961,14 +1867,18 @@ pub mod disassociate_accounts_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs is disassociated from. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateAccountsOutput`](crate::output::DisassociateAccountsOutput).
         pub fn build(self) -> crate::output::DisassociateAccountsOutput {
-            crate::output::DisassociateAccountsOutput { arn: self.arn }
+            crate::output::DisassociateAccountsOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DisassociateAccountsOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateAccountsOutput`](crate::output::DisassociateAccountsOutput).
@@ -1980,20 +1890,20 @@ impl DisassociateAccountsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAccountsOutput {
+pub struct AssociateAccountsOutput  {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl AssociateAccountsOutput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`AssociateAccountsOutput`](crate::output::AssociateAccountsOutput).
 pub mod associate_accounts_output {
-
+    
     /// A builder for [`AssociateAccountsOutput`](crate::output::AssociateAccountsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2007,14 +1917,18 @@ pub mod associate_accounts_output {
         }
         /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`AssociateAccountsOutput`](crate::output::AssociateAccountsOutput).
         pub fn build(self) -> crate::output::AssociateAccountsOutput {
-            crate::output::AssociateAccountsOutput { arn: self.arn }
+            crate::output::AssociateAccountsOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl AssociateAccountsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateAccountsOutput`](crate::output::AssociateAccountsOutput).
@@ -2026,7 +1940,7 @@ impl AssociateAccountsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBillingGroupsOutput {
+pub struct ListBillingGroupsOutput  {
     /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
     #[doc(hidden)]
     pub billing_groups: std::option::Option<std::vec::Vec<crate::model::BillingGroupListElement>>,
@@ -2036,22 +1950,21 @@ pub struct ListBillingGroupsOutput {
 }
 impl ListBillingGroupsOutput {
     /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
-    pub fn billing_groups(&self) -> std::option::Option<&[crate::model::BillingGroupListElement]> {
+    pub fn billing_groups(&self) -> std::option::Option<& [crate::model::BillingGroupListElement]> {
         self.billing_groups.as_deref()
     }
     /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput).
 pub mod list_billing_groups_output {
-
+    
     /// A builder for [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) billing_groups:
-            std::option::Option<std::vec::Vec<crate::model::BillingGroupListElement>>,
+        pub(crate) billing_groups: std::option::Option<std::vec::Vec<crate::model::BillingGroupListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2062,17 +1975,13 @@ pub mod list_billing_groups_output {
         /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
         pub fn billing_groups(mut self, input: crate::model::BillingGroupListElement) -> Self {
             let mut v = self.billing_groups.unwrap_or_default();
-            v.push(input);
-            self.billing_groups = Some(v);
-            self
+                            v.push(input);
+                            self.billing_groups = Some(v);
+                            self
         }
         /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
-        pub fn set_billing_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BillingGroupListElement>>,
-        ) -> Self {
-            self.billing_groups = input;
-            self
+        pub fn set_billing_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::BillingGroupListElement>>) -> Self {
+            self.billing_groups = input; self
         }
         /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2081,17 +1990,20 @@ pub mod list_billing_groups_output {
         }
         /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput).
         pub fn build(self) -> crate::output::ListBillingGroupsOutput {
             crate::output::ListBillingGroupsOutput {
-                billing_groups: self.billing_groups,
-                next_token: self.next_token,
+                billing_groups: self.billing_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBillingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput).
@@ -2103,20 +2015,20 @@ impl ListBillingGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBillingGroupOutput {
+pub struct CreateBillingGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the created billing group. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the created billing group. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput).
 pub mod create_billing_group_output {
-
+    
     /// A builder for [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2130,14 +2042,18 @@ pub mod create_billing_group_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the created billing group. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput).
         pub fn build(self) -> crate::output::CreateBillingGroupOutput {
-            crate::output::CreateBillingGroupOutput { arn: self.arn }
+            crate::output::CreateBillingGroupOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput).
@@ -2149,20 +2065,20 @@ impl CreateBillingGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBillingGroupOutput {
+pub struct DeleteBillingGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the deleted billing group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted billing group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput).
 pub mod delete_billing_group_output {
-
+    
     /// A builder for [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2176,14 +2092,18 @@ pub mod delete_billing_group_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the deleted billing group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput).
         pub fn build(self) -> crate::output::DeleteBillingGroupOutput {
-            crate::output::DeleteBillingGroupOutput { arn: self.arn }
+            crate::output::DeleteBillingGroupOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeleteBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput).
@@ -2195,7 +2115,7 @@ impl DeleteBillingGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateBillingGroupOutput {
+pub struct UpdateBillingGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the billing group that was updated. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2226,23 +2146,23 @@ pub struct UpdateBillingGroupOutput {
 }
 impl UpdateBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that was updated. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The name of the billing group. The names must be unique to each billing group. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> A description of the billing group. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    pub fn primary_account_id(&self) -> std::option::Option<&str> {
+    pub fn primary_account_id(&self) -> std::option::Option<& str> {
         self.primary_account_id.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
-    pub fn pricing_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn pricing_plan_arn(&self) -> std::option::Option<& str> {
         self.pricing_plan_arn.as_deref()
     }
     /// <p> The number of accounts in the particular billing group. </p>
@@ -2254,15 +2174,15 @@ impl UpdateBillingGroupOutput {
         self.last_modified_time
     }
     /// <p> The status of the billing group. Only one of the valid values can be used. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::BillingGroupStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::BillingGroupStatus> {
         self.status.as_ref()
     }
     /// <p> The reason why the billing group is in its current status. </p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBillingGroupOutput {
+impl  std::fmt::Debug for UpdateBillingGroupOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBillingGroupOutput");
         formatter.field("arn", &self.arn);
@@ -2279,7 +2199,7 @@ impl std::fmt::Debug for UpdateBillingGroupOutput {
 }
 /// See [`UpdateBillingGroupOutput`](crate::output::UpdateBillingGroupOutput).
 pub mod update_billing_group_output {
-
+    
     /// A builder for [`UpdateBillingGroupOutput`](crate::output::UpdateBillingGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2301,8 +2221,7 @@ pub mod update_billing_group_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the billing group that was updated. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The name of the billing group. The names must be unique to each billing group. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2311,8 +2230,7 @@ pub mod update_billing_group_output {
         }
         /// <p> The name of the billing group. The names must be unique to each billing group. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> A description of the billing group. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2321,8 +2239,7 @@ pub mod update_billing_group_output {
         }
         /// <p> A description of the billing group. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The account ID that serves as the main account in a billing group. </p>
         pub fn primary_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2330,12 +2247,8 @@ pub mod update_billing_group_output {
             self
         }
         /// <p> The account ID that serves as the main account in a billing group. </p>
-        pub fn set_primary_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.primary_account_id = input;
-            self
+        pub fn set_primary_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.primary_account_id = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
         pub fn pricing_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2343,12 +2256,8 @@ pub mod update_billing_group_output {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
-        pub fn set_pricing_plan_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pricing_plan_arn = input;
-            self
+        pub fn set_pricing_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pricing_plan_arn = input; self
         }
         /// <p> The number of accounts in the particular billing group. </p>
         pub fn size(mut self, input: i64) -> Self {
@@ -2357,8 +2266,7 @@ pub mod update_billing_group_output {
         }
         /// <p> The number of accounts in the particular billing group. </p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// <p> The most recent time when the billing group was modified. </p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -2367,8 +2275,7 @@ pub mod update_billing_group_output {
         }
         /// <p> The most recent time when the billing group was modified. </p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_time = input;
-            self
+            self.last_modified_time = input; self
         }
         /// <p> The status of the billing group. Only one of the valid values can be used. </p>
         pub fn status(mut self, input: crate::model::BillingGroupStatus) -> Self {
@@ -2376,12 +2283,8 @@ pub mod update_billing_group_output {
             self
         }
         /// <p> The status of the billing group. Only one of the valid values can be used. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::BillingGroupStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::BillingGroupStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> The reason why the billing group is in its current status. </p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2389,25 +2292,32 @@ pub mod update_billing_group_output {
             self
         }
         /// <p> The reason why the billing group is in its current status. </p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBillingGroupOutput`](crate::output::UpdateBillingGroupOutput).
         pub fn build(self) -> crate::output::UpdateBillingGroupOutput {
             crate::output::UpdateBillingGroupOutput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                primary_account_id: self.primary_account_id,
-                pricing_plan_arn: self.pricing_plan_arn,
-                size: self.size.unwrap_or_default(),
-                last_modified_time: self.last_modified_time.unwrap_or_default(),
-                status: self.status,
-                status_reason: self.status_reason,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                primary_account_id: self.primary_account_id
+                ,
+                pricing_plan_arn: self.pricing_plan_arn
+                ,
+                size: self.size
+                    .unwrap_or_default()
+                ,
+                last_modified_time: self.last_modified_time
+                    .unwrap_or_default()
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
             }
         }
     }
@@ -2426,6 +2336,8 @@ pub mod update_billing_group_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBillingGroupOutput`](crate::output::UpdateBillingGroupOutput).
@@ -2437,19 +2349,24 @@ impl UpdateBillingGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2461,19 +2378,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -2485,30 +2407,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p> The tags for the resource. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p> The tags for the resource. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -2516,31 +2432,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags for the resource. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags for the resource. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2552,35 +2463,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBillingGroupCostReportsOutput {
+pub struct ListBillingGroupCostReportsOutput  {
     /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
     #[doc(hidden)]
-    pub billing_group_cost_reports:
-        std::option::Option<std::vec::Vec<crate::model::BillingGroupCostReportElement>>,
+    pub billing_group_cost_reports: std::option::Option<std::vec::Vec<crate::model::BillingGroupCostReportElement>>,
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBillingGroupCostReportsOutput {
     /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
-    pub fn billing_group_cost_reports(
-        &self,
-    ) -> std::option::Option<&[crate::model::BillingGroupCostReportElement]> {
+    pub fn billing_group_cost_reports(&self) -> std::option::Option<& [crate::model::BillingGroupCostReportElement]> {
         self.billing_group_cost_reports.as_deref()
     }
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBillingGroupCostReportsOutput`](crate::output::ListBillingGroupCostReportsOutput).
 pub mod list_billing_group_cost_reports_output {
-
+    
     /// A builder for [`ListBillingGroupCostReportsOutput`](crate::output::ListBillingGroupCostReportsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) billing_group_cost_reports:
-            std::option::Option<std::vec::Vec<crate::model::BillingGroupCostReportElement>>,
+        pub(crate) billing_group_cost_reports: std::option::Option<std::vec::Vec<crate::model::BillingGroupCostReportElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2589,22 +2496,15 @@ pub mod list_billing_group_cost_reports_output {
         /// To override the contents of this collection use [`set_billing_group_cost_reports`](Self::set_billing_group_cost_reports).
         ///
         /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
-        pub fn billing_group_cost_reports(
-            mut self,
-            input: crate::model::BillingGroupCostReportElement,
-        ) -> Self {
+        pub fn billing_group_cost_reports(mut self, input: crate::model::BillingGroupCostReportElement) -> Self {
             let mut v = self.billing_group_cost_reports.unwrap_or_default();
-            v.push(input);
-            self.billing_group_cost_reports = Some(v);
-            self
+                            v.push(input);
+                            self.billing_group_cost_reports = Some(v);
+                            self
         }
         /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
-        pub fn set_billing_group_cost_reports(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BillingGroupCostReportElement>>,
-        ) -> Self {
-            self.billing_group_cost_reports = input;
-            self
+        pub fn set_billing_group_cost_reports(mut self, input: std::option::Option<std::vec::Vec<crate::model::BillingGroupCostReportElement>>) -> Self {
+            self.billing_group_cost_reports = input; self
         }
         /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2613,17 +2513,20 @@ pub mod list_billing_group_cost_reports_output {
         }
         /// <p>The pagination token that's used on subsequent calls to get reports. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBillingGroupCostReportsOutput`](crate::output::ListBillingGroupCostReportsOutput).
         pub fn build(self) -> crate::output::ListBillingGroupCostReportsOutput {
             crate::output::ListBillingGroupCostReportsOutput {
-                billing_group_cost_reports: self.billing_group_cost_reports,
-                next_token: self.next_token,
+                billing_group_cost_reports: self.billing_group_cost_reports
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBillingGroupCostReportsOutput {
     /// Creates a new builder-style object to manufacture [`ListBillingGroupCostReportsOutput`](crate::output::ListBillingGroupCostReportsOutput).
@@ -2635,35 +2538,31 @@ impl ListBillingGroupCostReportsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountAssociationsOutput {
+pub struct ListAccountAssociationsOutput  {
     /// <p> The list of linked accounts in the payer account. </p>
     #[doc(hidden)]
-    pub linked_accounts:
-        std::option::Option<std::vec::Vec<crate::model::AccountAssociationsListElement>>,
+    pub linked_accounts: std::option::Option<std::vec::Vec<crate::model::AccountAssociationsListElement>>,
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountAssociationsOutput {
     /// <p> The list of linked accounts in the payer account. </p>
-    pub fn linked_accounts(
-        &self,
-    ) -> std::option::Option<&[crate::model::AccountAssociationsListElement]> {
+    pub fn linked_accounts(&self) -> std::option::Option<& [crate::model::AccountAssociationsListElement]> {
         self.linked_accounts.as_deref()
     }
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccountAssociationsOutput`](crate::output::ListAccountAssociationsOutput).
 pub mod list_account_associations_output {
-
+    
     /// A builder for [`ListAccountAssociationsOutput`](crate::output::ListAccountAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) linked_accounts:
-            std::option::Option<std::vec::Vec<crate::model::AccountAssociationsListElement>>,
+        pub(crate) linked_accounts: std::option::Option<std::vec::Vec<crate::model::AccountAssociationsListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2672,22 +2571,15 @@ pub mod list_account_associations_output {
         /// To override the contents of this collection use [`set_linked_accounts`](Self::set_linked_accounts).
         ///
         /// <p> The list of linked accounts in the payer account. </p>
-        pub fn linked_accounts(
-            mut self,
-            input: crate::model::AccountAssociationsListElement,
-        ) -> Self {
+        pub fn linked_accounts(mut self, input: crate::model::AccountAssociationsListElement) -> Self {
             let mut v = self.linked_accounts.unwrap_or_default();
-            v.push(input);
-            self.linked_accounts = Some(v);
-            self
+                            v.push(input);
+                            self.linked_accounts = Some(v);
+                            self
         }
         /// <p> The list of linked accounts in the payer account. </p>
-        pub fn set_linked_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountAssociationsListElement>>,
-        ) -> Self {
-            self.linked_accounts = input;
-            self
+        pub fn set_linked_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountAssociationsListElement>>) -> Self {
+            self.linked_accounts = input; self
         }
         /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2696,17 +2588,20 @@ pub mod list_account_associations_output {
         }
         /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountAssociationsOutput`](crate::output::ListAccountAssociationsOutput).
         pub fn build(self) -> crate::output::ListAccountAssociationsOutput {
             crate::output::ListAccountAssociationsOutput {
-                linked_accounts: self.linked_accounts,
-                next_token: self.next_token,
+                linked_accounts: self.linked_accounts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccountAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssociationsOutput`](crate::output::ListAccountAssociationsOutput).
@@ -2714,3 +2609,4 @@ impl ListAccountAssociationsOutput {
         crate::output::list_account_associations_output::Builder::default()
     }
 }
+

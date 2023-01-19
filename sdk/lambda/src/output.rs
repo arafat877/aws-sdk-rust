@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFunctionUrlConfigOutput {
+pub struct UpdateFunctionUrlConfigOutput  {
     /// <p>The HTTP URL endpoint for your function.</p>
     #[doc(hidden)]
     pub function_url: std::option::Option<std::string::String>,
@@ -24,33 +24,33 @@ pub struct UpdateFunctionUrlConfigOutput {
 }
 impl UpdateFunctionUrlConfigOutput {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub fn function_url(&self) -> std::option::Option<&str> {
+    pub fn function_url(&self) -> std::option::Option<& str> {
         self.function_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+    pub fn auth_type(&self) -> std::option::Option<& crate::model::FunctionUrlAuthType> {
         self.auth_type.as_ref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
-    pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
+    pub fn cors(&self) -> std::option::Option<& crate::model::Cors> {
         self.cors.as_ref()
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_time(&self) -> std::option::Option<& str> {
         self.last_modified_time.as_deref()
     }
 }
 /// See [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput).
 pub mod update_function_url_config_output {
-
+    
     /// A builder for [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -69,8 +69,7 @@ pub mod update_function_url_config_output {
         }
         /// <p>The HTTP URL endpoint for your function.</p>
         pub fn set_function_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_url = input;
-            self
+            self.function_url = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of your function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +78,7 @@ pub mod update_function_url_config_output {
         }
         /// <p>The Amazon Resource Name (ARN) of your function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
         pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
@@ -88,12 +86,8 @@ pub mod update_function_url_config_output {
             self
         }
         /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-        pub fn set_auth_type(
-            mut self,
-            input: std::option::Option<crate::model::FunctionUrlAuthType>,
-        ) -> Self {
-            self.auth_type = input;
-            self
+        pub fn set_auth_type(mut self, input: std::option::Option<crate::model::FunctionUrlAuthType>) -> Self {
+            self.auth_type = input; self
         }
         /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
         pub fn cors(mut self, input: crate::model::Cors) -> Self {
@@ -102,8 +96,7 @@ pub mod update_function_url_config_output {
         }
         /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
         pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
-            self.cors = input;
-            self
+            self.cors = input; self
         }
         /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,12 +104,8 @@ pub mod update_function_url_config_output {
             self
         }
         /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,25 +113,29 @@ pub mod update_function_url_config_output {
             self
         }
         /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput).
         pub fn build(self) -> crate::output::UpdateFunctionUrlConfigOutput {
             crate::output::UpdateFunctionUrlConfigOutput {
-                function_url: self.function_url,
-                function_arn: self.function_arn,
-                auth_type: self.auth_type,
-                cors: self.cors,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                function_url: self.function_url
+                ,
+                function_arn: self.function_arn
+                ,
+                auth_type: self.auth_type
+                ,
+                cors: self.cors
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFunctionUrlConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionUrlConfigOutput`](crate::output::UpdateFunctionUrlConfigOutput).
@@ -154,7 +147,7 @@ impl UpdateFunctionUrlConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFunctionEventInvokeConfigOutput {
+pub struct UpdateFunctionEventInvokeConfigOutput  {
     /// <p>The date and time that the configuration was last updated.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -167,24 +160,24 @@ pub struct UpdateFunctionEventInvokeConfigOutput {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     #[doc(hidden)]
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
-    /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"> <b>Destinations</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+    /// <p>A destination for events after they have been sent to a function for processing.</p> 
+    /// <p class="title"> <b>Destinations</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
 impl UpdateFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -195,21 +188,21 @@ impl UpdateFunctionEventInvokeConfigOutput {
     pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_event_age_in_seconds
     }
-    /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"> <b>Destinations</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+    /// <p>A destination for events after they have been sent to a function for processing.</p> 
+    /// <p class="title"> <b>Destinations</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
     /// </ul>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
 }
 /// See [`UpdateFunctionEventInvokeConfigOutput`](crate::output::UpdateFunctionEventInvokeConfigOutput).
 pub mod update_function_event_invoke_config_output {
-
+    
     /// A builder for [`UpdateFunctionEventInvokeConfigOutput`](crate::output::UpdateFunctionEventInvokeConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -226,12 +219,8 @@ pub mod update_function_event_invoke_config_output {
             self
         }
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -240,8 +229,7 @@ pub mod update_function_event_invoke_config_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -250,8 +238,7 @@ pub mod update_function_event_invoke_config_output {
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
         pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
@@ -260,47 +247,49 @@ pub mod update_function_event_invoke_config_output {
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
         pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_event_age_in_seconds = input;
-            self
+            self.maximum_event_age_in_seconds = input; self
         }
-        /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title"> <b>Destinations</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+        /// <p>A destination for events after they have been sent to a function for processing.</p> 
+        /// <p class="title"> <b>Destinations</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
-        /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title"> <b>Destinations</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+        /// <p>A destination for events after they have been sent to a function for processing.</p> 
+        /// <p class="title"> <b>Destinations</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
         /// </ul>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFunctionEventInvokeConfigOutput`](crate::output::UpdateFunctionEventInvokeConfigOutput).
         pub fn build(self) -> crate::output::UpdateFunctionEventInvokeConfigOutput {
             crate::output::UpdateFunctionEventInvokeConfigOutput {
-                last_modified: self.last_modified,
-                function_arn: self.function_arn,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
-                destination_config: self.destination_config,
+                last_modified: self.last_modified
+                ,
+                function_arn: self.function_arn
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds
+                ,
+                destination_config: self.destination_config
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFunctionEventInvokeConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionEventInvokeConfigOutput`](crate::output::UpdateFunctionEventInvokeConfigOutput).
@@ -312,7 +301,7 @@ impl UpdateFunctionEventInvokeConfigOutput {
 /// <p>Details about a function's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFunctionConfigurationOutput {
+pub struct UpdateFunctionConfigurationOutput  {
     /// <p>The name of the function.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -390,8 +379,7 @@ pub struct UpdateFunctionConfigurationOutput {
     pub last_update_status_reason: std::option::Option<std::string::String>,
     /// <p>The reason code for the last update that was performed on the function.</p>
     #[doc(hidden)]
-    pub last_update_status_reason_code:
-        std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+    pub last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     #[doc(hidden)]
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
@@ -419,23 +407,23 @@ pub struct UpdateFunctionConfigurationOutput {
 }
 impl UpdateFunctionConfigurationOutput {
     /// <p>The name of the function.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The runtime environment for the Lambda function.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::model::Runtime> {
         self.runtime.as_ref()
     }
     /// <p>The function's execution role.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The function that Lambda calls to begin running your function.</p>
-    pub fn handler(&self) -> std::option::Option<&str> {
+    pub fn handler(&self) -> std::option::Option<& str> {
         self.handler.as_deref()
     }
     /// <p>The size of the function's deployment package, in bytes.</p>
@@ -443,7 +431,7 @@ impl UpdateFunctionConfigurationOutput {
         self.code_size
     }
     /// <p>The function's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
@@ -455,111 +443,109 @@ impl UpdateFunctionConfigurationOutput {
         self.memory_size
     }
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    pub fn code_sha256(&self) -> std::option::Option<&str> {
+    pub fn code_sha256(&self) -> std::option::Option<& str> {
         self.code_sha256.as_deref()
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The function's networking configuration.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
     /// <p>The function's dead letter queue.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The function's X-Ray tracing configuration.</p>
-    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+    pub fn tracing_config(&self) -> std::option::Option<& crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
     /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
-    pub fn master_arn(&self) -> std::option::Option<&str> {
+    pub fn master_arn(&self) -> std::option::Option<& str> {
         self.master_arn.as_deref()
     }
     /// <p>The latest updated revision of the function or alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+    pub fn layers(&self) -> std::option::Option<& [crate::model::Layer]> {
         self.layers.as_deref()
     }
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
     /// <p>The reason for the function's current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+    pub fn state_reason_code(&self) -> std::option::Option<& crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
     /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+    pub fn last_update_status(&self) -> std::option::Option<& crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
     /// <p>The reason for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+    pub fn last_update_status_reason(&self) -> std::option::Option<& str> {
         self.last_update_status_reason.as_deref()
     }
     /// <p>The reason code for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason_code(
-        &self,
-    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+    pub fn last_update_status_reason_code(&self) -> std::option::Option<& crate::model::LastUpdateStatusReasonCode> {
         self.last_update_status_reason_code.as_ref()
     }
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+    pub fn file_system_configs(&self) -> std::option::Option<& [crate::model::FileSystemConfig]> {
         self.file_system_configs.as_deref()
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+    pub fn package_type(&self) -> std::option::Option<& crate::model::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>The function's image configuration values.</p>
-    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+    pub fn image_config_response(&self) -> std::option::Option<& crate::model::ImageConfigResponse> {
         self.image_config_response.as_ref()
     }
     /// <p>The ARN of the signing profile version.</p>
-    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<& str> {
         self.signing_profile_version_arn.as_deref()
     }
     /// <p>The ARN of the signing job.</p>
-    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_job_arn(&self) -> std::option::Option<& str> {
         self.signing_job_arn.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.architectures.as_deref()
     }
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> std::option::Option<& crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-    pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
+    pub fn snap_start(&self) -> std::option::Option<& crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
     }
 }
 /// See [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput).
 pub mod update_function_configuration_output {
-
+    
     /// A builder for [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -588,10 +574,8 @@ pub mod update_function_configuration_output {
         pub(crate) state_reason_code: std::option::Option<crate::model::StateReasonCode>,
         pub(crate) last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
         pub(crate) last_update_status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_update_status_reason_code:
-            std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        pub(crate) file_system_configs:
-            std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+        pub(crate) last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+        pub(crate) file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         pub(crate) package_type: std::option::Option<crate::model::PackageType>,
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
@@ -607,12 +591,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn set_function_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_name = input;
-            self
+        pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_name = input; self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -621,8 +601,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
@@ -631,8 +610,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = input;
-            self
+            self.runtime = input; self
         }
         /// <p>The function's execution role.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -641,8 +619,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The function's execution role.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -651,8 +628,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.handler = input;
-            self
+            self.handler = input; self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn code_size(mut self, input: i64) -> Self {
@@ -661,8 +637,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size = input;
-            self
+            self.code_size = input; self
         }
         /// <p>The function's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -671,8 +646,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The function's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn timeout(mut self, input: i32) -> Self {
@@ -681,8 +655,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
@@ -691,8 +664,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_size = input;
-            self
+            self.memory_size = input; self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -700,12 +672,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -714,8 +682,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = input;
-            self
+            self.code_sha256 = input; self
         }
         /// <p>The version of the Lambda function.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -724,8 +691,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The version of the Lambda function.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The function's networking configuration.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
@@ -733,12 +699,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigResponse>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfigResponse>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>The function's dead letter queue.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -746,12 +708,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
@@ -759,12 +717,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentResponse>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::EnvironmentResponse>) -> Self {
+            self.environment = input; self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -773,8 +727,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
@@ -782,12 +735,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
-        pub fn set_tracing_config(
-            mut self,
-            input: std::option::Option<crate::model::TracingConfigResponse>,
-        ) -> Self {
-            self.tracing_config = input;
-            self
+        pub fn set_tracing_config(mut self, input: std::option::Option<crate::model::TracingConfigResponse>) -> Self {
+            self.tracing_config = input; self
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -796,8 +745,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = input;
-            self
+            self.master_arn = input; self
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -806,8 +754,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Appends an item to `layers`.
         ///
@@ -816,17 +763,13 @@ pub mod update_function_configuration_output {
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input);
-            self.layers = Some(v);
-            self
+                            v.push(input);
+                            self.layers = Some(v);
+                            self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-        pub fn set_layers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-        ) -> Self {
-            self.layers = input;
-            self
+        pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Layer>>) -> Self {
+            self.layers = input; self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -835,8 +778,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason for the function's current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -845,8 +787,7 @@ pub mod update_function_configuration_output {
         }
         /// <p>The reason for the function's current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
@@ -854,12 +795,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-        pub fn set_state_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::StateReasonCode>,
-        ) -> Self {
-            self.state_reason_code = input;
-            self
+        pub fn set_state_reason_code(mut self, input: std::option::Option<crate::model::StateReasonCode>) -> Self {
+            self.state_reason_code = input; self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
@@ -867,12 +804,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-        pub fn set_last_update_status(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatus>,
-        ) -> Self {
-            self.last_update_status = input;
-            self
+        pub fn set_last_update_status(mut self, input: std::option::Option<crate::model::LastUpdateStatus>) -> Self {
+            self.last_update_status = input; self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
         pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -880,28 +813,17 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_update_status_reason = input;
-            self
+        pub fn set_last_update_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_update_status_reason = input; self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason_code(
-            mut self,
-            input: crate::model::LastUpdateStatusReasonCode,
-        ) -> Self {
+        pub fn last_update_status_reason_code(mut self, input: crate::model::LastUpdateStatusReasonCode) -> Self {
             self.last_update_status_reason_code = Some(input);
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        ) -> Self {
-            self.last_update_status_reason_code = input;
-            self
+        pub fn set_last_update_status_reason_code(mut self, input: std::option::Option<crate::model::LastUpdateStatusReasonCode>) -> Self {
+            self.last_update_status_reason_code = input; self
         }
         /// Appends an item to `file_system_configs`.
         ///
@@ -910,17 +832,13 @@ pub mod update_function_configuration_output {
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
         pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input);
-            self.file_system_configs = Some(v);
-            self
+                            v.push(input);
+                            self.file_system_configs = Some(v);
+                            self
         }
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn set_file_system_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
-        ) -> Self {
-            self.file_system_configs = input;
-            self
+        pub fn set_file_system_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>) -> Self {
+            self.file_system_configs = input; self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
         pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
@@ -928,12 +846,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn set_package_type(
-            mut self,
-            input: std::option::Option<crate::model::PackageType>,
-        ) -> Self {
-            self.package_type = input;
-            self
+        pub fn set_package_type(mut self, input: std::option::Option<crate::model::PackageType>) -> Self {
+            self.package_type = input; self
         }
         /// <p>The function's image configuration values.</p>
         pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
@@ -941,28 +855,17 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn set_image_config_response(
-            mut self,
-            input: std::option::Option<crate::model::ImageConfigResponse>,
-        ) -> Self {
-            self.image_config_response = input;
-            self
+        pub fn set_image_config_response(mut self, input: std::option::Option<crate::model::ImageConfigResponse>) -> Self {
+            self.image_config_response = input; self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_profile_version_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn set_signing_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_profile_version_arn = input;
-            self
+        pub fn set_signing_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_profile_version_arn = input; self
         }
         /// <p>The ARN of the signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -970,12 +873,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn set_signing_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_job_arn = input;
-            self
+        pub fn set_signing_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_job_arn = input; self
         }
         /// Appends an item to `architectures`.
         ///
@@ -984,17 +883,13 @@ pub mod update_function_configuration_output {
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input);
-            self.architectures = Some(v);
-            self
+                            v.push(input);
+                            self.architectures = Some(v);
+                            self
         }
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn set_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.architectures = input;
-            self
+        pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.architectures = input; self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
         pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
@@ -1002,12 +897,8 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-        pub fn set_ephemeral_storage(
-            mut self,
-            input: std::option::Option<crate::model::EphemeralStorage>,
-        ) -> Self {
-            self.ephemeral_storage = input;
-            self
+        pub fn set_ephemeral_storage(mut self, input: std::option::Option<crate::model::EphemeralStorage>) -> Self {
+            self.ephemeral_storage = input; self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
@@ -1015,53 +906,86 @@ pub mod update_function_configuration_output {
             self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-        pub fn set_snap_start(
-            mut self,
-            input: std::option::Option<crate::model::SnapStartResponse>,
-        ) -> Self {
-            self.snap_start = input;
-            self
+        pub fn set_snap_start(mut self, input: std::option::Option<crate::model::SnapStartResponse>) -> Self {
+            self.snap_start = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateFunctionConfigurationOutput {
             crate::output::UpdateFunctionConfigurationOutput {
-                function_name: self.function_name,
-                function_arn: self.function_arn,
-                runtime: self.runtime,
-                role: self.role,
-                handler: self.handler,
-                code_size: self.code_size.unwrap_or_default(),
-                description: self.description,
-                timeout: self.timeout,
-                memory_size: self.memory_size,
-                last_modified: self.last_modified,
-                code_sha256: self.code_sha256,
-                version: self.version,
-                vpc_config: self.vpc_config,
-                dead_letter_config: self.dead_letter_config,
-                environment: self.environment,
-                kms_key_arn: self.kms_key_arn,
-                tracing_config: self.tracing_config,
-                master_arn: self.master_arn,
-                revision_id: self.revision_id,
-                layers: self.layers,
-                state: self.state,
-                state_reason: self.state_reason,
-                state_reason_code: self.state_reason_code,
-                last_update_status: self.last_update_status,
-                last_update_status_reason: self.last_update_status_reason,
-                last_update_status_reason_code: self.last_update_status_reason_code,
-                file_system_configs: self.file_system_configs,
-                package_type: self.package_type,
-                image_config_response: self.image_config_response,
-                signing_profile_version_arn: self.signing_profile_version_arn,
-                signing_job_arn: self.signing_job_arn,
-                architectures: self.architectures,
-                ephemeral_storage: self.ephemeral_storage,
-                snap_start: self.snap_start,
+                function_name: self.function_name
+                ,
+                function_arn: self.function_arn
+                ,
+                runtime: self.runtime
+                ,
+                role: self.role
+                ,
+                handler: self.handler
+                ,
+                code_size: self.code_size
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                timeout: self.timeout
+                ,
+                memory_size: self.memory_size
+                ,
+                last_modified: self.last_modified
+                ,
+                code_sha256: self.code_sha256
+                ,
+                version: self.version
+                ,
+                vpc_config: self.vpc_config
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                environment: self.environment
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tracing_config: self.tracing_config
+                ,
+                master_arn: self.master_arn
+                ,
+                revision_id: self.revision_id
+                ,
+                layers: self.layers
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                state_reason_code: self.state_reason_code
+                ,
+                last_update_status: self.last_update_status
+                ,
+                last_update_status_reason: self.last_update_status_reason
+                ,
+                last_update_status_reason_code: self.last_update_status_reason_code
+                ,
+                file_system_configs: self.file_system_configs
+                ,
+                package_type: self.package_type
+                ,
+                image_config_response: self.image_config_response
+                ,
+                signing_profile_version_arn: self.signing_profile_version_arn
+                ,
+                signing_job_arn: self.signing_job_arn
+                ,
+                architectures: self.architectures
+                ,
+                ephemeral_storage: self.ephemeral_storage
+                ,
+                snap_start: self.snap_start
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFunctionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput).
@@ -1073,7 +997,7 @@ impl UpdateFunctionConfigurationOutput {
 /// <p>Details about a function's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFunctionCodeOutput {
+pub struct UpdateFunctionCodeOutput  {
     /// <p>The name of the function.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -1151,8 +1075,7 @@ pub struct UpdateFunctionCodeOutput {
     pub last_update_status_reason: std::option::Option<std::string::String>,
     /// <p>The reason code for the last update that was performed on the function.</p>
     #[doc(hidden)]
-    pub last_update_status_reason_code:
-        std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+    pub last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     #[doc(hidden)]
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
@@ -1180,23 +1103,23 @@ pub struct UpdateFunctionCodeOutput {
 }
 impl UpdateFunctionCodeOutput {
     /// <p>The name of the function.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The runtime environment for the Lambda function.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::model::Runtime> {
         self.runtime.as_ref()
     }
     /// <p>The function's execution role.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The function that Lambda calls to begin running your function.</p>
-    pub fn handler(&self) -> std::option::Option<&str> {
+    pub fn handler(&self) -> std::option::Option<& str> {
         self.handler.as_deref()
     }
     /// <p>The size of the function's deployment package, in bytes.</p>
@@ -1204,7 +1127,7 @@ impl UpdateFunctionCodeOutput {
         self.code_size
     }
     /// <p>The function's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
@@ -1216,111 +1139,109 @@ impl UpdateFunctionCodeOutput {
         self.memory_size
     }
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    pub fn code_sha256(&self) -> std::option::Option<&str> {
+    pub fn code_sha256(&self) -> std::option::Option<& str> {
         self.code_sha256.as_deref()
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The function's networking configuration.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
     /// <p>The function's dead letter queue.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The function's X-Ray tracing configuration.</p>
-    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+    pub fn tracing_config(&self) -> std::option::Option<& crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
     /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
-    pub fn master_arn(&self) -> std::option::Option<&str> {
+    pub fn master_arn(&self) -> std::option::Option<& str> {
         self.master_arn.as_deref()
     }
     /// <p>The latest updated revision of the function or alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+    pub fn layers(&self) -> std::option::Option<& [crate::model::Layer]> {
         self.layers.as_deref()
     }
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
     /// <p>The reason for the function's current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+    pub fn state_reason_code(&self) -> std::option::Option<& crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
     /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+    pub fn last_update_status(&self) -> std::option::Option<& crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
     /// <p>The reason for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+    pub fn last_update_status_reason(&self) -> std::option::Option<& str> {
         self.last_update_status_reason.as_deref()
     }
     /// <p>The reason code for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason_code(
-        &self,
-    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+    pub fn last_update_status_reason_code(&self) -> std::option::Option<& crate::model::LastUpdateStatusReasonCode> {
         self.last_update_status_reason_code.as_ref()
     }
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+    pub fn file_system_configs(&self) -> std::option::Option<& [crate::model::FileSystemConfig]> {
         self.file_system_configs.as_deref()
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+    pub fn package_type(&self) -> std::option::Option<& crate::model::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>The function's image configuration values.</p>
-    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+    pub fn image_config_response(&self) -> std::option::Option<& crate::model::ImageConfigResponse> {
         self.image_config_response.as_ref()
     }
     /// <p>The ARN of the signing profile version.</p>
-    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<& str> {
         self.signing_profile_version_arn.as_deref()
     }
     /// <p>The ARN of the signing job.</p>
-    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_job_arn(&self) -> std::option::Option<& str> {
         self.signing_job_arn.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.architectures.as_deref()
     }
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> std::option::Option<& crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-    pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
+    pub fn snap_start(&self) -> std::option::Option<& crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
     }
 }
 /// See [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput).
 pub mod update_function_code_output {
-
+    
     /// A builder for [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1349,10 +1270,8 @@ pub mod update_function_code_output {
         pub(crate) state_reason_code: std::option::Option<crate::model::StateReasonCode>,
         pub(crate) last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
         pub(crate) last_update_status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_update_status_reason_code:
-            std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        pub(crate) file_system_configs:
-            std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+        pub(crate) last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+        pub(crate) file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         pub(crate) package_type: std::option::Option<crate::model::PackageType>,
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
@@ -1368,12 +1287,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn set_function_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_name = input;
-            self
+        pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_name = input; self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1382,8 +1297,7 @@ pub mod update_function_code_output {
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
@@ -1392,8 +1306,7 @@ pub mod update_function_code_output {
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = input;
-            self
+            self.runtime = input; self
         }
         /// <p>The function's execution role.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1402,8 +1315,7 @@ pub mod update_function_code_output {
         }
         /// <p>The function's execution role.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1412,8 +1324,7 @@ pub mod update_function_code_output {
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.handler = input;
-            self
+            self.handler = input; self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn code_size(mut self, input: i64) -> Self {
@@ -1422,8 +1333,7 @@ pub mod update_function_code_output {
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size = input;
-            self
+            self.code_size = input; self
         }
         /// <p>The function's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1432,8 +1342,7 @@ pub mod update_function_code_output {
         }
         /// <p>The function's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn timeout(mut self, input: i32) -> Self {
@@ -1442,8 +1351,7 @@ pub mod update_function_code_output {
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
@@ -1452,8 +1360,7 @@ pub mod update_function_code_output {
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_size = input;
-            self
+            self.memory_size = input; self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1461,12 +1368,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1475,8 +1378,7 @@ pub mod update_function_code_output {
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = input;
-            self
+            self.code_sha256 = input; self
         }
         /// <p>The version of the Lambda function.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1485,8 +1387,7 @@ pub mod update_function_code_output {
         }
         /// <p>The version of the Lambda function.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The function's networking configuration.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
@@ -1494,12 +1395,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigResponse>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfigResponse>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>The function's dead letter queue.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -1507,12 +1404,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
@@ -1520,12 +1413,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentResponse>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::EnvironmentResponse>) -> Self {
+            self.environment = input; self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1534,8 +1423,7 @@ pub mod update_function_code_output {
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
@@ -1543,12 +1431,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
-        pub fn set_tracing_config(
-            mut self,
-            input: std::option::Option<crate::model::TracingConfigResponse>,
-        ) -> Self {
-            self.tracing_config = input;
-            self
+        pub fn set_tracing_config(mut self, input: std::option::Option<crate::model::TracingConfigResponse>) -> Self {
+            self.tracing_config = input; self
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1557,8 +1441,7 @@ pub mod update_function_code_output {
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = input;
-            self
+            self.master_arn = input; self
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1567,8 +1450,7 @@ pub mod update_function_code_output {
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Appends an item to `layers`.
         ///
@@ -1577,17 +1459,13 @@ pub mod update_function_code_output {
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input);
-            self.layers = Some(v);
-            self
+                            v.push(input);
+                            self.layers = Some(v);
+                            self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-        pub fn set_layers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-        ) -> Self {
-            self.layers = input;
-            self
+        pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Layer>>) -> Self {
+            self.layers = input; self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -1596,8 +1474,7 @@ pub mod update_function_code_output {
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason for the function's current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1606,8 +1483,7 @@ pub mod update_function_code_output {
         }
         /// <p>The reason for the function's current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
@@ -1615,12 +1491,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-        pub fn set_state_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::StateReasonCode>,
-        ) -> Self {
-            self.state_reason_code = input;
-            self
+        pub fn set_state_reason_code(mut self, input: std::option::Option<crate::model::StateReasonCode>) -> Self {
+            self.state_reason_code = input; self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
@@ -1628,12 +1500,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-        pub fn set_last_update_status(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatus>,
-        ) -> Self {
-            self.last_update_status = input;
-            self
+        pub fn set_last_update_status(mut self, input: std::option::Option<crate::model::LastUpdateStatus>) -> Self {
+            self.last_update_status = input; self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
         pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1641,28 +1509,17 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_update_status_reason = input;
-            self
+        pub fn set_last_update_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_update_status_reason = input; self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason_code(
-            mut self,
-            input: crate::model::LastUpdateStatusReasonCode,
-        ) -> Self {
+        pub fn last_update_status_reason_code(mut self, input: crate::model::LastUpdateStatusReasonCode) -> Self {
             self.last_update_status_reason_code = Some(input);
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        ) -> Self {
-            self.last_update_status_reason_code = input;
-            self
+        pub fn set_last_update_status_reason_code(mut self, input: std::option::Option<crate::model::LastUpdateStatusReasonCode>) -> Self {
+            self.last_update_status_reason_code = input; self
         }
         /// Appends an item to `file_system_configs`.
         ///
@@ -1671,17 +1528,13 @@ pub mod update_function_code_output {
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
         pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input);
-            self.file_system_configs = Some(v);
-            self
+                            v.push(input);
+                            self.file_system_configs = Some(v);
+                            self
         }
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn set_file_system_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
-        ) -> Self {
-            self.file_system_configs = input;
-            self
+        pub fn set_file_system_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>) -> Self {
+            self.file_system_configs = input; self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
         pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
@@ -1689,12 +1542,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn set_package_type(
-            mut self,
-            input: std::option::Option<crate::model::PackageType>,
-        ) -> Self {
-            self.package_type = input;
-            self
+        pub fn set_package_type(mut self, input: std::option::Option<crate::model::PackageType>) -> Self {
+            self.package_type = input; self
         }
         /// <p>The function's image configuration values.</p>
         pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
@@ -1702,28 +1551,17 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn set_image_config_response(
-            mut self,
-            input: std::option::Option<crate::model::ImageConfigResponse>,
-        ) -> Self {
-            self.image_config_response = input;
-            self
+        pub fn set_image_config_response(mut self, input: std::option::Option<crate::model::ImageConfigResponse>) -> Self {
+            self.image_config_response = input; self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_profile_version_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn set_signing_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_profile_version_arn = input;
-            self
+        pub fn set_signing_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_profile_version_arn = input; self
         }
         /// <p>The ARN of the signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1731,12 +1569,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn set_signing_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_job_arn = input;
-            self
+        pub fn set_signing_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_job_arn = input; self
         }
         /// Appends an item to `architectures`.
         ///
@@ -1745,17 +1579,13 @@ pub mod update_function_code_output {
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input);
-            self.architectures = Some(v);
-            self
+                            v.push(input);
+                            self.architectures = Some(v);
+                            self
         }
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn set_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.architectures = input;
-            self
+        pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.architectures = input; self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
         pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
@@ -1763,12 +1593,8 @@ pub mod update_function_code_output {
             self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-        pub fn set_ephemeral_storage(
-            mut self,
-            input: std::option::Option<crate::model::EphemeralStorage>,
-        ) -> Self {
-            self.ephemeral_storage = input;
-            self
+        pub fn set_ephemeral_storage(mut self, input: std::option::Option<crate::model::EphemeralStorage>) -> Self {
+            self.ephemeral_storage = input; self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
@@ -1776,53 +1602,86 @@ pub mod update_function_code_output {
             self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-        pub fn set_snap_start(
-            mut self,
-            input: std::option::Option<crate::model::SnapStartResponse>,
-        ) -> Self {
-            self.snap_start = input;
-            self
+        pub fn set_snap_start(mut self, input: std::option::Option<crate::model::SnapStartResponse>) -> Self {
+            self.snap_start = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput).
         pub fn build(self) -> crate::output::UpdateFunctionCodeOutput {
             crate::output::UpdateFunctionCodeOutput {
-                function_name: self.function_name,
-                function_arn: self.function_arn,
-                runtime: self.runtime,
-                role: self.role,
-                handler: self.handler,
-                code_size: self.code_size.unwrap_or_default(),
-                description: self.description,
-                timeout: self.timeout,
-                memory_size: self.memory_size,
-                last_modified: self.last_modified,
-                code_sha256: self.code_sha256,
-                version: self.version,
-                vpc_config: self.vpc_config,
-                dead_letter_config: self.dead_letter_config,
-                environment: self.environment,
-                kms_key_arn: self.kms_key_arn,
-                tracing_config: self.tracing_config,
-                master_arn: self.master_arn,
-                revision_id: self.revision_id,
-                layers: self.layers,
-                state: self.state,
-                state_reason: self.state_reason,
-                state_reason_code: self.state_reason_code,
-                last_update_status: self.last_update_status,
-                last_update_status_reason: self.last_update_status_reason,
-                last_update_status_reason_code: self.last_update_status_reason_code,
-                file_system_configs: self.file_system_configs,
-                package_type: self.package_type,
-                image_config_response: self.image_config_response,
-                signing_profile_version_arn: self.signing_profile_version_arn,
-                signing_job_arn: self.signing_job_arn,
-                architectures: self.architectures,
-                ephemeral_storage: self.ephemeral_storage,
-                snap_start: self.snap_start,
+                function_name: self.function_name
+                ,
+                function_arn: self.function_arn
+                ,
+                runtime: self.runtime
+                ,
+                role: self.role
+                ,
+                handler: self.handler
+                ,
+                code_size: self.code_size
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                timeout: self.timeout
+                ,
+                memory_size: self.memory_size
+                ,
+                last_modified: self.last_modified
+                ,
+                code_sha256: self.code_sha256
+                ,
+                version: self.version
+                ,
+                vpc_config: self.vpc_config
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                environment: self.environment
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tracing_config: self.tracing_config
+                ,
+                master_arn: self.master_arn
+                ,
+                revision_id: self.revision_id
+                ,
+                layers: self.layers
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                state_reason_code: self.state_reason_code
+                ,
+                last_update_status: self.last_update_status
+                ,
+                last_update_status_reason: self.last_update_status_reason
+                ,
+                last_update_status_reason_code: self.last_update_status_reason_code
+                ,
+                file_system_configs: self.file_system_configs
+                ,
+                package_type: self.package_type
+                ,
+                image_config_response: self.image_config_response
+                ,
+                signing_profile_version_arn: self.signing_profile_version_arn
+                ,
+                signing_job_arn: self.signing_job_arn
+                ,
+                architectures: self.architectures
+                ,
+                ephemeral_storage: self.ephemeral_storage
+                ,
+                snap_start: self.snap_start
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFunctionCodeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput).
@@ -1834,7 +1693,7 @@ impl UpdateFunctionCodeOutput {
 /// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventSourceMappingOutput {
+pub struct UpdateEventSourceMappingOutput  {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
     pub uuid: std::option::Option<std::string::String>,
@@ -1844,13 +1703,13 @@ pub struct UpdateEventSourceMappingOutput {
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     #[doc(hidden)]
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -1889,8 +1748,7 @@ pub struct UpdateEventSourceMappingOutput {
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     #[doc(hidden)]
-    pub source_access_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+    pub source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     #[doc(hidden)]
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
@@ -1908,38 +1766,35 @@ pub struct UpdateEventSourceMappingOutput {
     pub tumbling_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     #[doc(hidden)]
-    pub function_response_types:
-        std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    pub function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     #[doc(hidden)]
-    pub amazon_managed_kafka_event_source_config:
-        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    pub amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
     #[doc(hidden)]
-    pub self_managed_kafka_event_source_config:
-        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    pub self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl UpdateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
-    pub fn uuid(&self) -> std::option::Option<&str> {
+    pub fn uuid(&self) -> std::option::Option<& str> {
         self.uuid.as_deref()
     }
     /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
@@ -1949,55 +1804,51 @@ impl UpdateEventSourceMappingOutput {
         self.parallelization_factor
     }
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The result of the last Lambda invocation of your function.</p>
-    pub fn last_processing_result(&self) -> std::option::Option<&str> {
+    pub fn last_processing_result(&self) -> std::option::Option<& str> {
         self.last_processing_result.as_deref()
     }
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+    pub fn state_transition_reason(&self) -> std::option::Option<& str> {
         self.state_transition_reason.as_deref()
     }
     /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>The name of the Kafka topic.</p>
-    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn topics(&self) -> std::option::Option<& [std::string::String]> {
         self.topics.as_deref()
     }
     /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queues(&self) -> std::option::Option<& [std::string::String]> {
         self.queues.as_deref()
     }
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-    pub fn source_access_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+    pub fn source_access_configurations(&self) -> std::option::Option<& [crate::model::SourceAccessConfiguration]> {
         self.source_access_configurations.as_deref()
     }
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-    pub fn self_managed_event_source(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+    pub fn self_managed_event_source(&self) -> std::option::Option<& crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
@@ -2017,27 +1868,21 @@ impl UpdateEventSourceMappingOutput {
         self.tumbling_window_in_seconds
     }
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn function_response_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+    pub fn function_response_types(&self) -> std::option::Option<& [crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-    pub fn amazon_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+    pub fn amazon_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::AmazonManagedKafkaEventSourceConfig> {
         self.amazon_managed_kafka_event_source_config.as_ref()
     }
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-    pub fn self_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+    pub fn self_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
 }
 /// See [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput).
 pub mod update_event_source_mapping_output {
-
+    
     /// A builder for [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2057,20 +1902,15 @@ pub mod update_event_source_mapping_output {
         pub(crate) destination_config: std::option::Option<crate::model::DestinationConfig>,
         pub(crate) topics: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) source_access_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        pub(crate) self_managed_event_source:
-            std::option::Option<crate::model::SelfManagedEventSource>,
+        pub(crate) source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+        pub(crate) self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
         pub(crate) bisect_batch_on_function_error: std::option::Option<bool>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
-        pub(crate) function_response_types:
-            std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        pub(crate) amazon_managed_kafka_event_source_config:
-            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        pub(crate) self_managed_kafka_event_source_config:
-            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -2080,8 +1920,7 @@ pub mod update_event_source_mapping_output {
         }
         /// <p>The identifier of the event source mapping.</p>
         pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uuid = input;
-            self
+            self.uuid = input; self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
@@ -2089,12 +1928,8 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-        pub fn set_starting_position(
-            mut self,
-            input: std::option::Option<crate::model::EventSourcePosition>,
-        ) -> Self {
-            self.starting_position = input;
-            self
+        pub fn set_starting_position(mut self, input: std::option::Option<crate::model::EventSourcePosition>) -> Self {
+            self.starting_position = input; self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2102,43 +1937,34 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-        pub fn set_starting_position_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.starting_position_timestamp = input;
-            self
+        pub fn set_starting_position_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.starting_position_timestamp = input; self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -2147,8 +1973,7 @@ pub mod update_event_source_mapping_output {
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = input;
-            self
+            self.parallelization_factor = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2156,12 +1981,8 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-        pub fn set_event_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_source_arn = input;
-            self
+        pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_source_arn = input; self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
@@ -2169,12 +1990,8 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-        pub fn set_filter_criteria(
-            mut self,
-            input: std::option::Option<crate::model::FilterCriteria>,
-        ) -> Self {
-            self.filter_criteria = input;
-            self
+        pub fn set_filter_criteria(mut self, input: std::option::Option<crate::model::FilterCriteria>) -> Self {
+            self.filter_criteria = input; self
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2183,8 +2000,7 @@ pub mod update_event_source_mapping_output {
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2192,12 +2008,8 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
         pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2205,12 +2017,8 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
-        pub fn set_last_processing_result(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_processing_result = input;
-            self
+        pub fn set_last_processing_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_processing_result = input; self
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2219,8 +2027,7 @@ pub mod update_event_source_mapping_output {
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
         pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2228,12 +2035,8 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-        pub fn set_state_transition_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_transition_reason = input;
-            self
+        pub fn set_state_transition_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_transition_reason = input; self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
@@ -2241,12 +2044,8 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Appends an item to `topics`.
         ///
@@ -2255,17 +2054,13 @@ pub mod update_event_source_mapping_output {
         /// <p>The name of the Kafka topic.</p>
         pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input.into());
-            self.topics = Some(v);
-            self
+                            v.push(input.into());
+                            self.topics = Some(v);
+                            self
         }
         /// <p>The name of the Kafka topic.</p>
-        pub fn set_topics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.topics = input;
-            self
+        pub fn set_topics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.topics = input; self
         }
         /// Appends an item to `queues`.
         ///
@@ -2274,55 +2069,37 @@ pub mod update_event_source_mapping_output {
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
         pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(input.into());
-            self.queues = Some(v);
-            self
+                            v.push(input.into());
+                            self.queues = Some(v);
+                            self
         }
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-        pub fn set_queues(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.queues = input;
-            self
+        pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.queues = input; self
         }
         /// Appends an item to `source_access_configurations`.
         ///
         /// To override the contents of this collection use [`set_source_access_configurations`](Self::set_source_access_configurations).
         ///
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn source_access_configurations(
-            mut self,
-            input: crate::model::SourceAccessConfiguration,
-        ) -> Self {
+        pub fn source_access_configurations(mut self, input: crate::model::SourceAccessConfiguration) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input);
-            self.source_access_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.source_access_configurations = Some(v);
+                            self
         }
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn set_source_access_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        ) -> Self {
-            self.source_access_configurations = input;
-            self
+        pub fn set_source_access_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>) -> Self {
+            self.source_access_configurations = input; self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn self_managed_event_source(
-            mut self,
-            input: crate::model::SelfManagedEventSource,
-        ) -> Self {
+        pub fn self_managed_event_source(mut self, input: crate::model::SelfManagedEventSource) -> Self {
             self.self_managed_event_source = Some(input);
             self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn set_self_managed_event_source(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedEventSource>,
-        ) -> Self {
-            self.self_managed_event_source = input;
-            self
+        pub fn set_self_managed_event_source(mut self, input: std::option::Option<crate::model::SelfManagedEventSource>) -> Self {
+            self.self_managed_event_source = input; self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -2330,12 +2107,8 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
-        pub fn set_maximum_record_age_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_record_age_in_seconds = input;
-            self
+        pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_record_age_in_seconds = input; self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
@@ -2343,12 +2116,8 @@ pub mod update_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-        pub fn set_bisect_batch_on_function_error(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.bisect_batch_on_function_error = input;
-            self
+        pub fn set_bisect_batch_on_function_error(mut self, input: std::option::Option<bool>) -> Self {
+            self.bisect_batch_on_function_error = input; self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -2357,8 +2126,7 @@ pub mod update_event_source_mapping_output {
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
@@ -2367,95 +2135,99 @@ pub mod update_event_source_mapping_output {
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.tumbling_window_in_seconds = input;
-            self
+            self.tumbling_window_in_seconds = input; self
         }
         /// Appends an item to `function_response_types`.
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn function_response_types(
-            mut self,
-            input: crate::model::FunctionResponseType,
-        ) -> Self {
+        pub fn function_response_types(mut self, input: crate::model::FunctionResponseType) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input);
-            self.function_response_types = Some(v);
-            self
+                            v.push(input);
+                            self.function_response_types = Some(v);
+                            self
         }
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn set_function_response_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        ) -> Self {
-            self.function_response_types = input;
-            self
+        pub fn set_function_response_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>) -> Self {
+            self.function_response_types = input; self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn amazon_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::AmazonManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn amazon_managed_kafka_event_source_config(mut self, input: crate::model::AmazonManagedKafkaEventSourceConfig) -> Self {
             self.amazon_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn set_amazon_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.amazon_managed_kafka_event_source_config = input;
-            self
+        pub fn set_amazon_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>) -> Self {
+            self.amazon_managed_kafka_event_source_config = input; self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn self_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::SelfManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn self_managed_kafka_event_source_config(mut self, input: crate::model::SelfManagedKafkaEventSourceConfig) -> Self {
             self.self_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn set_self_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.self_managed_kafka_event_source_config = input;
-            self
+        pub fn set_self_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>) -> Self {
+            self.self_managed_kafka_event_source_config = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput).
         pub fn build(self) -> crate::output::UpdateEventSourceMappingOutput {
             crate::output::UpdateEventSourceMappingOutput {
-                uuid: self.uuid,
-                starting_position: self.starting_position,
-                starting_position_timestamp: self.starting_position_timestamp,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                parallelization_factor: self.parallelization_factor,
-                event_source_arn: self.event_source_arn,
-                filter_criteria: self.filter_criteria,
-                function_arn: self.function_arn,
-                last_modified: self.last_modified,
-                last_processing_result: self.last_processing_result,
-                state: self.state,
-                state_transition_reason: self.state_transition_reason,
-                destination_config: self.destination_config,
-                topics: self.topics,
-                queues: self.queues,
-                source_access_configurations: self.source_access_configurations,
-                self_managed_event_source: self.self_managed_event_source,
-                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-                bisect_batch_on_function_error: self.bisect_batch_on_function_error,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                tumbling_window_in_seconds: self.tumbling_window_in_seconds,
-                function_response_types: self.function_response_types,
-                amazon_managed_kafka_event_source_config: self
-                    .amazon_managed_kafka_event_source_config,
-                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                uuid: self.uuid
+                ,
+                starting_position: self.starting_position
+                ,
+                starting_position_timestamp: self.starting_position_timestamp
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                parallelization_factor: self.parallelization_factor
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                filter_criteria: self.filter_criteria
+                ,
+                function_arn: self.function_arn
+                ,
+                last_modified: self.last_modified
+                ,
+                last_processing_result: self.last_processing_result
+                ,
+                state: self.state
+                ,
+                state_transition_reason: self.state_transition_reason
+                ,
+                destination_config: self.destination_config
+                ,
+                topics: self.topics
+                ,
+                queues: self.queues
+                ,
+                source_access_configurations: self.source_access_configurations
+                ,
+                self_managed_event_source: self.self_managed_event_source
+                ,
+                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+                ,
+                bisect_batch_on_function_error: self.bisect_batch_on_function_error
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                tumbling_window_in_seconds: self.tumbling_window_in_seconds
+                ,
+                function_response_types: self.function_response_types
+                ,
+                amazon_managed_kafka_event_source_config: self.amazon_managed_kafka_event_source_config
+                ,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEventSourceMappingOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput).
@@ -2467,20 +2239,20 @@ impl UpdateEventSourceMappingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCodeSigningConfigOutput {
+pub struct UpdateCodeSigningConfigOutput  {
     /// <p>The code signing configuration</p>
     #[doc(hidden)]
     pub code_signing_config: std::option::Option<crate::model::CodeSigningConfig>,
 }
 impl UpdateCodeSigningConfigOutput {
     /// <p>The code signing configuration</p>
-    pub fn code_signing_config(&self) -> std::option::Option<&crate::model::CodeSigningConfig> {
+    pub fn code_signing_config(&self) -> std::option::Option<& crate::model::CodeSigningConfig> {
         self.code_signing_config.as_ref()
     }
 }
 /// See [`UpdateCodeSigningConfigOutput`](crate::output::UpdateCodeSigningConfigOutput).
 pub mod update_code_signing_config_output {
-
+    
     /// A builder for [`UpdateCodeSigningConfigOutput`](crate::output::UpdateCodeSigningConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2493,20 +2265,19 @@ pub mod update_code_signing_config_output {
             self
         }
         /// <p>The code signing configuration</p>
-        pub fn set_code_signing_config(
-            mut self,
-            input: std::option::Option<crate::model::CodeSigningConfig>,
-        ) -> Self {
-            self.code_signing_config = input;
-            self
+        pub fn set_code_signing_config(mut self, input: std::option::Option<crate::model::CodeSigningConfig>) -> Self {
+            self.code_signing_config = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCodeSigningConfigOutput`](crate::output::UpdateCodeSigningConfigOutput).
         pub fn build(self) -> crate::output::UpdateCodeSigningConfigOutput {
             crate::output::UpdateCodeSigningConfigOutput {
-                code_signing_config: self.code_signing_config,
+                code_signing_config: self.code_signing_config
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCodeSigningConfigOutput`](crate::output::UpdateCodeSigningConfigOutput).
@@ -2518,7 +2289,7 @@ impl UpdateCodeSigningConfigOutput {
 /// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAliasOutput {
+pub struct UpdateAliasOutput  {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     #[doc(hidden)]
     pub alias_arn: std::option::Option<std::string::String>,
@@ -2540,33 +2311,33 @@ pub struct UpdateAliasOutput {
 }
 impl UpdateAliasOutput {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-    pub fn alias_arn(&self) -> std::option::Option<&str> {
+    pub fn alias_arn(&self) -> std::option::Option<& str> {
         self.alias_arn.as_deref()
     }
     /// <p>The name of the alias.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function version that the alias invokes.</p>
-    pub fn function_version(&self) -> std::option::Option<&str> {
+    pub fn function_version(&self) -> std::option::Option<& str> {
         self.function_version.as_deref()
     }
     /// <p>A description of the alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-    pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
+    pub fn routing_config(&self) -> std::option::Option<& crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
     /// <p>A unique identifier that changes when you update the alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
 pub mod update_alias_output {
-
+    
     /// A builder for [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2585,8 +2356,7 @@ pub mod update_alias_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the alias.</p>
         pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias_arn = input;
-            self
+            self.alias_arn = input; self
         }
         /// <p>The name of the alias.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2595,8 +2365,7 @@ pub mod update_alias_output {
         }
         /// <p>The name of the alias.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The function version that the alias invokes.</p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2604,12 +2373,8 @@ pub mod update_alias_output {
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn set_function_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_version = input;
-            self
+        pub fn set_function_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_version = input; self
         }
         /// <p>A description of the alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2618,8 +2383,7 @@ pub mod update_alias_output {
         }
         /// <p>A description of the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
@@ -2627,12 +2391,8 @@ pub mod update_alias_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-        pub fn set_routing_config(
-            mut self,
-            input: std::option::Option<crate::model::AliasRoutingConfiguration>,
-        ) -> Self {
-            self.routing_config = input;
-            self
+        pub fn set_routing_config(mut self, input: std::option::Option<crate::model::AliasRoutingConfiguration>) -> Self {
+            self.routing_config = input; self
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2641,21 +2401,28 @@ pub mod update_alias_output {
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
         pub fn build(self) -> crate::output::UpdateAliasOutput {
             crate::output::UpdateAliasOutput {
-                alias_arn: self.alias_arn,
-                name: self.name,
-                function_version: self.function_version,
-                description: self.description,
-                routing_config: self.routing_config,
-                revision_id: self.revision_id,
+                alias_arn: self.alias_arn
+                ,
+                name: self.name
+                ,
+                function_version: self.function_version
+                ,
+                description: self.description
+                ,
+                routing_config: self.routing_config
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
@@ -2667,19 +2434,24 @@ impl UpdateAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2691,19 +2463,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -2715,19 +2492,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemovePermissionOutput {}
+pub struct RemovePermissionOutput  {
+}
 /// See [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
 pub mod remove_permission_output {
-
+    
     /// A builder for [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
         pub fn build(self) -> crate::output::RemovePermissionOutput {
-            crate::output::RemovePermissionOutput {}
+            crate::output::RemovePermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl RemovePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemovePermissionOutput`](crate::output::RemovePermissionOutput).
@@ -2739,19 +2521,24 @@ impl RemovePermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveLayerVersionPermissionOutput {}
+pub struct RemoveLayerVersionPermissionOutput  {
+}
 /// See [`RemoveLayerVersionPermissionOutput`](crate::output::RemoveLayerVersionPermissionOutput).
 pub mod remove_layer_version_permission_output {
-
+    
     /// A builder for [`RemoveLayerVersionPermissionOutput`](crate::output::RemoveLayerVersionPermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveLayerVersionPermissionOutput`](crate::output::RemoveLayerVersionPermissionOutput).
         pub fn build(self) -> crate::output::RemoveLayerVersionPermissionOutput {
-            crate::output::RemoveLayerVersionPermissionOutput {}
+            crate::output::RemoveLayerVersionPermissionOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveLayerVersionPermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveLayerVersionPermissionOutput`](crate::output::RemoveLayerVersionPermissionOutput).
@@ -2763,7 +2550,7 @@ impl RemoveLayerVersionPermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutProvisionedConcurrencyConfigOutput {
+pub struct PutProvisionedConcurrencyConfigOutput  {
     /// <p>The amount of provisioned concurrency requested.</p>
     #[doc(hidden)]
     pub requested_provisioned_concurrent_executions: std::option::Option<i32>,
@@ -2797,21 +2584,21 @@ impl PutProvisionedConcurrencyConfigOutput {
         self.allocated_provisioned_concurrent_executions
     }
     /// <p>The status of the allocation process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedConcurrencyStatusEnum> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProvisionedConcurrencyStatusEnum> {
         self.status.as_ref()
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
 }
 /// See [`PutProvisionedConcurrencyConfigOutput`](crate::output::PutProvisionedConcurrencyConfigOutput).
 pub mod put_provisioned_concurrency_config_output {
-
+    
     /// A builder for [`PutProvisionedConcurrencyConfigOutput`](crate::output::PutProvisionedConcurrencyConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2829,12 +2616,8 @@ pub mod put_provisioned_concurrency_config_output {
             self
         }
         /// <p>The amount of provisioned concurrency requested.</p>
-        pub fn set_requested_provisioned_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.requested_provisioned_concurrent_executions = input;
-            self
+        pub fn set_requested_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.requested_provisioned_concurrent_executions = input; self
         }
         /// <p>The amount of provisioned concurrency available.</p>
         pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -2842,12 +2625,8 @@ pub mod put_provisioned_concurrency_config_output {
             self
         }
         /// <p>The amount of provisioned concurrency available.</p>
-        pub fn set_available_provisioned_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.available_provisioned_concurrent_executions = input;
-            self
+        pub fn set_available_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.available_provisioned_concurrent_executions = input; self
         }
         /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
         pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -2855,12 +2634,8 @@ pub mod put_provisioned_concurrency_config_output {
             self
         }
         /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
-        pub fn set_allocated_provisioned_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.allocated_provisioned_concurrent_executions = input;
-            self
+        pub fn set_allocated_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_provisioned_concurrent_executions = input; self
         }
         /// <p>The status of the allocation process.</p>
         pub fn status(mut self, input: crate::model::ProvisionedConcurrencyStatusEnum) -> Self {
@@ -2868,12 +2643,8 @@ pub mod put_provisioned_concurrency_config_output {
             self
         }
         /// <p>The status of the allocation process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>) -> Self {
+            self.status = input; self
         }
         /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2881,12 +2652,8 @@ pub mod put_provisioned_concurrency_config_output {
             self
         }
         /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2894,28 +2661,29 @@ pub mod put_provisioned_concurrency_config_output {
             self
         }
         /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// Consumes the builder and constructs a [`PutProvisionedConcurrencyConfigOutput`](crate::output::PutProvisionedConcurrencyConfigOutput).
         pub fn build(self) -> crate::output::PutProvisionedConcurrencyConfigOutput {
             crate::output::PutProvisionedConcurrencyConfigOutput {
-                requested_provisioned_concurrent_executions: self
-                    .requested_provisioned_concurrent_executions,
-                available_provisioned_concurrent_executions: self
-                    .available_provisioned_concurrent_executions,
-                allocated_provisioned_concurrent_executions: self
-                    .allocated_provisioned_concurrent_executions,
-                status: self.status,
-                status_reason: self.status_reason,
-                last_modified: self.last_modified,
+                requested_provisioned_concurrent_executions: self.requested_provisioned_concurrent_executions
+                ,
+                available_provisioned_concurrent_executions: self.available_provisioned_concurrent_executions
+                ,
+                allocated_provisioned_concurrent_executions: self.allocated_provisioned_concurrent_executions
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                last_modified: self.last_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl PutProvisionedConcurrencyConfigOutput {
     /// Creates a new builder-style object to manufacture [`PutProvisionedConcurrencyConfigOutput`](crate::output::PutProvisionedConcurrencyConfigOutput).
@@ -2927,7 +2695,7 @@ impl PutProvisionedConcurrencyConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFunctionEventInvokeConfigOutput {
+pub struct PutFunctionEventInvokeConfigOutput  {
     /// <p>The date and time that the configuration was last updated.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -2940,24 +2708,24 @@ pub struct PutFunctionEventInvokeConfigOutput {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     #[doc(hidden)]
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
-    /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"> <b>Destinations</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+    /// <p>A destination for events after they have been sent to a function for processing.</p> 
+    /// <p class="title"> <b>Destinations</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
 impl PutFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -2968,21 +2736,21 @@ impl PutFunctionEventInvokeConfigOutput {
     pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_event_age_in_seconds
     }
-    /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"> <b>Destinations</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+    /// <p>A destination for events after they have been sent to a function for processing.</p> 
+    /// <p class="title"> <b>Destinations</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
     /// </ul>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
 }
 /// See [`PutFunctionEventInvokeConfigOutput`](crate::output::PutFunctionEventInvokeConfigOutput).
 pub mod put_function_event_invoke_config_output {
-
+    
     /// A builder for [`PutFunctionEventInvokeConfigOutput`](crate::output::PutFunctionEventInvokeConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2999,12 +2767,8 @@ pub mod put_function_event_invoke_config_output {
             self
         }
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3013,8 +2777,7 @@ pub mod put_function_event_invoke_config_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -3023,8 +2786,7 @@ pub mod put_function_event_invoke_config_output {
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
         pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
@@ -3033,47 +2795,49 @@ pub mod put_function_event_invoke_config_output {
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
         pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_event_age_in_seconds = input;
-            self
+            self.maximum_event_age_in_seconds = input; self
         }
-        /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title"> <b>Destinations</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+        /// <p>A destination for events after they have been sent to a function for processing.</p> 
+        /// <p class="title"> <b>Destinations</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
-        /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title"> <b>Destinations</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+        /// <p>A destination for events after they have been sent to a function for processing.</p> 
+        /// <p class="title"> <b>Destinations</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
         /// </ul>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Consumes the builder and constructs a [`PutFunctionEventInvokeConfigOutput`](crate::output::PutFunctionEventInvokeConfigOutput).
         pub fn build(self) -> crate::output::PutFunctionEventInvokeConfigOutput {
             crate::output::PutFunctionEventInvokeConfigOutput {
-                last_modified: self.last_modified,
-                function_arn: self.function_arn,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
-                destination_config: self.destination_config,
+                last_modified: self.last_modified
+                ,
+                function_arn: self.function_arn
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds
+                ,
+                destination_config: self.destination_config
+                ,
             }
         }
     }
+    
+    
 }
 impl PutFunctionEventInvokeConfigOutput {
     /// Creates a new builder-style object to manufacture [`PutFunctionEventInvokeConfigOutput`](crate::output::PutFunctionEventInvokeConfigOutput).
@@ -3085,7 +2849,7 @@ impl PutFunctionEventInvokeConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFunctionConcurrencyOutput {
+pub struct PutFunctionConcurrencyOutput  {
     /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
     #[doc(hidden)]
     pub reserved_concurrent_executions: std::option::Option<i32>,
@@ -3098,7 +2862,7 @@ impl PutFunctionConcurrencyOutput {
 }
 /// See [`PutFunctionConcurrencyOutput`](crate::output::PutFunctionConcurrencyOutput).
 pub mod put_function_concurrency_output {
-
+    
     /// A builder for [`PutFunctionConcurrencyOutput`](crate::output::PutFunctionConcurrencyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3111,20 +2875,19 @@ pub mod put_function_concurrency_output {
             self
         }
         /// <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Lambda reserved concurrency</a>.</p>
-        pub fn set_reserved_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.reserved_concurrent_executions = input;
-            self
+        pub fn set_reserved_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.reserved_concurrent_executions = input; self
         }
         /// Consumes the builder and constructs a [`PutFunctionConcurrencyOutput`](crate::output::PutFunctionConcurrencyOutput).
         pub fn build(self) -> crate::output::PutFunctionConcurrencyOutput {
             crate::output::PutFunctionConcurrencyOutput {
-                reserved_concurrent_executions: self.reserved_concurrent_executions,
+                reserved_concurrent_executions: self.reserved_concurrent_executions
+                ,
             }
         }
     }
+    
+    
 }
 impl PutFunctionConcurrencyOutput {
     /// Creates a new builder-style object to manufacture [`PutFunctionConcurrencyOutput`](crate::output::PutFunctionConcurrencyOutput).
@@ -3136,41 +2899,41 @@ impl PutFunctionConcurrencyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFunctionCodeSigningConfigOutput {
+pub struct PutFunctionCodeSigningConfigOutput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
     pub code_signing_config_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
 }
 impl PutFunctionCodeSigningConfigOutput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+    pub fn code_signing_config_arn(&self) -> std::option::Option<& str> {
         self.code_signing_config_arn.as_deref()
     }
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
 }
 /// See [`PutFunctionCodeSigningConfigOutput`](crate::output::PutFunctionCodeSigningConfigOutput).
 pub mod put_function_code_signing_config_output {
-
+    
     /// A builder for [`PutFunctionCodeSigningConfigOutput`](crate::output::PutFunctionCodeSigningConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3184,48 +2947,44 @@ pub mod put_function_code_signing_config_output {
             self
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn set_code_signing_config_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_signing_config_arn = input;
-            self
+        pub fn set_code_signing_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_signing_config_arn = input; self
         }
-        /// <p>The name of the Lambda function.</p>
-        /// <p class="title"> <b>Name formats</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-        /// </ul>
+        /// <p>The name of the Lambda function.</p> 
+        /// <p class="title"> <b>Name formats</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+        /// </ul> 
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
-        /// <p>The name of the Lambda function.</p>
-        /// <p class="title"> <b>Name formats</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-        /// </ul>
+        /// <p>The name of the Lambda function.</p> 
+        /// <p class="title"> <b>Name formats</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+        /// </ul> 
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn set_function_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_name = input;
-            self
+        pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_name = input; self
         }
         /// Consumes the builder and constructs a [`PutFunctionCodeSigningConfigOutput`](crate::output::PutFunctionCodeSigningConfigOutput).
         pub fn build(self) -> crate::output::PutFunctionCodeSigningConfigOutput {
             crate::output::PutFunctionCodeSigningConfigOutput {
-                code_signing_config_arn: self.code_signing_config_arn,
-                function_name: self.function_name,
+                code_signing_config_arn: self.code_signing_config_arn
+                ,
+                function_name: self.function_name
+                ,
             }
         }
     }
+    
+    
 }
 impl PutFunctionCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`PutFunctionCodeSigningConfigOutput`](crate::output::PutFunctionCodeSigningConfigOutput).
@@ -3237,7 +2996,7 @@ impl PutFunctionCodeSigningConfigOutput {
 /// <p>Details about a function's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishVersionOutput {
+pub struct PublishVersionOutput  {
     /// <p>The name of the function.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -3315,8 +3074,7 @@ pub struct PublishVersionOutput {
     pub last_update_status_reason: std::option::Option<std::string::String>,
     /// <p>The reason code for the last update that was performed on the function.</p>
     #[doc(hidden)]
-    pub last_update_status_reason_code:
-        std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+    pub last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     #[doc(hidden)]
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
@@ -3344,23 +3102,23 @@ pub struct PublishVersionOutput {
 }
 impl PublishVersionOutput {
     /// <p>The name of the function.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The runtime environment for the Lambda function.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::model::Runtime> {
         self.runtime.as_ref()
     }
     /// <p>The function's execution role.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The function that Lambda calls to begin running your function.</p>
-    pub fn handler(&self) -> std::option::Option<&str> {
+    pub fn handler(&self) -> std::option::Option<& str> {
         self.handler.as_deref()
     }
     /// <p>The size of the function's deployment package, in bytes.</p>
@@ -3368,7 +3126,7 @@ impl PublishVersionOutput {
         self.code_size
     }
     /// <p>The function's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
@@ -3380,111 +3138,109 @@ impl PublishVersionOutput {
         self.memory_size
     }
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    pub fn code_sha256(&self) -> std::option::Option<&str> {
+    pub fn code_sha256(&self) -> std::option::Option<& str> {
         self.code_sha256.as_deref()
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The function's networking configuration.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
     /// <p>The function's dead letter queue.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The function's X-Ray tracing configuration.</p>
-    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+    pub fn tracing_config(&self) -> std::option::Option<& crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
     /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
-    pub fn master_arn(&self) -> std::option::Option<&str> {
+    pub fn master_arn(&self) -> std::option::Option<& str> {
         self.master_arn.as_deref()
     }
     /// <p>The latest updated revision of the function or alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+    pub fn layers(&self) -> std::option::Option<& [crate::model::Layer]> {
         self.layers.as_deref()
     }
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
     /// <p>The reason for the function's current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+    pub fn state_reason_code(&self) -> std::option::Option<& crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
     /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+    pub fn last_update_status(&self) -> std::option::Option<& crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
     /// <p>The reason for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+    pub fn last_update_status_reason(&self) -> std::option::Option<& str> {
         self.last_update_status_reason.as_deref()
     }
     /// <p>The reason code for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason_code(
-        &self,
-    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+    pub fn last_update_status_reason_code(&self) -> std::option::Option<& crate::model::LastUpdateStatusReasonCode> {
         self.last_update_status_reason_code.as_ref()
     }
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+    pub fn file_system_configs(&self) -> std::option::Option<& [crate::model::FileSystemConfig]> {
         self.file_system_configs.as_deref()
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+    pub fn package_type(&self) -> std::option::Option<& crate::model::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>The function's image configuration values.</p>
-    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+    pub fn image_config_response(&self) -> std::option::Option<& crate::model::ImageConfigResponse> {
         self.image_config_response.as_ref()
     }
     /// <p>The ARN of the signing profile version.</p>
-    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<& str> {
         self.signing_profile_version_arn.as_deref()
     }
     /// <p>The ARN of the signing job.</p>
-    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_job_arn(&self) -> std::option::Option<& str> {
         self.signing_job_arn.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.architectures.as_deref()
     }
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> std::option::Option<& crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-    pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
+    pub fn snap_start(&self) -> std::option::Option<& crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
     }
 }
 /// See [`PublishVersionOutput`](crate::output::PublishVersionOutput).
 pub mod publish_version_output {
-
+    
     /// A builder for [`PublishVersionOutput`](crate::output::PublishVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3513,10 +3269,8 @@ pub mod publish_version_output {
         pub(crate) state_reason_code: std::option::Option<crate::model::StateReasonCode>,
         pub(crate) last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
         pub(crate) last_update_status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_update_status_reason_code:
-            std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        pub(crate) file_system_configs:
-            std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+        pub(crate) last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+        pub(crate) file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         pub(crate) package_type: std::option::Option<crate::model::PackageType>,
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
@@ -3532,12 +3286,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn set_function_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_name = input;
-            self
+        pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_name = input; self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3546,8 +3296,7 @@ pub mod publish_version_output {
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
@@ -3556,8 +3305,7 @@ pub mod publish_version_output {
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = input;
-            self
+            self.runtime = input; self
         }
         /// <p>The function's execution role.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3566,8 +3314,7 @@ pub mod publish_version_output {
         }
         /// <p>The function's execution role.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3576,8 +3323,7 @@ pub mod publish_version_output {
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.handler = input;
-            self
+            self.handler = input; self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn code_size(mut self, input: i64) -> Self {
@@ -3586,8 +3332,7 @@ pub mod publish_version_output {
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size = input;
-            self
+            self.code_size = input; self
         }
         /// <p>The function's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3596,8 +3341,7 @@ pub mod publish_version_output {
         }
         /// <p>The function's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn timeout(mut self, input: i32) -> Self {
@@ -3606,8 +3350,7 @@ pub mod publish_version_output {
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
@@ -3616,8 +3359,7 @@ pub mod publish_version_output {
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_size = input;
-            self
+            self.memory_size = input; self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3625,12 +3367,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3639,8 +3377,7 @@ pub mod publish_version_output {
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = input;
-            self
+            self.code_sha256 = input; self
         }
         /// <p>The version of the Lambda function.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3649,8 +3386,7 @@ pub mod publish_version_output {
         }
         /// <p>The version of the Lambda function.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The function's networking configuration.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
@@ -3658,12 +3394,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigResponse>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfigResponse>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>The function's dead letter queue.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -3671,12 +3403,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
@@ -3684,12 +3412,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentResponse>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::EnvironmentResponse>) -> Self {
+            self.environment = input; self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3698,8 +3422,7 @@ pub mod publish_version_output {
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
@@ -3707,12 +3430,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
-        pub fn set_tracing_config(
-            mut self,
-            input: std::option::Option<crate::model::TracingConfigResponse>,
-        ) -> Self {
-            self.tracing_config = input;
-            self
+        pub fn set_tracing_config(mut self, input: std::option::Option<crate::model::TracingConfigResponse>) -> Self {
+            self.tracing_config = input; self
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3721,8 +3440,7 @@ pub mod publish_version_output {
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = input;
-            self
+            self.master_arn = input; self
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3731,8 +3449,7 @@ pub mod publish_version_output {
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Appends an item to `layers`.
         ///
@@ -3741,17 +3458,13 @@ pub mod publish_version_output {
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input);
-            self.layers = Some(v);
-            self
+                            v.push(input);
+                            self.layers = Some(v);
+                            self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-        pub fn set_layers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-        ) -> Self {
-            self.layers = input;
-            self
+        pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Layer>>) -> Self {
+            self.layers = input; self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -3760,8 +3473,7 @@ pub mod publish_version_output {
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason for the function's current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3770,8 +3482,7 @@ pub mod publish_version_output {
         }
         /// <p>The reason for the function's current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
@@ -3779,12 +3490,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-        pub fn set_state_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::StateReasonCode>,
-        ) -> Self {
-            self.state_reason_code = input;
-            self
+        pub fn set_state_reason_code(mut self, input: std::option::Option<crate::model::StateReasonCode>) -> Self {
+            self.state_reason_code = input; self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
@@ -3792,12 +3499,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-        pub fn set_last_update_status(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatus>,
-        ) -> Self {
-            self.last_update_status = input;
-            self
+        pub fn set_last_update_status(mut self, input: std::option::Option<crate::model::LastUpdateStatus>) -> Self {
+            self.last_update_status = input; self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
         pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3805,28 +3508,17 @@ pub mod publish_version_output {
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_update_status_reason = input;
-            self
+        pub fn set_last_update_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_update_status_reason = input; self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason_code(
-            mut self,
-            input: crate::model::LastUpdateStatusReasonCode,
-        ) -> Self {
+        pub fn last_update_status_reason_code(mut self, input: crate::model::LastUpdateStatusReasonCode) -> Self {
             self.last_update_status_reason_code = Some(input);
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        ) -> Self {
-            self.last_update_status_reason_code = input;
-            self
+        pub fn set_last_update_status_reason_code(mut self, input: std::option::Option<crate::model::LastUpdateStatusReasonCode>) -> Self {
+            self.last_update_status_reason_code = input; self
         }
         /// Appends an item to `file_system_configs`.
         ///
@@ -3835,17 +3527,13 @@ pub mod publish_version_output {
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
         pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input);
-            self.file_system_configs = Some(v);
-            self
+                            v.push(input);
+                            self.file_system_configs = Some(v);
+                            self
         }
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn set_file_system_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
-        ) -> Self {
-            self.file_system_configs = input;
-            self
+        pub fn set_file_system_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>) -> Self {
+            self.file_system_configs = input; self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
         pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
@@ -3853,12 +3541,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn set_package_type(
-            mut self,
-            input: std::option::Option<crate::model::PackageType>,
-        ) -> Self {
-            self.package_type = input;
-            self
+        pub fn set_package_type(mut self, input: std::option::Option<crate::model::PackageType>) -> Self {
+            self.package_type = input; self
         }
         /// <p>The function's image configuration values.</p>
         pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
@@ -3866,28 +3550,17 @@ pub mod publish_version_output {
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn set_image_config_response(
-            mut self,
-            input: std::option::Option<crate::model::ImageConfigResponse>,
-        ) -> Self {
-            self.image_config_response = input;
-            self
+        pub fn set_image_config_response(mut self, input: std::option::Option<crate::model::ImageConfigResponse>) -> Self {
+            self.image_config_response = input; self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_profile_version_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn set_signing_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_profile_version_arn = input;
-            self
+        pub fn set_signing_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_profile_version_arn = input; self
         }
         /// <p>The ARN of the signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3895,12 +3568,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn set_signing_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_job_arn = input;
-            self
+        pub fn set_signing_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_job_arn = input; self
         }
         /// Appends an item to `architectures`.
         ///
@@ -3909,17 +3578,13 @@ pub mod publish_version_output {
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input);
-            self.architectures = Some(v);
-            self
+                            v.push(input);
+                            self.architectures = Some(v);
+                            self
         }
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn set_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.architectures = input;
-            self
+        pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.architectures = input; self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
         pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
@@ -3927,12 +3592,8 @@ pub mod publish_version_output {
             self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-        pub fn set_ephemeral_storage(
-            mut self,
-            input: std::option::Option<crate::model::EphemeralStorage>,
-        ) -> Self {
-            self.ephemeral_storage = input;
-            self
+        pub fn set_ephemeral_storage(mut self, input: std::option::Option<crate::model::EphemeralStorage>) -> Self {
+            self.ephemeral_storage = input; self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
@@ -3940,53 +3601,86 @@ pub mod publish_version_output {
             self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-        pub fn set_snap_start(
-            mut self,
-            input: std::option::Option<crate::model::SnapStartResponse>,
-        ) -> Self {
-            self.snap_start = input;
-            self
+        pub fn set_snap_start(mut self, input: std::option::Option<crate::model::SnapStartResponse>) -> Self {
+            self.snap_start = input; self
         }
         /// Consumes the builder and constructs a [`PublishVersionOutput`](crate::output::PublishVersionOutput).
         pub fn build(self) -> crate::output::PublishVersionOutput {
             crate::output::PublishVersionOutput {
-                function_name: self.function_name,
-                function_arn: self.function_arn,
-                runtime: self.runtime,
-                role: self.role,
-                handler: self.handler,
-                code_size: self.code_size.unwrap_or_default(),
-                description: self.description,
-                timeout: self.timeout,
-                memory_size: self.memory_size,
-                last_modified: self.last_modified,
-                code_sha256: self.code_sha256,
-                version: self.version,
-                vpc_config: self.vpc_config,
-                dead_letter_config: self.dead_letter_config,
-                environment: self.environment,
-                kms_key_arn: self.kms_key_arn,
-                tracing_config: self.tracing_config,
-                master_arn: self.master_arn,
-                revision_id: self.revision_id,
-                layers: self.layers,
-                state: self.state,
-                state_reason: self.state_reason,
-                state_reason_code: self.state_reason_code,
-                last_update_status: self.last_update_status,
-                last_update_status_reason: self.last_update_status_reason,
-                last_update_status_reason_code: self.last_update_status_reason_code,
-                file_system_configs: self.file_system_configs,
-                package_type: self.package_type,
-                image_config_response: self.image_config_response,
-                signing_profile_version_arn: self.signing_profile_version_arn,
-                signing_job_arn: self.signing_job_arn,
-                architectures: self.architectures,
-                ephemeral_storage: self.ephemeral_storage,
-                snap_start: self.snap_start,
+                function_name: self.function_name
+                ,
+                function_arn: self.function_arn
+                ,
+                runtime: self.runtime
+                ,
+                role: self.role
+                ,
+                handler: self.handler
+                ,
+                code_size: self.code_size
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                timeout: self.timeout
+                ,
+                memory_size: self.memory_size
+                ,
+                last_modified: self.last_modified
+                ,
+                code_sha256: self.code_sha256
+                ,
+                version: self.version
+                ,
+                vpc_config: self.vpc_config
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                environment: self.environment
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tracing_config: self.tracing_config
+                ,
+                master_arn: self.master_arn
+                ,
+                revision_id: self.revision_id
+                ,
+                layers: self.layers
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                state_reason_code: self.state_reason_code
+                ,
+                last_update_status: self.last_update_status
+                ,
+                last_update_status_reason: self.last_update_status_reason
+                ,
+                last_update_status_reason_code: self.last_update_status_reason_code
+                ,
+                file_system_configs: self.file_system_configs
+                ,
+                package_type: self.package_type
+                ,
+                image_config_response: self.image_config_response
+                ,
+                signing_profile_version_arn: self.signing_profile_version_arn
+                ,
+                signing_job_arn: self.signing_job_arn
+                ,
+                architectures: self.architectures
+                ,
+                ephemeral_storage: self.ephemeral_storage
+                ,
+                snap_start: self.snap_start
+                ,
             }
         }
     }
+    
+    
 }
 impl PublishVersionOutput {
     /// Creates a new builder-style object to manufacture [`PublishVersionOutput`](crate::output::PublishVersionOutput).
@@ -3998,7 +3692,7 @@ impl PublishVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishLayerVersionOutput {
+pub struct PublishLayerVersionOutput  {
     /// <p>Details about the layer version.</p>
     #[doc(hidden)]
     pub content: std::option::Option<crate::model::LayerVersionContentOutput>,
@@ -4029,23 +3723,23 @@ pub struct PublishLayerVersionOutput {
 }
 impl PublishLayerVersionOutput {
     /// <p>Details about the layer version.</p>
-    pub fn content(&self) -> std::option::Option<&crate::model::LayerVersionContentOutput> {
+    pub fn content(&self) -> std::option::Option<& crate::model::LayerVersionContentOutput> {
         self.content.as_ref()
     }
     /// <p>The ARN of the layer.</p>
-    pub fn layer_arn(&self) -> std::option::Option<&str> {
+    pub fn layer_arn(&self) -> std::option::Option<& str> {
         self.layer_arn.as_deref()
     }
     /// <p>The ARN of the layer version.</p>
-    pub fn layer_version_arn(&self) -> std::option::Option<&str> {
+    pub fn layer_version_arn(&self) -> std::option::Option<& str> {
         self.layer_version_arn.as_deref()
     }
     /// <p>The description of the version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn created_date(&self) -> std::option::Option<&str> {
+    pub fn created_date(&self) -> std::option::Option<& str> {
         self.created_date.as_deref()
     }
     /// <p>The version number.</p>
@@ -4053,21 +3747,21 @@ impl PublishLayerVersionOutput {
         self.version
     }
     /// <p>The layer's compatible runtimes.</p>
-    pub fn compatible_runtimes(&self) -> std::option::Option<&[crate::model::Runtime]> {
+    pub fn compatible_runtimes(&self) -> std::option::Option<& [crate::model::Runtime]> {
         self.compatible_runtimes.as_deref()
     }
     /// <p>The layer's software license.</p>
-    pub fn license_info(&self) -> std::option::Option<&str> {
+    pub fn license_info(&self) -> std::option::Option<& str> {
         self.license_info.as_deref()
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn compatible_architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
     }
 }
 /// See [`PublishLayerVersionOutput`](crate::output::PublishLayerVersionOutput).
 pub mod publish_layer_version_output {
-
+    
     /// A builder for [`PublishLayerVersionOutput`](crate::output::PublishLayerVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4079,8 +3773,7 @@ pub mod publish_layer_version_output {
         pub(crate) version: std::option::Option<i64>,
         pub(crate) compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         pub(crate) license_info: std::option::Option<std::string::String>,
-        pub(crate) compatible_architectures:
-            std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>Details about the layer version.</p>
@@ -4089,12 +3782,8 @@ pub mod publish_layer_version_output {
             self
         }
         /// <p>Details about the layer version.</p>
-        pub fn set_content(
-            mut self,
-            input: std::option::Option<crate::model::LayerVersionContentOutput>,
-        ) -> Self {
-            self.content = input;
-            self
+        pub fn set_content(mut self, input: std::option::Option<crate::model::LayerVersionContentOutput>) -> Self {
+            self.content = input; self
         }
         /// <p>The ARN of the layer.</p>
         pub fn layer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4103,8 +3792,7 @@ pub mod publish_layer_version_output {
         }
         /// <p>The ARN of the layer.</p>
         pub fn set_layer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layer_arn = input;
-            self
+            self.layer_arn = input; self
         }
         /// <p>The ARN of the layer version.</p>
         pub fn layer_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4112,12 +3800,8 @@ pub mod publish_layer_version_output {
             self
         }
         /// <p>The ARN of the layer version.</p>
-        pub fn set_layer_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.layer_version_arn = input;
-            self
+        pub fn set_layer_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.layer_version_arn = input; self
         }
         /// <p>The description of the version.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4126,8 +3810,7 @@ pub mod publish_layer_version_output {
         }
         /// <p>The description of the version.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4136,8 +3819,7 @@ pub mod publish_layer_version_output {
         }
         /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The version number.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -4146,8 +3828,7 @@ pub mod publish_layer_version_output {
         }
         /// <p>The version number.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Appends an item to `compatible_runtimes`.
         ///
@@ -4156,17 +3837,13 @@ pub mod publish_layer_version_output {
         /// <p>The layer's compatible runtimes.</p>
         pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input);
-            self.compatible_runtimes = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_runtimes = Some(v);
+                            self
         }
         /// <p>The layer's compatible runtimes.</p>
-        pub fn set_compatible_runtimes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
-        ) -> Self {
-            self.compatible_runtimes = input;
-            self
+        pub fn set_compatible_runtimes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Runtime>>) -> Self {
+            self.compatible_runtimes = input; self
         }
         /// <p>The layer's software license.</p>
         pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4175,8 +3852,7 @@ pub mod publish_layer_version_output {
         }
         /// <p>The layer's software license.</p>
         pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_info = input;
-            self
+            self.license_info = input; self
         }
         /// Appends an item to `compatible_architectures`.
         ///
@@ -4185,33 +3861,41 @@ pub mod publish_layer_version_output {
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input);
-            self.compatible_architectures = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_architectures = Some(v);
+                            self
         }
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn set_compatible_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.compatible_architectures = input;
-            self
+        pub fn set_compatible_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.compatible_architectures = input; self
         }
         /// Consumes the builder and constructs a [`PublishLayerVersionOutput`](crate::output::PublishLayerVersionOutput).
         pub fn build(self) -> crate::output::PublishLayerVersionOutput {
             crate::output::PublishLayerVersionOutput {
-                content: self.content,
-                layer_arn: self.layer_arn,
-                layer_version_arn: self.layer_version_arn,
-                description: self.description,
-                created_date: self.created_date,
-                version: self.version.unwrap_or_default(),
-                compatible_runtimes: self.compatible_runtimes,
-                license_info: self.license_info,
-                compatible_architectures: self.compatible_architectures,
+                content: self.content
+                ,
+                layer_arn: self.layer_arn
+                ,
+                layer_version_arn: self.layer_version_arn
+                ,
+                description: self.description
+                ,
+                created_date: self.created_date
+                ,
+                version: self.version
+                    .unwrap_or_default()
+                ,
+                compatible_runtimes: self.compatible_runtimes
+                ,
+                license_info: self.license_info
+                ,
+                compatible_architectures: self.compatible_architectures
+                ,
             }
         }
     }
+    
+    
 }
 impl PublishLayerVersionOutput {
     /// Creates a new builder-style object to manufacture [`PublishLayerVersionOutput`](crate::output::PublishLayerVersionOutput).
@@ -4223,7 +3907,7 @@ impl PublishLayerVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVersionsByFunctionOutput {
+pub struct ListVersionsByFunctionOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -4233,23 +3917,22 @@ pub struct ListVersionsByFunctionOutput {
 }
 impl ListVersionsByFunctionOutput {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>A list of Lambda function versions.</p>
-    pub fn versions(&self) -> std::option::Option<&[crate::model::FunctionConfiguration]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::FunctionConfiguration]> {
         self.versions.as_deref()
     }
 }
 /// See [`ListVersionsByFunctionOutput`](crate::output::ListVersionsByFunctionOutput).
 pub mod list_versions_by_function_output {
-
+    
     /// A builder for [`ListVersionsByFunctionOutput`](crate::output::ListVersionsByFunctionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) versions:
-            std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
+        pub(crate) versions: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
     }
     impl Builder {
         /// <p>The pagination token that's included if more results are available.</p>
@@ -4259,8 +3942,7 @@ pub mod list_versions_by_function_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -4269,26 +3951,26 @@ pub mod list_versions_by_function_output {
         /// <p>A list of Lambda function versions.</p>
         pub fn versions(mut self, input: crate::model::FunctionConfiguration) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// <p>A list of Lambda function versions.</p>
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>) -> Self {
+            self.versions = input; self
         }
         /// Consumes the builder and constructs a [`ListVersionsByFunctionOutput`](crate::output::ListVersionsByFunctionOutput).
         pub fn build(self) -> crate::output::ListVersionsByFunctionOutput {
             crate::output::ListVersionsByFunctionOutput {
-                next_marker: self.next_marker,
-                versions: self.versions,
+                next_marker: self.next_marker
+                ,
+                versions: self.versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListVersionsByFunctionOutput {
     /// Creates a new builder-style object to manufacture [`ListVersionsByFunctionOutput`](crate::output::ListVersionsByFunctionOutput).
@@ -4300,30 +3982,24 @@ impl ListVersionsByFunctionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsOutput {
+pub struct ListTagsOutput  {
     /// <p>The function's tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsOutput {
     /// <p>The function's tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsOutput`](crate::output::ListTagsOutput).
 pub mod list_tags_output {
-
+    
     /// A builder for [`ListTagsOutput`](crate::output::ListTagsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -4331,31 +4007,26 @@ pub mod list_tags_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The function's tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The function's tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsOutput`](crate::output::ListTagsOutput).
         pub fn build(self) -> crate::output::ListTagsOutput {
-            crate::output::ListTagsOutput { tags: self.tags }
+            crate::output::ListTagsOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::output::ListTagsOutput).
@@ -4367,35 +4038,31 @@ impl ListTagsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProvisionedConcurrencyConfigsOutput {
+pub struct ListProvisionedConcurrencyConfigsOutput  {
     /// <p>A list of provisioned concurrency configurations.</p>
     #[doc(hidden)]
-    pub provisioned_concurrency_configs:
-        std::option::Option<std::vec::Vec<crate::model::ProvisionedConcurrencyConfigListItem>>,
+    pub provisioned_concurrency_configs: std::option::Option<std::vec::Vec<crate::model::ProvisionedConcurrencyConfigListItem>>,
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListProvisionedConcurrencyConfigsOutput {
     /// <p>A list of provisioned concurrency configurations.</p>
-    pub fn provisioned_concurrency_configs(
-        &self,
-    ) -> std::option::Option<&[crate::model::ProvisionedConcurrencyConfigListItem]> {
+    pub fn provisioned_concurrency_configs(&self) -> std::option::Option<& [crate::model::ProvisionedConcurrencyConfigListItem]> {
         self.provisioned_concurrency_configs.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`ListProvisionedConcurrencyConfigsOutput`](crate::output::ListProvisionedConcurrencyConfigsOutput).
 pub mod list_provisioned_concurrency_configs_output {
-
+    
     /// A builder for [`ListProvisionedConcurrencyConfigsOutput`](crate::output::ListProvisionedConcurrencyConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) provisioned_concurrency_configs:
-            std::option::Option<std::vec::Vec<crate::model::ProvisionedConcurrencyConfigListItem>>,
+        pub(crate) provisioned_concurrency_configs: std::option::Option<std::vec::Vec<crate::model::ProvisionedConcurrencyConfigListItem>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4404,24 +4071,15 @@ pub mod list_provisioned_concurrency_configs_output {
         /// To override the contents of this collection use [`set_provisioned_concurrency_configs`](Self::set_provisioned_concurrency_configs).
         ///
         /// <p>A list of provisioned concurrency configurations.</p>
-        pub fn provisioned_concurrency_configs(
-            mut self,
-            input: crate::model::ProvisionedConcurrencyConfigListItem,
-        ) -> Self {
+        pub fn provisioned_concurrency_configs(mut self, input: crate::model::ProvisionedConcurrencyConfigListItem) -> Self {
             let mut v = self.provisioned_concurrency_configs.unwrap_or_default();
-            v.push(input);
-            self.provisioned_concurrency_configs = Some(v);
-            self
+                            v.push(input);
+                            self.provisioned_concurrency_configs = Some(v);
+                            self
         }
         /// <p>A list of provisioned concurrency configurations.</p>
-        pub fn set_provisioned_concurrency_configs(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ProvisionedConcurrencyConfigListItem>,
-            >,
-        ) -> Self {
-            self.provisioned_concurrency_configs = input;
-            self
+        pub fn set_provisioned_concurrency_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProvisionedConcurrencyConfigListItem>>) -> Self {
+            self.provisioned_concurrency_configs = input; self
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4430,17 +4088,20 @@ pub mod list_provisioned_concurrency_configs_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`ListProvisionedConcurrencyConfigsOutput`](crate::output::ListProvisionedConcurrencyConfigsOutput).
         pub fn build(self) -> crate::output::ListProvisionedConcurrencyConfigsOutput {
             crate::output::ListProvisionedConcurrencyConfigsOutput {
-                provisioned_concurrency_configs: self.provisioned_concurrency_configs,
-                next_marker: self.next_marker,
+                provisioned_concurrency_configs: self.provisioned_concurrency_configs
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProvisionedConcurrencyConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListProvisionedConcurrencyConfigsOutput`](crate::output::ListProvisionedConcurrencyConfigsOutput).
@@ -4452,7 +4113,7 @@ impl ListProvisionedConcurrencyConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLayerVersionsOutput {
+pub struct ListLayerVersionsOutput  {
     /// <p>A pagination token returned when the response doesn't contain all versions.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -4462,23 +4123,22 @@ pub struct ListLayerVersionsOutput {
 }
 impl ListLayerVersionsOutput {
     /// <p>A pagination token returned when the response doesn't contain all versions.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>A list of versions.</p>
-    pub fn layer_versions(&self) -> std::option::Option<&[crate::model::LayerVersionsListItem]> {
+    pub fn layer_versions(&self) -> std::option::Option<& [crate::model::LayerVersionsListItem]> {
         self.layer_versions.as_deref()
     }
 }
 /// See [`ListLayerVersionsOutput`](crate::output::ListLayerVersionsOutput).
 pub mod list_layer_versions_output {
-
+    
     /// A builder for [`ListLayerVersionsOutput`](crate::output::ListLayerVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) layer_versions:
-            std::option::Option<std::vec::Vec<crate::model::LayerVersionsListItem>>,
+        pub(crate) layer_versions: std::option::Option<std::vec::Vec<crate::model::LayerVersionsListItem>>,
     }
     impl Builder {
         /// <p>A pagination token returned when the response doesn't contain all versions.</p>
@@ -4488,8 +4148,7 @@ pub mod list_layer_versions_output {
         }
         /// <p>A pagination token returned when the response doesn't contain all versions.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `layer_versions`.
         ///
@@ -4498,26 +4157,26 @@ pub mod list_layer_versions_output {
         /// <p>A list of versions.</p>
         pub fn layer_versions(mut self, input: crate::model::LayerVersionsListItem) -> Self {
             let mut v = self.layer_versions.unwrap_or_default();
-            v.push(input);
-            self.layer_versions = Some(v);
-            self
+                            v.push(input);
+                            self.layer_versions = Some(v);
+                            self
         }
         /// <p>A list of versions.</p>
-        pub fn set_layer_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LayerVersionsListItem>>,
-        ) -> Self {
-            self.layer_versions = input;
-            self
+        pub fn set_layer_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::LayerVersionsListItem>>) -> Self {
+            self.layer_versions = input; self
         }
         /// Consumes the builder and constructs a [`ListLayerVersionsOutput`](crate::output::ListLayerVersionsOutput).
         pub fn build(self) -> crate::output::ListLayerVersionsOutput {
             crate::output::ListLayerVersionsOutput {
-                next_marker: self.next_marker,
-                layer_versions: self.layer_versions,
+                next_marker: self.next_marker
+                ,
+                layer_versions: self.layer_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLayerVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLayerVersionsOutput`](crate::output::ListLayerVersionsOutput).
@@ -4529,7 +4188,7 @@ impl ListLayerVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLayersOutput {
+pub struct ListLayersOutput  {
     /// <p>A pagination token returned when the response doesn't contain all layers.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -4539,17 +4198,17 @@ pub struct ListLayersOutput {
 }
 impl ListLayersOutput {
     /// <p>A pagination token returned when the response doesn't contain all layers.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>A list of function layers.</p>
-    pub fn layers(&self) -> std::option::Option<&[crate::model::LayersListItem]> {
+    pub fn layers(&self) -> std::option::Option<& [crate::model::LayersListItem]> {
         self.layers.as_deref()
     }
 }
 /// See [`ListLayersOutput`](crate::output::ListLayersOutput).
 pub mod list_layers_output {
-
+    
     /// A builder for [`ListLayersOutput`](crate::output::ListLayersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4564,8 +4223,7 @@ pub mod list_layers_output {
         }
         /// <p>A pagination token returned when the response doesn't contain all layers.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `layers`.
         ///
@@ -4574,26 +4232,26 @@ pub mod list_layers_output {
         /// <p>A list of function layers.</p>
         pub fn layers(mut self, input: crate::model::LayersListItem) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input);
-            self.layers = Some(v);
-            self
+                            v.push(input);
+                            self.layers = Some(v);
+                            self
         }
         /// <p>A list of function layers.</p>
-        pub fn set_layers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LayersListItem>>,
-        ) -> Self {
-            self.layers = input;
-            self
+        pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::model::LayersListItem>>) -> Self {
+            self.layers = input; self
         }
         /// Consumes the builder and constructs a [`ListLayersOutput`](crate::output::ListLayersOutput).
         pub fn build(self) -> crate::output::ListLayersOutput {
             crate::output::ListLayersOutput {
-                next_marker: self.next_marker,
-                layers: self.layers,
+                next_marker: self.next_marker
+                ,
+                layers: self.layers
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLayersOutput {
     /// Creates a new builder-style object to manufacture [`ListLayersOutput`](crate::output::ListLayersOutput).
@@ -4605,7 +4263,7 @@ impl ListLayersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFunctionUrlConfigsOutput {
+pub struct ListFunctionUrlConfigsOutput  {
     /// <p>A list of function URL configurations.</p>
     #[doc(hidden)]
     pub function_url_configs: std::option::Option<std::vec::Vec<crate::model::FunctionUrlConfig>>,
@@ -4615,22 +4273,21 @@ pub struct ListFunctionUrlConfigsOutput {
 }
 impl ListFunctionUrlConfigsOutput {
     /// <p>A list of function URL configurations.</p>
-    pub fn function_url_configs(&self) -> std::option::Option<&[crate::model::FunctionUrlConfig]> {
+    pub fn function_url_configs(&self) -> std::option::Option<& [crate::model::FunctionUrlConfig]> {
         self.function_url_configs.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput).
 pub mod list_function_url_configs_output {
-
+    
     /// A builder for [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) function_url_configs:
-            std::option::Option<std::vec::Vec<crate::model::FunctionUrlConfig>>,
+        pub(crate) function_url_configs: std::option::Option<std::vec::Vec<crate::model::FunctionUrlConfig>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4641,17 +4298,13 @@ pub mod list_function_url_configs_output {
         /// <p>A list of function URL configurations.</p>
         pub fn function_url_configs(mut self, input: crate::model::FunctionUrlConfig) -> Self {
             let mut v = self.function_url_configs.unwrap_or_default();
-            v.push(input);
-            self.function_url_configs = Some(v);
-            self
+                            v.push(input);
+                            self.function_url_configs = Some(v);
+                            self
         }
         /// <p>A list of function URL configurations.</p>
-        pub fn set_function_url_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FunctionUrlConfig>>,
-        ) -> Self {
-            self.function_url_configs = input;
-            self
+        pub fn set_function_url_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FunctionUrlConfig>>) -> Self {
+            self.function_url_configs = input; self
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4660,17 +4313,20 @@ pub mod list_function_url_configs_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput).
         pub fn build(self) -> crate::output::ListFunctionUrlConfigsOutput {
             crate::output::ListFunctionUrlConfigsOutput {
-                function_url_configs: self.function_url_configs,
-                next_marker: self.next_marker,
+                function_url_configs: self.function_url_configs
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFunctionUrlConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionUrlConfigsOutput`](crate::output::ListFunctionUrlConfigsOutput).
@@ -4682,7 +4338,7 @@ impl ListFunctionUrlConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFunctionsByCodeSigningConfigOutput {
+pub struct ListFunctionsByCodeSigningConfigOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -4692,17 +4348,17 @@ pub struct ListFunctionsByCodeSigningConfigOutput {
 }
 impl ListFunctionsByCodeSigningConfigOutput {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The function ARNs. </p>
-    pub fn function_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn function_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.function_arns.as_deref()
     }
 }
 /// See [`ListFunctionsByCodeSigningConfigOutput`](crate::output::ListFunctionsByCodeSigningConfigOutput).
 pub mod list_functions_by_code_signing_config_output {
-
+    
     /// A builder for [`ListFunctionsByCodeSigningConfigOutput`](crate::output::ListFunctionsByCodeSigningConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4717,8 +4373,7 @@ pub mod list_functions_by_code_signing_config_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `function_arns`.
         ///
@@ -4727,26 +4382,26 @@ pub mod list_functions_by_code_signing_config_output {
         /// <p>The function ARNs. </p>
         pub fn function_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.function_arns.unwrap_or_default();
-            v.push(input.into());
-            self.function_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.function_arns = Some(v);
+                            self
         }
         /// <p>The function ARNs. </p>
-        pub fn set_function_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.function_arns = input;
-            self
+        pub fn set_function_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.function_arns = input; self
         }
         /// Consumes the builder and constructs a [`ListFunctionsByCodeSigningConfigOutput`](crate::output::ListFunctionsByCodeSigningConfigOutput).
         pub fn build(self) -> crate::output::ListFunctionsByCodeSigningConfigOutput {
             crate::output::ListFunctionsByCodeSigningConfigOutput {
-                next_marker: self.next_marker,
-                function_arns: self.function_arns,
+                next_marker: self.next_marker
+                ,
+                function_arns: self.function_arns
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFunctionsByCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionsByCodeSigningConfigOutput`](crate::output::ListFunctionsByCodeSigningConfigOutput).
@@ -4758,7 +4413,7 @@ impl ListFunctionsByCodeSigningConfigOutput {
 /// <p>A list of Lambda functions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFunctionsOutput {
+pub struct ListFunctionsOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -4768,23 +4423,22 @@ pub struct ListFunctionsOutput {
 }
 impl ListFunctionsOutput {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>A list of Lambda functions.</p>
-    pub fn functions(&self) -> std::option::Option<&[crate::model::FunctionConfiguration]> {
+    pub fn functions(&self) -> std::option::Option<& [crate::model::FunctionConfiguration]> {
         self.functions.as_deref()
     }
 }
 /// See [`ListFunctionsOutput`](crate::output::ListFunctionsOutput).
 pub mod list_functions_output {
-
+    
     /// A builder for [`ListFunctionsOutput`](crate::output::ListFunctionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) functions:
-            std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
+        pub(crate) functions: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
     }
     impl Builder {
         /// <p>The pagination token that's included if more results are available.</p>
@@ -4794,8 +4448,7 @@ pub mod list_functions_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `functions`.
         ///
@@ -4804,26 +4457,26 @@ pub mod list_functions_output {
         /// <p>A list of Lambda functions.</p>
         pub fn functions(mut self, input: crate::model::FunctionConfiguration) -> Self {
             let mut v = self.functions.unwrap_or_default();
-            v.push(input);
-            self.functions = Some(v);
-            self
+                            v.push(input);
+                            self.functions = Some(v);
+                            self
         }
         /// <p>A list of Lambda functions.</p>
-        pub fn set_functions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
-        ) -> Self {
-            self.functions = input;
-            self
+        pub fn set_functions(mut self, input: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>) -> Self {
+            self.functions = input; self
         }
         /// Consumes the builder and constructs a [`ListFunctionsOutput`](crate::output::ListFunctionsOutput).
         pub fn build(self) -> crate::output::ListFunctionsOutput {
             crate::output::ListFunctionsOutput {
-                next_marker: self.next_marker,
-                functions: self.functions,
+                next_marker: self.next_marker
+                ,
+                functions: self.functions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFunctionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionsOutput`](crate::output::ListFunctionsOutput).
@@ -4835,35 +4488,31 @@ impl ListFunctionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFunctionEventInvokeConfigsOutput {
+pub struct ListFunctionEventInvokeConfigsOutput  {
     /// <p>A list of configurations.</p>
     #[doc(hidden)]
-    pub function_event_invoke_configs:
-        std::option::Option<std::vec::Vec<crate::model::FunctionEventInvokeConfig>>,
+    pub function_event_invoke_configs: std::option::Option<std::vec::Vec<crate::model::FunctionEventInvokeConfig>>,
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListFunctionEventInvokeConfigsOutput {
     /// <p>A list of configurations.</p>
-    pub fn function_event_invoke_configs(
-        &self,
-    ) -> std::option::Option<&[crate::model::FunctionEventInvokeConfig]> {
+    pub fn function_event_invoke_configs(&self) -> std::option::Option<& [crate::model::FunctionEventInvokeConfig]> {
         self.function_event_invoke_configs.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`ListFunctionEventInvokeConfigsOutput`](crate::output::ListFunctionEventInvokeConfigsOutput).
 pub mod list_function_event_invoke_configs_output {
-
+    
     /// A builder for [`ListFunctionEventInvokeConfigsOutput`](crate::output::ListFunctionEventInvokeConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) function_event_invoke_configs:
-            std::option::Option<std::vec::Vec<crate::model::FunctionEventInvokeConfig>>,
+        pub(crate) function_event_invoke_configs: std::option::Option<std::vec::Vec<crate::model::FunctionEventInvokeConfig>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4872,22 +4521,15 @@ pub mod list_function_event_invoke_configs_output {
         /// To override the contents of this collection use [`set_function_event_invoke_configs`](Self::set_function_event_invoke_configs).
         ///
         /// <p>A list of configurations.</p>
-        pub fn function_event_invoke_configs(
-            mut self,
-            input: crate::model::FunctionEventInvokeConfig,
-        ) -> Self {
+        pub fn function_event_invoke_configs(mut self, input: crate::model::FunctionEventInvokeConfig) -> Self {
             let mut v = self.function_event_invoke_configs.unwrap_or_default();
-            v.push(input);
-            self.function_event_invoke_configs = Some(v);
-            self
+                            v.push(input);
+                            self.function_event_invoke_configs = Some(v);
+                            self
         }
         /// <p>A list of configurations.</p>
-        pub fn set_function_event_invoke_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FunctionEventInvokeConfig>>,
-        ) -> Self {
-            self.function_event_invoke_configs = input;
-            self
+        pub fn set_function_event_invoke_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FunctionEventInvokeConfig>>) -> Self {
+            self.function_event_invoke_configs = input; self
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4896,17 +4538,20 @@ pub mod list_function_event_invoke_configs_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`ListFunctionEventInvokeConfigsOutput`](crate::output::ListFunctionEventInvokeConfigsOutput).
         pub fn build(self) -> crate::output::ListFunctionEventInvokeConfigsOutput {
             crate::output::ListFunctionEventInvokeConfigsOutput {
-                function_event_invoke_configs: self.function_event_invoke_configs,
-                next_marker: self.next_marker,
+                function_event_invoke_configs: self.function_event_invoke_configs
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFunctionEventInvokeConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionEventInvokeConfigsOutput`](crate::output::ListFunctionEventInvokeConfigsOutput).
@@ -4918,36 +4563,32 @@ impl ListFunctionEventInvokeConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventSourceMappingsOutput {
+pub struct ListEventSourceMappingsOutput  {
     /// <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>A list of event source mappings.</p>
     #[doc(hidden)]
-    pub event_source_mappings:
-        std::option::Option<std::vec::Vec<crate::model::EventSourceMappingConfiguration>>,
+    pub event_source_mappings: std::option::Option<std::vec::Vec<crate::model::EventSourceMappingConfiguration>>,
 }
 impl ListEventSourceMappingsOutput {
     /// <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>A list of event source mappings.</p>
-    pub fn event_source_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventSourceMappingConfiguration]> {
+    pub fn event_source_mappings(&self) -> std::option::Option<& [crate::model::EventSourceMappingConfiguration]> {
         self.event_source_mappings.as_deref()
     }
 }
 /// See [`ListEventSourceMappingsOutput`](crate::output::ListEventSourceMappingsOutput).
 pub mod list_event_source_mappings_output {
-
+    
     /// A builder for [`ListEventSourceMappingsOutput`](crate::output::ListEventSourceMappingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) event_source_mappings:
-            std::option::Option<std::vec::Vec<crate::model::EventSourceMappingConfiguration>>,
+        pub(crate) event_source_mappings: std::option::Option<std::vec::Vec<crate::model::EventSourceMappingConfiguration>>,
     }
     impl Builder {
         /// <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
@@ -4957,41 +4598,35 @@ pub mod list_event_source_mappings_output {
         }
         /// <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `event_source_mappings`.
         ///
         /// To override the contents of this collection use [`set_event_source_mappings`](Self::set_event_source_mappings).
         ///
         /// <p>A list of event source mappings.</p>
-        pub fn event_source_mappings(
-            mut self,
-            input: crate::model::EventSourceMappingConfiguration,
-        ) -> Self {
+        pub fn event_source_mappings(mut self, input: crate::model::EventSourceMappingConfiguration) -> Self {
             let mut v = self.event_source_mappings.unwrap_or_default();
-            v.push(input);
-            self.event_source_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.event_source_mappings = Some(v);
+                            self
         }
         /// <p>A list of event source mappings.</p>
-        pub fn set_event_source_mappings(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::EventSourceMappingConfiguration>,
-            >,
-        ) -> Self {
-            self.event_source_mappings = input;
-            self
+        pub fn set_event_source_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventSourceMappingConfiguration>>) -> Self {
+            self.event_source_mappings = input; self
         }
         /// Consumes the builder and constructs a [`ListEventSourceMappingsOutput`](crate::output::ListEventSourceMappingsOutput).
         pub fn build(self) -> crate::output::ListEventSourceMappingsOutput {
             crate::output::ListEventSourceMappingsOutput {
-                next_marker: self.next_marker,
-                event_source_mappings: self.event_source_mappings,
+                next_marker: self.next_marker
+                ,
+                event_source_mappings: self.event_source_mappings
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventSourceMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventSourceMappingsOutput`](crate::output::ListEventSourceMappingsOutput).
@@ -5003,7 +4638,7 @@ impl ListEventSourceMappingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCodeSigningConfigsOutput {
+pub struct ListCodeSigningConfigsOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -5013,23 +4648,22 @@ pub struct ListCodeSigningConfigsOutput {
 }
 impl ListCodeSigningConfigsOutput {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The code signing configurations</p>
-    pub fn code_signing_configs(&self) -> std::option::Option<&[crate::model::CodeSigningConfig]> {
+    pub fn code_signing_configs(&self) -> std::option::Option<& [crate::model::CodeSigningConfig]> {
         self.code_signing_configs.as_deref()
     }
 }
 /// See [`ListCodeSigningConfigsOutput`](crate::output::ListCodeSigningConfigsOutput).
 pub mod list_code_signing_configs_output {
-
+    
     /// A builder for [`ListCodeSigningConfigsOutput`](crate::output::ListCodeSigningConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) code_signing_configs:
-            std::option::Option<std::vec::Vec<crate::model::CodeSigningConfig>>,
+        pub(crate) code_signing_configs: std::option::Option<std::vec::Vec<crate::model::CodeSigningConfig>>,
     }
     impl Builder {
         /// <p>The pagination token that's included if more results are available.</p>
@@ -5039,8 +4673,7 @@ pub mod list_code_signing_configs_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `code_signing_configs`.
         ///
@@ -5049,26 +4682,26 @@ pub mod list_code_signing_configs_output {
         /// <p>The code signing configurations</p>
         pub fn code_signing_configs(mut self, input: crate::model::CodeSigningConfig) -> Self {
             let mut v = self.code_signing_configs.unwrap_or_default();
-            v.push(input);
-            self.code_signing_configs = Some(v);
-            self
+                            v.push(input);
+                            self.code_signing_configs = Some(v);
+                            self
         }
         /// <p>The code signing configurations</p>
-        pub fn set_code_signing_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CodeSigningConfig>>,
-        ) -> Self {
-            self.code_signing_configs = input;
-            self
+        pub fn set_code_signing_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::CodeSigningConfig>>) -> Self {
+            self.code_signing_configs = input; self
         }
         /// Consumes the builder and constructs a [`ListCodeSigningConfigsOutput`](crate::output::ListCodeSigningConfigsOutput).
         pub fn build(self) -> crate::output::ListCodeSigningConfigsOutput {
             crate::output::ListCodeSigningConfigsOutput {
-                next_marker: self.next_marker,
-                code_signing_configs: self.code_signing_configs,
+                next_marker: self.next_marker
+                ,
+                code_signing_configs: self.code_signing_configs
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCodeSigningConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListCodeSigningConfigsOutput`](crate::output::ListCodeSigningConfigsOutput).
@@ -5080,7 +4713,7 @@ impl ListCodeSigningConfigsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAliasesOutput {
+pub struct ListAliasesOutput  {
     /// <p>The pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -5090,17 +4723,17 @@ pub struct ListAliasesOutput {
 }
 impl ListAliasesOutput {
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>A list of aliases.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::model::AliasConfiguration]> {
+    pub fn aliases(&self) -> std::option::Option<& [crate::model::AliasConfiguration]> {
         self.aliases.as_deref()
     }
 }
 /// See [`ListAliasesOutput`](crate::output::ListAliasesOutput).
 pub mod list_aliases_output {
-
+    
     /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5115,8 +4748,7 @@ pub mod list_aliases_output {
         }
         /// <p>The pagination token that's included if more results are available.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `aliases`.
         ///
@@ -5125,26 +4757,26 @@ pub mod list_aliases_output {
         /// <p>A list of aliases.</p>
         pub fn aliases(mut self, input: crate::model::AliasConfiguration) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input);
-            self.aliases = Some(v);
-            self
+                            v.push(input);
+                            self.aliases = Some(v);
+                            self
         }
         /// <p>A list of aliases.</p>
-        pub fn set_aliases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AliasConfiguration>>,
-        ) -> Self {
-            self.aliases = input;
-            self
+        pub fn set_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::model::AliasConfiguration>>) -> Self {
+            self.aliases = input; self
         }
         /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::output::ListAliasesOutput).
         pub fn build(self) -> crate::output::ListAliasesOutput {
             crate::output::ListAliasesOutput {
-                next_marker: self.next_marker,
-                aliases: self.aliases,
+                next_marker: self.next_marker
+                ,
+                aliases: self.aliases
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListAliasesOutput`](crate::output::ListAliasesOutput).
@@ -5157,7 +4789,7 @@ impl ListAliasesOutput {
 #[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvokeAsyncOutput {
+pub struct InvokeAsyncOutput  {
     /// <p>The status code.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -5170,7 +4802,7 @@ impl InvokeAsyncOutput {
 }
 /// See [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput).
 pub mod invoke_async_output {
-
+    
     /// A builder for [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5184,16 +4816,19 @@ pub mod invoke_async_output {
         }
         /// <p>The status code.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput).
         pub fn build(self) -> crate::output::InvokeAsyncOutput {
             crate::output::InvokeAsyncOutput {
-                status: self.status.unwrap_or_default(),
+                status: self.status
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl InvokeAsyncOutput {
     /// Creates a new builder-style object to manufacture [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput).
@@ -5205,7 +4840,7 @@ impl InvokeAsyncOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvokeOutput {
+pub struct InvokeOutput  {
     /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code> invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For the <code>DryRun</code> invocation type, the status code is 204.</p>
     #[doc(hidden)]
     pub status_code: i32,
@@ -5228,23 +4863,23 @@ impl InvokeOutput {
         self.status_code
     }
     /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
-    pub fn function_error(&self) -> std::option::Option<&str> {
+    pub fn function_error(&self) -> std::option::Option<& str> {
         self.function_error.as_deref()
     }
     /// <p>The last 4 KB of the execution log, which is base64-encoded.</p>
-    pub fn log_result(&self) -> std::option::Option<&str> {
+    pub fn log_result(&self) -> std::option::Option<& str> {
         self.log_result.as_deref()
     }
     /// <p>The response from the function, or an error object.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
     /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
-    pub fn executed_version(&self) -> std::option::Option<&str> {
+    pub fn executed_version(&self) -> std::option::Option<& str> {
         self.executed_version.as_deref()
     }
 }
-impl std::fmt::Debug for InvokeOutput {
+impl  std::fmt::Debug for InvokeOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeOutput");
         formatter.field("status_code", &self.status_code);
@@ -5257,7 +4892,7 @@ impl std::fmt::Debug for InvokeOutput {
 }
 /// See [`InvokeOutput`](crate::output::InvokeOutput).
 pub mod invoke_output {
-
+    
     /// A builder for [`InvokeOutput`](crate::output::InvokeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5275,8 +4910,7 @@ pub mod invoke_output {
         }
         /// <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code> invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For the <code>DryRun</code> invocation type, the status code is 204.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.status_code = input;
-            self
+            self.status_code = input; self
         }
         /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
         pub fn function_error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5284,12 +4918,8 @@ pub mod invoke_output {
             self
         }
         /// <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
-        pub fn set_function_error(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_error = input;
-            self
+        pub fn set_function_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_error = input; self
         }
         /// <p>The last 4 KB of the execution log, which is base64-encoded.</p>
         pub fn log_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5298,8 +4928,7 @@ pub mod invoke_output {
         }
         /// <p>The last 4 KB of the execution log, which is base64-encoded.</p>
         pub fn set_log_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_result = input;
-            self
+            self.log_result = input; self
         }
         /// <p>The response from the function, or an error object.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -5308,8 +4937,7 @@ pub mod invoke_output {
         }
         /// <p>The response from the function, or an error object.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.payload = input;
-            self
+            self.payload = input; self
         }
         /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
         pub fn executed_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5317,21 +4945,23 @@ pub mod invoke_output {
             self
         }
         /// <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
-        pub fn set_executed_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.executed_version = input;
-            self
+        pub fn set_executed_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.executed_version = input; self
         }
         /// Consumes the builder and constructs a [`InvokeOutput`](crate::output::InvokeOutput).
         pub fn build(self) -> crate::output::InvokeOutput {
             crate::output::InvokeOutput {
-                status_code: self.status_code.unwrap_or_default(),
-                function_error: self.function_error,
-                log_result: self.log_result,
-                payload: self.payload,
-                executed_version: self.executed_version,
+                status_code: self.status_code
+                    .unwrap_or_default()
+                ,
+                function_error: self.function_error
+                ,
+                log_result: self.log_result
+                ,
+                payload: self.payload
+                ,
+                executed_version: self.executed_version
+                ,
             }
         }
     }
@@ -5346,6 +4976,8 @@ pub mod invoke_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl InvokeOutput {
     /// Creates a new builder-style object to manufacture [`InvokeOutput`](crate::output::InvokeOutput).
@@ -5357,7 +4989,7 @@ impl InvokeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProvisionedConcurrencyConfigOutput {
+pub struct GetProvisionedConcurrencyConfigOutput  {
     /// <p>The amount of provisioned concurrency requested.</p>
     #[doc(hidden)]
     pub requested_provisioned_concurrent_executions: std::option::Option<i32>,
@@ -5391,21 +5023,21 @@ impl GetProvisionedConcurrencyConfigOutput {
         self.allocated_provisioned_concurrent_executions
     }
     /// <p>The status of the allocation process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ProvisionedConcurrencyStatusEnum> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProvisionedConcurrencyStatusEnum> {
         self.status.as_ref()
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
 }
 /// See [`GetProvisionedConcurrencyConfigOutput`](crate::output::GetProvisionedConcurrencyConfigOutput).
 pub mod get_provisioned_concurrency_config_output {
-
+    
     /// A builder for [`GetProvisionedConcurrencyConfigOutput`](crate::output::GetProvisionedConcurrencyConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5423,12 +5055,8 @@ pub mod get_provisioned_concurrency_config_output {
             self
         }
         /// <p>The amount of provisioned concurrency requested.</p>
-        pub fn set_requested_provisioned_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.requested_provisioned_concurrent_executions = input;
-            self
+        pub fn set_requested_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.requested_provisioned_concurrent_executions = input; self
         }
         /// <p>The amount of provisioned concurrency available.</p>
         pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -5436,12 +5064,8 @@ pub mod get_provisioned_concurrency_config_output {
             self
         }
         /// <p>The amount of provisioned concurrency available.</p>
-        pub fn set_available_provisioned_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.available_provisioned_concurrent_executions = input;
-            self
+        pub fn set_available_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.available_provisioned_concurrent_executions = input; self
         }
         /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
         pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -5449,12 +5073,8 @@ pub mod get_provisioned_concurrency_config_output {
             self
         }
         /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
-        pub fn set_allocated_provisioned_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.allocated_provisioned_concurrent_executions = input;
-            self
+        pub fn set_allocated_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_provisioned_concurrent_executions = input; self
         }
         /// <p>The status of the allocation process.</p>
         pub fn status(mut self, input: crate::model::ProvisionedConcurrencyStatusEnum) -> Self {
@@ -5462,12 +5082,8 @@ pub mod get_provisioned_concurrency_config_output {
             self
         }
         /// <p>The status of the allocation process.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProvisionedConcurrencyStatusEnum>) -> Self {
+            self.status = input; self
         }
         /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5475,12 +5091,8 @@ pub mod get_provisioned_concurrency_config_output {
             self
         }
         /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5488,28 +5100,29 @@ pub mod get_provisioned_concurrency_config_output {
             self
         }
         /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// Consumes the builder and constructs a [`GetProvisionedConcurrencyConfigOutput`](crate::output::GetProvisionedConcurrencyConfigOutput).
         pub fn build(self) -> crate::output::GetProvisionedConcurrencyConfigOutput {
             crate::output::GetProvisionedConcurrencyConfigOutput {
-                requested_provisioned_concurrent_executions: self
-                    .requested_provisioned_concurrent_executions,
-                available_provisioned_concurrent_executions: self
-                    .available_provisioned_concurrent_executions,
-                allocated_provisioned_concurrent_executions: self
-                    .allocated_provisioned_concurrent_executions,
-                status: self.status,
-                status_reason: self.status_reason,
-                last_modified: self.last_modified,
+                requested_provisioned_concurrent_executions: self.requested_provisioned_concurrent_executions
+                ,
+                available_provisioned_concurrent_executions: self.available_provisioned_concurrent_executions
+                ,
+                allocated_provisioned_concurrent_executions: self.allocated_provisioned_concurrent_executions
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                last_modified: self.last_modified
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProvisionedConcurrencyConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetProvisionedConcurrencyConfigOutput`](crate::output::GetProvisionedConcurrencyConfigOutput).
@@ -5521,7 +5134,7 @@ impl GetProvisionedConcurrencyConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// <p>The resource-based policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -5531,17 +5144,17 @@ pub struct GetPolicyOutput {
 }
 impl GetPolicyOutput {
     /// <p>The resource-based policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>A unique identifier for the current revision of the policy.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`GetPolicyOutput`](crate::output::GetPolicyOutput).
 pub mod get_policy_output {
-
+    
     /// A builder for [`GetPolicyOutput`](crate::output::GetPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5556,8 +5169,7 @@ pub mod get_policy_output {
         }
         /// <p>The resource-based policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p>A unique identifier for the current revision of the policy.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5566,17 +5178,20 @@ pub mod get_policy_output {
         }
         /// <p>A unique identifier for the current revision of the policy.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput).
         pub fn build(self) -> crate::output::GetPolicyOutput {
             crate::output::GetPolicyOutput {
-                policy: self.policy,
-                revision_id: self.revision_id,
+                policy: self.policy
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::output::GetPolicyOutput).
@@ -5588,7 +5203,7 @@ impl GetPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLayerVersionPolicyOutput {
+pub struct GetLayerVersionPolicyOutput  {
     /// <p>The policy document.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -5598,17 +5213,17 @@ pub struct GetLayerVersionPolicyOutput {
 }
 impl GetLayerVersionPolicyOutput {
     /// <p>The policy document.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>A unique identifier for the current revision of the policy.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`GetLayerVersionPolicyOutput`](crate::output::GetLayerVersionPolicyOutput).
 pub mod get_layer_version_policy_output {
-
+    
     /// A builder for [`GetLayerVersionPolicyOutput`](crate::output::GetLayerVersionPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5623,8 +5238,7 @@ pub mod get_layer_version_policy_output {
         }
         /// <p>The policy document.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// <p>A unique identifier for the current revision of the policy.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5633,17 +5247,20 @@ pub mod get_layer_version_policy_output {
         }
         /// <p>A unique identifier for the current revision of the policy.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`GetLayerVersionPolicyOutput`](crate::output::GetLayerVersionPolicyOutput).
         pub fn build(self) -> crate::output::GetLayerVersionPolicyOutput {
             crate::output::GetLayerVersionPolicyOutput {
-                policy: self.policy,
-                revision_id: self.revision_id,
+                policy: self.policy
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLayerVersionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetLayerVersionPolicyOutput`](crate::output::GetLayerVersionPolicyOutput).
@@ -5655,7 +5272,7 @@ impl GetLayerVersionPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLayerVersionByArnOutput {
+pub struct GetLayerVersionByArnOutput  {
     /// <p>Details about the layer version.</p>
     #[doc(hidden)]
     pub content: std::option::Option<crate::model::LayerVersionContentOutput>,
@@ -5686,23 +5303,23 @@ pub struct GetLayerVersionByArnOutput {
 }
 impl GetLayerVersionByArnOutput {
     /// <p>Details about the layer version.</p>
-    pub fn content(&self) -> std::option::Option<&crate::model::LayerVersionContentOutput> {
+    pub fn content(&self) -> std::option::Option<& crate::model::LayerVersionContentOutput> {
         self.content.as_ref()
     }
     /// <p>The ARN of the layer.</p>
-    pub fn layer_arn(&self) -> std::option::Option<&str> {
+    pub fn layer_arn(&self) -> std::option::Option<& str> {
         self.layer_arn.as_deref()
     }
     /// <p>The ARN of the layer version.</p>
-    pub fn layer_version_arn(&self) -> std::option::Option<&str> {
+    pub fn layer_version_arn(&self) -> std::option::Option<& str> {
         self.layer_version_arn.as_deref()
     }
     /// <p>The description of the version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn created_date(&self) -> std::option::Option<&str> {
+    pub fn created_date(&self) -> std::option::Option<& str> {
         self.created_date.as_deref()
     }
     /// <p>The version number.</p>
@@ -5710,21 +5327,21 @@ impl GetLayerVersionByArnOutput {
         self.version
     }
     /// <p>The layer's compatible runtimes.</p>
-    pub fn compatible_runtimes(&self) -> std::option::Option<&[crate::model::Runtime]> {
+    pub fn compatible_runtimes(&self) -> std::option::Option<& [crate::model::Runtime]> {
         self.compatible_runtimes.as_deref()
     }
     /// <p>The layer's software license.</p>
-    pub fn license_info(&self) -> std::option::Option<&str> {
+    pub fn license_info(&self) -> std::option::Option<& str> {
         self.license_info.as_deref()
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn compatible_architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
     }
 }
 /// See [`GetLayerVersionByArnOutput`](crate::output::GetLayerVersionByArnOutput).
 pub mod get_layer_version_by_arn_output {
-
+    
     /// A builder for [`GetLayerVersionByArnOutput`](crate::output::GetLayerVersionByArnOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5736,8 +5353,7 @@ pub mod get_layer_version_by_arn_output {
         pub(crate) version: std::option::Option<i64>,
         pub(crate) compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         pub(crate) license_info: std::option::Option<std::string::String>,
-        pub(crate) compatible_architectures:
-            std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>Details about the layer version.</p>
@@ -5746,12 +5362,8 @@ pub mod get_layer_version_by_arn_output {
             self
         }
         /// <p>Details about the layer version.</p>
-        pub fn set_content(
-            mut self,
-            input: std::option::Option<crate::model::LayerVersionContentOutput>,
-        ) -> Self {
-            self.content = input;
-            self
+        pub fn set_content(mut self, input: std::option::Option<crate::model::LayerVersionContentOutput>) -> Self {
+            self.content = input; self
         }
         /// <p>The ARN of the layer.</p>
         pub fn layer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5760,8 +5372,7 @@ pub mod get_layer_version_by_arn_output {
         }
         /// <p>The ARN of the layer.</p>
         pub fn set_layer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layer_arn = input;
-            self
+            self.layer_arn = input; self
         }
         /// <p>The ARN of the layer version.</p>
         pub fn layer_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5769,12 +5380,8 @@ pub mod get_layer_version_by_arn_output {
             self
         }
         /// <p>The ARN of the layer version.</p>
-        pub fn set_layer_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.layer_version_arn = input;
-            self
+        pub fn set_layer_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.layer_version_arn = input; self
         }
         /// <p>The description of the version.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5783,8 +5390,7 @@ pub mod get_layer_version_by_arn_output {
         }
         /// <p>The description of the version.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5793,8 +5399,7 @@ pub mod get_layer_version_by_arn_output {
         }
         /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The version number.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -5803,8 +5408,7 @@ pub mod get_layer_version_by_arn_output {
         }
         /// <p>The version number.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Appends an item to `compatible_runtimes`.
         ///
@@ -5813,17 +5417,13 @@ pub mod get_layer_version_by_arn_output {
         /// <p>The layer's compatible runtimes.</p>
         pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input);
-            self.compatible_runtimes = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_runtimes = Some(v);
+                            self
         }
         /// <p>The layer's compatible runtimes.</p>
-        pub fn set_compatible_runtimes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
-        ) -> Self {
-            self.compatible_runtimes = input;
-            self
+        pub fn set_compatible_runtimes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Runtime>>) -> Self {
+            self.compatible_runtimes = input; self
         }
         /// <p>The layer's software license.</p>
         pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5832,8 +5432,7 @@ pub mod get_layer_version_by_arn_output {
         }
         /// <p>The layer's software license.</p>
         pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_info = input;
-            self
+            self.license_info = input; self
         }
         /// Appends an item to `compatible_architectures`.
         ///
@@ -5842,33 +5441,41 @@ pub mod get_layer_version_by_arn_output {
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input);
-            self.compatible_architectures = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_architectures = Some(v);
+                            self
         }
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn set_compatible_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.compatible_architectures = input;
-            self
+        pub fn set_compatible_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.compatible_architectures = input; self
         }
         /// Consumes the builder and constructs a [`GetLayerVersionByArnOutput`](crate::output::GetLayerVersionByArnOutput).
         pub fn build(self) -> crate::output::GetLayerVersionByArnOutput {
             crate::output::GetLayerVersionByArnOutput {
-                content: self.content,
-                layer_arn: self.layer_arn,
-                layer_version_arn: self.layer_version_arn,
-                description: self.description,
-                created_date: self.created_date,
-                version: self.version.unwrap_or_default(),
-                compatible_runtimes: self.compatible_runtimes,
-                license_info: self.license_info,
-                compatible_architectures: self.compatible_architectures,
+                content: self.content
+                ,
+                layer_arn: self.layer_arn
+                ,
+                layer_version_arn: self.layer_version_arn
+                ,
+                description: self.description
+                ,
+                created_date: self.created_date
+                ,
+                version: self.version
+                    .unwrap_or_default()
+                ,
+                compatible_runtimes: self.compatible_runtimes
+                ,
+                license_info: self.license_info
+                ,
+                compatible_architectures: self.compatible_architectures
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLayerVersionByArnOutput {
     /// Creates a new builder-style object to manufacture [`GetLayerVersionByArnOutput`](crate::output::GetLayerVersionByArnOutput).
@@ -5880,7 +5487,7 @@ impl GetLayerVersionByArnOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLayerVersionOutput {
+pub struct GetLayerVersionOutput  {
     /// <p>Details about the layer version.</p>
     #[doc(hidden)]
     pub content: std::option::Option<crate::model::LayerVersionContentOutput>,
@@ -5911,23 +5518,23 @@ pub struct GetLayerVersionOutput {
 }
 impl GetLayerVersionOutput {
     /// <p>Details about the layer version.</p>
-    pub fn content(&self) -> std::option::Option<&crate::model::LayerVersionContentOutput> {
+    pub fn content(&self) -> std::option::Option<& crate::model::LayerVersionContentOutput> {
         self.content.as_ref()
     }
     /// <p>The ARN of the layer.</p>
-    pub fn layer_arn(&self) -> std::option::Option<&str> {
+    pub fn layer_arn(&self) -> std::option::Option<& str> {
         self.layer_arn.as_deref()
     }
     /// <p>The ARN of the layer version.</p>
-    pub fn layer_version_arn(&self) -> std::option::Option<&str> {
+    pub fn layer_version_arn(&self) -> std::option::Option<& str> {
         self.layer_version_arn.as_deref()
     }
     /// <p>The description of the version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn created_date(&self) -> std::option::Option<&str> {
+    pub fn created_date(&self) -> std::option::Option<& str> {
         self.created_date.as_deref()
     }
     /// <p>The version number.</p>
@@ -5935,21 +5542,21 @@ impl GetLayerVersionOutput {
         self.version
     }
     /// <p>The layer's compatible runtimes.</p>
-    pub fn compatible_runtimes(&self) -> std::option::Option<&[crate::model::Runtime]> {
+    pub fn compatible_runtimes(&self) -> std::option::Option<& [crate::model::Runtime]> {
         self.compatible_runtimes.as_deref()
     }
     /// <p>The layer's software license.</p>
-    pub fn license_info(&self) -> std::option::Option<&str> {
+    pub fn license_info(&self) -> std::option::Option<& str> {
         self.license_info.as_deref()
     }
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-    pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn compatible_architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
     }
 }
 /// See [`GetLayerVersionOutput`](crate::output::GetLayerVersionOutput).
 pub mod get_layer_version_output {
-
+    
     /// A builder for [`GetLayerVersionOutput`](crate::output::GetLayerVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5961,8 +5568,7 @@ pub mod get_layer_version_output {
         pub(crate) version: std::option::Option<i64>,
         pub(crate) compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
         pub(crate) license_info: std::option::Option<std::string::String>,
-        pub(crate) compatible_architectures:
-            std::option::Option<std::vec::Vec<crate::model::Architecture>>,
+        pub(crate) compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
     }
     impl Builder {
         /// <p>Details about the layer version.</p>
@@ -5971,12 +5577,8 @@ pub mod get_layer_version_output {
             self
         }
         /// <p>Details about the layer version.</p>
-        pub fn set_content(
-            mut self,
-            input: std::option::Option<crate::model::LayerVersionContentOutput>,
-        ) -> Self {
-            self.content = input;
-            self
+        pub fn set_content(mut self, input: std::option::Option<crate::model::LayerVersionContentOutput>) -> Self {
+            self.content = input; self
         }
         /// <p>The ARN of the layer.</p>
         pub fn layer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5985,8 +5587,7 @@ pub mod get_layer_version_output {
         }
         /// <p>The ARN of the layer.</p>
         pub fn set_layer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.layer_arn = input;
-            self
+            self.layer_arn = input; self
         }
         /// <p>The ARN of the layer version.</p>
         pub fn layer_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5994,12 +5595,8 @@ pub mod get_layer_version_output {
             self
         }
         /// <p>The ARN of the layer version.</p>
-        pub fn set_layer_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.layer_version_arn = input;
-            self
+        pub fn set_layer_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.layer_version_arn = input; self
         }
         /// <p>The description of the version.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6008,8 +5605,7 @@ pub mod get_layer_version_output {
         }
         /// <p>The description of the version.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6018,8 +5614,7 @@ pub mod get_layer_version_output {
         }
         /// <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_date = input;
-            self
+            self.created_date = input; self
         }
         /// <p>The version number.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -6028,8 +5623,7 @@ pub mod get_layer_version_output {
         }
         /// <p>The version number.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Appends an item to `compatible_runtimes`.
         ///
@@ -6038,17 +5632,13 @@ pub mod get_layer_version_output {
         /// <p>The layer's compatible runtimes.</p>
         pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
-            v.push(input);
-            self.compatible_runtimes = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_runtimes = Some(v);
+                            self
         }
         /// <p>The layer's compatible runtimes.</p>
-        pub fn set_compatible_runtimes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
-        ) -> Self {
-            self.compatible_runtimes = input;
-            self
+        pub fn set_compatible_runtimes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Runtime>>) -> Self {
+            self.compatible_runtimes = input; self
         }
         /// <p>The layer's software license.</p>
         pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6057,8 +5647,7 @@ pub mod get_layer_version_output {
         }
         /// <p>The layer's software license.</p>
         pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.license_info = input;
-            self
+            self.license_info = input; self
         }
         /// Appends an item to `compatible_architectures`.
         ///
@@ -6067,33 +5656,41 @@ pub mod get_layer_version_output {
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
-            v.push(input);
-            self.compatible_architectures = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_architectures = Some(v);
+                            self
         }
         /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
-        pub fn set_compatible_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.compatible_architectures = input;
-            self
+        pub fn set_compatible_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.compatible_architectures = input; self
         }
         /// Consumes the builder and constructs a [`GetLayerVersionOutput`](crate::output::GetLayerVersionOutput).
         pub fn build(self) -> crate::output::GetLayerVersionOutput {
             crate::output::GetLayerVersionOutput {
-                content: self.content,
-                layer_arn: self.layer_arn,
-                layer_version_arn: self.layer_version_arn,
-                description: self.description,
-                created_date: self.created_date,
-                version: self.version.unwrap_or_default(),
-                compatible_runtimes: self.compatible_runtimes,
-                license_info: self.license_info,
-                compatible_architectures: self.compatible_architectures,
+                content: self.content
+                ,
+                layer_arn: self.layer_arn
+                ,
+                layer_version_arn: self.layer_version_arn
+                ,
+                description: self.description
+                ,
+                created_date: self.created_date
+                ,
+                version: self.version
+                    .unwrap_or_default()
+                ,
+                compatible_runtimes: self.compatible_runtimes
+                ,
+                license_info: self.license_info
+                ,
+                compatible_architectures: self.compatible_architectures
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLayerVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetLayerVersionOutput`](crate::output::GetLayerVersionOutput).
@@ -6105,7 +5702,7 @@ impl GetLayerVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionUrlConfigOutput {
+pub struct GetFunctionUrlConfigOutput  {
     /// <p>The HTTP URL endpoint for your function.</p>
     #[doc(hidden)]
     pub function_url: std::option::Option<std::string::String>,
@@ -6127,33 +5724,33 @@ pub struct GetFunctionUrlConfigOutput {
 }
 impl GetFunctionUrlConfigOutput {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub fn function_url(&self) -> std::option::Option<&str> {
+    pub fn function_url(&self) -> std::option::Option<& str> {
         self.function_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+    pub fn auth_type(&self) -> std::option::Option<& crate::model::FunctionUrlAuthType> {
         self.auth_type.as_ref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
-    pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
+    pub fn cors(&self) -> std::option::Option<& crate::model::Cors> {
         self.cors.as_ref()
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
     /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_time(&self) -> std::option::Option<& str> {
         self.last_modified_time.as_deref()
     }
 }
 /// See [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput).
 pub mod get_function_url_config_output {
-
+    
     /// A builder for [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6172,8 +5769,7 @@ pub mod get_function_url_config_output {
         }
         /// <p>The HTTP URL endpoint for your function.</p>
         pub fn set_function_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_url = input;
-            self
+            self.function_url = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of your function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6182,8 +5778,7 @@ pub mod get_function_url_config_output {
         }
         /// <p>The Amazon Resource Name (ARN) of your function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
         pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
@@ -6191,12 +5786,8 @@ pub mod get_function_url_config_output {
             self
         }
         /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-        pub fn set_auth_type(
-            mut self,
-            input: std::option::Option<crate::model::FunctionUrlAuthType>,
-        ) -> Self {
-            self.auth_type = input;
-            self
+        pub fn set_auth_type(mut self, input: std::option::Option<crate::model::FunctionUrlAuthType>) -> Self {
+            self.auth_type = input; self
         }
         /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
         pub fn cors(mut self, input: crate::model::Cors) -> Self {
@@ -6205,8 +5796,7 @@ pub mod get_function_url_config_output {
         }
         /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
         pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
-            self.cors = input;
-            self
+            self.cors = input; self
         }
         /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6214,12 +5804,8 @@ pub mod get_function_url_config_output {
             self
         }
         /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6227,25 +5813,29 @@ pub mod get_function_url_config_output {
             self
         }
         /// <p>When the function URL configuration was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput).
         pub fn build(self) -> crate::output::GetFunctionUrlConfigOutput {
             crate::output::GetFunctionUrlConfigOutput {
-                function_url: self.function_url,
-                function_arn: self.function_arn,
-                auth_type: self.auth_type,
-                cors: self.cors,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                function_url: self.function_url
+                ,
+                function_arn: self.function_arn
+                ,
+                auth_type: self.auth_type
+                ,
+                cors: self.cors
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFunctionUrlConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionUrlConfigOutput`](crate::output::GetFunctionUrlConfigOutput).
@@ -6257,7 +5847,7 @@ impl GetFunctionUrlConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionEventInvokeConfigOutput {
+pub struct GetFunctionEventInvokeConfigOutput  {
     /// <p>The date and time that the configuration was last updated.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -6270,24 +5860,24 @@ pub struct GetFunctionEventInvokeConfigOutput {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     #[doc(hidden)]
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
-    /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"> <b>Destinations</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+    /// <p>A destination for events after they have been sent to a function for processing.</p> 
+    /// <p class="title"> <b>Destinations</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
 impl GetFunctionEventInvokeConfigOutput {
     /// <p>The date and time that the configuration was last updated.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
@@ -6298,21 +5888,21 @@ impl GetFunctionEventInvokeConfigOutput {
     pub fn maximum_event_age_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_event_age_in_seconds
     }
-    /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title"> <b>Destinations</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+    /// <p>A destination for events after they have been sent to a function for processing.</p> 
+    /// <p class="title"> <b>Destinations</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
     /// </ul>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
 }
 /// See [`GetFunctionEventInvokeConfigOutput`](crate::output::GetFunctionEventInvokeConfigOutput).
 pub mod get_function_event_invoke_config_output {
-
+    
     /// A builder for [`GetFunctionEventInvokeConfigOutput`](crate::output::GetFunctionEventInvokeConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6329,12 +5919,8 @@ pub mod get_function_event_invoke_config_output {
             self
         }
         /// <p>The date and time that the configuration was last updated.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6343,8 +5929,7 @@ pub mod get_function_event_invoke_config_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -6353,8 +5938,7 @@ pub mod get_function_event_invoke_config_output {
         }
         /// <p>The maximum number of times to retry when the function returns an error.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
         pub fn maximum_event_age_in_seconds(mut self, input: i32) -> Self {
@@ -6363,47 +5947,49 @@ pub mod get_function_event_invoke_config_output {
         }
         /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
         pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_event_age_in_seconds = input;
-            self
+            self.maximum_event_age_in_seconds = input; self
         }
-        /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title"> <b>Destinations</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+        /// <p>A destination for events after they have been sent to a function for processing.</p> 
+        /// <p class="title"> <b>Destinations</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
-        /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title"> <b>Destinations</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
-        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
-        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
+        /// <p>A destination for events after they have been sent to a function for processing.</p> 
+        /// <p class="title"> <b>Destinations</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li> 
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> 
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li> 
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> 
         /// </ul>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Consumes the builder and constructs a [`GetFunctionEventInvokeConfigOutput`](crate::output::GetFunctionEventInvokeConfigOutput).
         pub fn build(self) -> crate::output::GetFunctionEventInvokeConfigOutput {
             crate::output::GetFunctionEventInvokeConfigOutput {
-                last_modified: self.last_modified,
-                function_arn: self.function_arn,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds,
-                destination_config: self.destination_config,
+                last_modified: self.last_modified
+                ,
+                function_arn: self.function_arn
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                maximum_event_age_in_seconds: self.maximum_event_age_in_seconds
+                ,
+                destination_config: self.destination_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFunctionEventInvokeConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionEventInvokeConfigOutput`](crate::output::GetFunctionEventInvokeConfigOutput).
@@ -6415,7 +6001,7 @@ impl GetFunctionEventInvokeConfigOutput {
 /// <p>Details about a function's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionConfigurationOutput {
+pub struct GetFunctionConfigurationOutput  {
     /// <p>The name of the function.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -6493,8 +6079,7 @@ pub struct GetFunctionConfigurationOutput {
     pub last_update_status_reason: std::option::Option<std::string::String>,
     /// <p>The reason code for the last update that was performed on the function.</p>
     #[doc(hidden)]
-    pub last_update_status_reason_code:
-        std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+    pub last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     #[doc(hidden)]
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
@@ -6522,23 +6107,23 @@ pub struct GetFunctionConfigurationOutput {
 }
 impl GetFunctionConfigurationOutput {
     /// <p>The name of the function.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The runtime environment for the Lambda function.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::model::Runtime> {
         self.runtime.as_ref()
     }
     /// <p>The function's execution role.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The function that Lambda calls to begin running your function.</p>
-    pub fn handler(&self) -> std::option::Option<&str> {
+    pub fn handler(&self) -> std::option::Option<& str> {
         self.handler.as_deref()
     }
     /// <p>The size of the function's deployment package, in bytes.</p>
@@ -6546,7 +6131,7 @@ impl GetFunctionConfigurationOutput {
         self.code_size
     }
     /// <p>The function's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
@@ -6558,111 +6143,109 @@ impl GetFunctionConfigurationOutput {
         self.memory_size
     }
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    pub fn code_sha256(&self) -> std::option::Option<&str> {
+    pub fn code_sha256(&self) -> std::option::Option<& str> {
         self.code_sha256.as_deref()
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The function's networking configuration.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
     /// <p>The function's dead letter queue.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The function's X-Ray tracing configuration.</p>
-    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+    pub fn tracing_config(&self) -> std::option::Option<& crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
     /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
-    pub fn master_arn(&self) -> std::option::Option<&str> {
+    pub fn master_arn(&self) -> std::option::Option<& str> {
         self.master_arn.as_deref()
     }
     /// <p>The latest updated revision of the function or alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+    pub fn layers(&self) -> std::option::Option<& [crate::model::Layer]> {
         self.layers.as_deref()
     }
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
     /// <p>The reason for the function's current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+    pub fn state_reason_code(&self) -> std::option::Option<& crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
     /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+    pub fn last_update_status(&self) -> std::option::Option<& crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
     /// <p>The reason for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+    pub fn last_update_status_reason(&self) -> std::option::Option<& str> {
         self.last_update_status_reason.as_deref()
     }
     /// <p>The reason code for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason_code(
-        &self,
-    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+    pub fn last_update_status_reason_code(&self) -> std::option::Option<& crate::model::LastUpdateStatusReasonCode> {
         self.last_update_status_reason_code.as_ref()
     }
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+    pub fn file_system_configs(&self) -> std::option::Option<& [crate::model::FileSystemConfig]> {
         self.file_system_configs.as_deref()
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+    pub fn package_type(&self) -> std::option::Option<& crate::model::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>The function's image configuration values.</p>
-    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+    pub fn image_config_response(&self) -> std::option::Option<& crate::model::ImageConfigResponse> {
         self.image_config_response.as_ref()
     }
     /// <p>The ARN of the signing profile version.</p>
-    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<& str> {
         self.signing_profile_version_arn.as_deref()
     }
     /// <p>The ARN of the signing job.</p>
-    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_job_arn(&self) -> std::option::Option<& str> {
         self.signing_job_arn.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.architectures.as_deref()
     }
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> std::option::Option<& crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-    pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
+    pub fn snap_start(&self) -> std::option::Option<& crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
     }
 }
 /// See [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput).
 pub mod get_function_configuration_output {
-
+    
     /// A builder for [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6691,10 +6274,8 @@ pub mod get_function_configuration_output {
         pub(crate) state_reason_code: std::option::Option<crate::model::StateReasonCode>,
         pub(crate) last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
         pub(crate) last_update_status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_update_status_reason_code:
-            std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        pub(crate) file_system_configs:
-            std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+        pub(crate) last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+        pub(crate) file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         pub(crate) package_type: std::option::Option<crate::model::PackageType>,
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
@@ -6710,12 +6291,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn set_function_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_name = input;
-            self
+        pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_name = input; self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6724,8 +6301,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
@@ -6734,8 +6310,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = input;
-            self
+            self.runtime = input; self
         }
         /// <p>The function's execution role.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6744,8 +6319,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The function's execution role.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6754,8 +6328,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.handler = input;
-            self
+            self.handler = input; self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn code_size(mut self, input: i64) -> Self {
@@ -6764,8 +6337,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size = input;
-            self
+            self.code_size = input; self
         }
         /// <p>The function's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6774,8 +6346,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The function's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn timeout(mut self, input: i32) -> Self {
@@ -6784,8 +6355,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
@@ -6794,8 +6364,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_size = input;
-            self
+            self.memory_size = input; self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6803,12 +6372,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6817,8 +6382,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = input;
-            self
+            self.code_sha256 = input; self
         }
         /// <p>The version of the Lambda function.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6827,8 +6391,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The version of the Lambda function.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The function's networking configuration.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
@@ -6836,12 +6399,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigResponse>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfigResponse>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>The function's dead letter queue.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -6849,12 +6408,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
@@ -6862,12 +6417,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentResponse>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::EnvironmentResponse>) -> Self {
+            self.environment = input; self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6876,8 +6427,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
@@ -6885,12 +6435,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
-        pub fn set_tracing_config(
-            mut self,
-            input: std::option::Option<crate::model::TracingConfigResponse>,
-        ) -> Self {
-            self.tracing_config = input;
-            self
+        pub fn set_tracing_config(mut self, input: std::option::Option<crate::model::TracingConfigResponse>) -> Self {
+            self.tracing_config = input; self
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6899,8 +6445,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = input;
-            self
+            self.master_arn = input; self
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6909,8 +6454,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Appends an item to `layers`.
         ///
@@ -6919,17 +6463,13 @@ pub mod get_function_configuration_output {
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input);
-            self.layers = Some(v);
-            self
+                            v.push(input);
+                            self.layers = Some(v);
+                            self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-        pub fn set_layers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-        ) -> Self {
-            self.layers = input;
-            self
+        pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Layer>>) -> Self {
+            self.layers = input; self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -6938,8 +6478,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason for the function's current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6948,8 +6487,7 @@ pub mod get_function_configuration_output {
         }
         /// <p>The reason for the function's current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
@@ -6957,12 +6495,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-        pub fn set_state_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::StateReasonCode>,
-        ) -> Self {
-            self.state_reason_code = input;
-            self
+        pub fn set_state_reason_code(mut self, input: std::option::Option<crate::model::StateReasonCode>) -> Self {
+            self.state_reason_code = input; self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
@@ -6970,12 +6504,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-        pub fn set_last_update_status(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatus>,
-        ) -> Self {
-            self.last_update_status = input;
-            self
+        pub fn set_last_update_status(mut self, input: std::option::Option<crate::model::LastUpdateStatus>) -> Self {
+            self.last_update_status = input; self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
         pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6983,28 +6513,17 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_update_status_reason = input;
-            self
+        pub fn set_last_update_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_update_status_reason = input; self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason_code(
-            mut self,
-            input: crate::model::LastUpdateStatusReasonCode,
-        ) -> Self {
+        pub fn last_update_status_reason_code(mut self, input: crate::model::LastUpdateStatusReasonCode) -> Self {
             self.last_update_status_reason_code = Some(input);
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        ) -> Self {
-            self.last_update_status_reason_code = input;
-            self
+        pub fn set_last_update_status_reason_code(mut self, input: std::option::Option<crate::model::LastUpdateStatusReasonCode>) -> Self {
+            self.last_update_status_reason_code = input; self
         }
         /// Appends an item to `file_system_configs`.
         ///
@@ -7013,17 +6532,13 @@ pub mod get_function_configuration_output {
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
         pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input);
-            self.file_system_configs = Some(v);
-            self
+                            v.push(input);
+                            self.file_system_configs = Some(v);
+                            self
         }
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn set_file_system_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
-        ) -> Self {
-            self.file_system_configs = input;
-            self
+        pub fn set_file_system_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>) -> Self {
+            self.file_system_configs = input; self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
         pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
@@ -7031,12 +6546,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn set_package_type(
-            mut self,
-            input: std::option::Option<crate::model::PackageType>,
-        ) -> Self {
-            self.package_type = input;
-            self
+        pub fn set_package_type(mut self, input: std::option::Option<crate::model::PackageType>) -> Self {
+            self.package_type = input; self
         }
         /// <p>The function's image configuration values.</p>
         pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
@@ -7044,28 +6555,17 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn set_image_config_response(
-            mut self,
-            input: std::option::Option<crate::model::ImageConfigResponse>,
-        ) -> Self {
-            self.image_config_response = input;
-            self
+        pub fn set_image_config_response(mut self, input: std::option::Option<crate::model::ImageConfigResponse>) -> Self {
+            self.image_config_response = input; self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_profile_version_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn set_signing_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_profile_version_arn = input;
-            self
+        pub fn set_signing_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_profile_version_arn = input; self
         }
         /// <p>The ARN of the signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7073,12 +6573,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn set_signing_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_job_arn = input;
-            self
+        pub fn set_signing_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_job_arn = input; self
         }
         /// Appends an item to `architectures`.
         ///
@@ -7087,17 +6583,13 @@ pub mod get_function_configuration_output {
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input);
-            self.architectures = Some(v);
-            self
+                            v.push(input);
+                            self.architectures = Some(v);
+                            self
         }
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn set_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.architectures = input;
-            self
+        pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.architectures = input; self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
         pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
@@ -7105,12 +6597,8 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-        pub fn set_ephemeral_storage(
-            mut self,
-            input: std::option::Option<crate::model::EphemeralStorage>,
-        ) -> Self {
-            self.ephemeral_storage = input;
-            self
+        pub fn set_ephemeral_storage(mut self, input: std::option::Option<crate::model::EphemeralStorage>) -> Self {
+            self.ephemeral_storage = input; self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
@@ -7118,53 +6606,86 @@ pub mod get_function_configuration_output {
             self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-        pub fn set_snap_start(
-            mut self,
-            input: std::option::Option<crate::model::SnapStartResponse>,
-        ) -> Self {
-            self.snap_start = input;
-            self
+        pub fn set_snap_start(mut self, input: std::option::Option<crate::model::SnapStartResponse>) -> Self {
+            self.snap_start = input; self
         }
         /// Consumes the builder and constructs a [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput).
         pub fn build(self) -> crate::output::GetFunctionConfigurationOutput {
             crate::output::GetFunctionConfigurationOutput {
-                function_name: self.function_name,
-                function_arn: self.function_arn,
-                runtime: self.runtime,
-                role: self.role,
-                handler: self.handler,
-                code_size: self.code_size.unwrap_or_default(),
-                description: self.description,
-                timeout: self.timeout,
-                memory_size: self.memory_size,
-                last_modified: self.last_modified,
-                code_sha256: self.code_sha256,
-                version: self.version,
-                vpc_config: self.vpc_config,
-                dead_letter_config: self.dead_letter_config,
-                environment: self.environment,
-                kms_key_arn: self.kms_key_arn,
-                tracing_config: self.tracing_config,
-                master_arn: self.master_arn,
-                revision_id: self.revision_id,
-                layers: self.layers,
-                state: self.state,
-                state_reason: self.state_reason,
-                state_reason_code: self.state_reason_code,
-                last_update_status: self.last_update_status,
-                last_update_status_reason: self.last_update_status_reason,
-                last_update_status_reason_code: self.last_update_status_reason_code,
-                file_system_configs: self.file_system_configs,
-                package_type: self.package_type,
-                image_config_response: self.image_config_response,
-                signing_profile_version_arn: self.signing_profile_version_arn,
-                signing_job_arn: self.signing_job_arn,
-                architectures: self.architectures,
-                ephemeral_storage: self.ephemeral_storage,
-                snap_start: self.snap_start,
+                function_name: self.function_name
+                ,
+                function_arn: self.function_arn
+                ,
+                runtime: self.runtime
+                ,
+                role: self.role
+                ,
+                handler: self.handler
+                ,
+                code_size: self.code_size
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                timeout: self.timeout
+                ,
+                memory_size: self.memory_size
+                ,
+                last_modified: self.last_modified
+                ,
+                code_sha256: self.code_sha256
+                ,
+                version: self.version
+                ,
+                vpc_config: self.vpc_config
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                environment: self.environment
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tracing_config: self.tracing_config
+                ,
+                master_arn: self.master_arn
+                ,
+                revision_id: self.revision_id
+                ,
+                layers: self.layers
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                state_reason_code: self.state_reason_code
+                ,
+                last_update_status: self.last_update_status
+                ,
+                last_update_status_reason: self.last_update_status_reason
+                ,
+                last_update_status_reason_code: self.last_update_status_reason_code
+                ,
+                file_system_configs: self.file_system_configs
+                ,
+                package_type: self.package_type
+                ,
+                image_config_response: self.image_config_response
+                ,
+                signing_profile_version_arn: self.signing_profile_version_arn
+                ,
+                signing_job_arn: self.signing_job_arn
+                ,
+                architectures: self.architectures
+                ,
+                ephemeral_storage: self.ephemeral_storage
+                ,
+                snap_start: self.snap_start
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFunctionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput).
@@ -7176,7 +6697,7 @@ impl GetFunctionConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionConcurrencyOutput {
+pub struct GetFunctionConcurrencyOutput  {
     /// <p>The number of simultaneous executions that are reserved for the function.</p>
     #[doc(hidden)]
     pub reserved_concurrent_executions: std::option::Option<i32>,
@@ -7189,7 +6710,7 @@ impl GetFunctionConcurrencyOutput {
 }
 /// See [`GetFunctionConcurrencyOutput`](crate::output::GetFunctionConcurrencyOutput).
 pub mod get_function_concurrency_output {
-
+    
     /// A builder for [`GetFunctionConcurrencyOutput`](crate::output::GetFunctionConcurrencyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7202,20 +6723,19 @@ pub mod get_function_concurrency_output {
             self
         }
         /// <p>The number of simultaneous executions that are reserved for the function.</p>
-        pub fn set_reserved_concurrent_executions(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.reserved_concurrent_executions = input;
-            self
+        pub fn set_reserved_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+            self.reserved_concurrent_executions = input; self
         }
         /// Consumes the builder and constructs a [`GetFunctionConcurrencyOutput`](crate::output::GetFunctionConcurrencyOutput).
         pub fn build(self) -> crate::output::GetFunctionConcurrencyOutput {
             crate::output::GetFunctionConcurrencyOutput {
-                reserved_concurrent_executions: self.reserved_concurrent_executions,
+                reserved_concurrent_executions: self.reserved_concurrent_executions
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFunctionConcurrencyOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionConcurrencyOutput`](crate::output::GetFunctionConcurrencyOutput).
@@ -7227,41 +6747,41 @@ impl GetFunctionConcurrencyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionCodeSigningConfigOutput {
+pub struct GetFunctionCodeSigningConfigOutput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
     pub code_signing_config_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
 }
 impl GetFunctionCodeSigningConfigOutput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+    pub fn code_signing_config_arn(&self) -> std::option::Option<& str> {
         self.code_signing_config_arn.as_deref()
     }
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
 }
 /// See [`GetFunctionCodeSigningConfigOutput`](crate::output::GetFunctionCodeSigningConfigOutput).
 pub mod get_function_code_signing_config_output {
-
+    
     /// A builder for [`GetFunctionCodeSigningConfigOutput`](crate::output::GetFunctionCodeSigningConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7275,48 +6795,44 @@ pub mod get_function_code_signing_config_output {
             self
         }
         /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-        pub fn set_code_signing_config_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.code_signing_config_arn = input;
-            self
+        pub fn set_code_signing_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code_signing_config_arn = input; self
         }
-        /// <p>The name of the Lambda function.</p>
-        /// <p class="title"> <b>Name formats</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-        /// </ul>
+        /// <p>The name of the Lambda function.</p> 
+        /// <p class="title"> <b>Name formats</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+        /// </ul> 
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
-        /// <p>The name of the Lambda function.</p>
-        /// <p class="title"> <b>Name formats</b> </p>
-        /// <ul>
-        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-        /// </ul>
+        /// <p>The name of the Lambda function.</p> 
+        /// <p class="title"> <b>Name formats</b> </p> 
+        /// <ul> 
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+        /// </ul> 
         /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-        pub fn set_function_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_name = input;
-            self
+        pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_name = input; self
         }
         /// Consumes the builder and constructs a [`GetFunctionCodeSigningConfigOutput`](crate::output::GetFunctionCodeSigningConfigOutput).
         pub fn build(self) -> crate::output::GetFunctionCodeSigningConfigOutput {
             crate::output::GetFunctionCodeSigningConfigOutput {
-                code_signing_config_arn: self.code_signing_config_arn,
-                function_name: self.function_name,
+                code_signing_config_arn: self.code_signing_config_arn
+                ,
+                function_name: self.function_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFunctionCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionCodeSigningConfigOutput`](crate::output::GetFunctionCodeSigningConfigOutput).
@@ -7328,7 +6844,7 @@ impl GetFunctionCodeSigningConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionOutput {
+pub struct GetFunctionOutput  {
     /// <p>The configuration of the function or version.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::FunctionConfiguration>,
@@ -7337,44 +6853,38 @@ pub struct GetFunctionOutput {
     pub code: std::option::Option<crate::model::FunctionCodeLocation>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
     #[doc(hidden)]
     pub concurrency: std::option::Option<crate::model::Concurrency>,
 }
 impl GetFunctionOutput {
     /// <p>The configuration of the function or version.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::FunctionConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::FunctionConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The deployment package of the function or version.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::FunctionCodeLocation> {
+    pub fn code(&self) -> std::option::Option<& crate::model::FunctionCodeLocation> {
         self.code.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
-    pub fn concurrency(&self) -> std::option::Option<&crate::model::Concurrency> {
+    pub fn concurrency(&self) -> std::option::Option<& crate::model::Concurrency> {
         self.concurrency.as_ref()
     }
 }
 /// See [`GetFunctionOutput`](crate::output::GetFunctionOutput).
 pub mod get_function_output {
-
+    
     /// A builder for [`GetFunctionOutput`](crate::output::GetFunctionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration: std::option::Option<crate::model::FunctionConfiguration>,
         pub(crate) code: std::option::Option<crate::model::FunctionCodeLocation>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) concurrency: std::option::Option<crate::model::Concurrency>,
     }
     impl Builder {
@@ -7384,12 +6894,8 @@ pub mod get_function_output {
             self
         }
         /// <p>The configuration of the function or version.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::FunctionConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::FunctionConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// <p>The deployment package of the function or version.</p>
         pub fn code(mut self, input: crate::model::FunctionCodeLocation) -> Self {
@@ -7397,37 +6903,23 @@ pub mod get_function_output {
             self
         }
         /// <p>The deployment package of the function or version.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::FunctionCodeLocation>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::FunctionCodeLocation>) -> Self {
+            self.code = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
         pub fn concurrency(mut self, input: crate::model::Concurrency) -> Self {
@@ -7435,23 +6927,25 @@ pub mod get_function_output {
             self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
-        pub fn set_concurrency(
-            mut self,
-            input: std::option::Option<crate::model::Concurrency>,
-        ) -> Self {
-            self.concurrency = input;
-            self
+        pub fn set_concurrency(mut self, input: std::option::Option<crate::model::Concurrency>) -> Self {
+            self.concurrency = input; self
         }
         /// Consumes the builder and constructs a [`GetFunctionOutput`](crate::output::GetFunctionOutput).
         pub fn build(self) -> crate::output::GetFunctionOutput {
             crate::output::GetFunctionOutput {
-                configuration: self.configuration,
-                code: self.code,
-                tags: self.tags,
-                concurrency: self.concurrency,
+                configuration: self.configuration
+                ,
+                code: self.code
+                ,
+                tags: self.tags
+                ,
+                concurrency: self.concurrency
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFunctionOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionOutput`](crate::output::GetFunctionOutput).
@@ -7463,7 +6957,7 @@ impl GetFunctionOutput {
 /// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventSourceMappingOutput {
+pub struct GetEventSourceMappingOutput  {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
     pub uuid: std::option::Option<std::string::String>,
@@ -7473,13 +6967,13 @@ pub struct GetEventSourceMappingOutput {
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     #[doc(hidden)]
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -7518,8 +7012,7 @@ pub struct GetEventSourceMappingOutput {
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     #[doc(hidden)]
-    pub source_access_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+    pub source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     #[doc(hidden)]
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
@@ -7537,38 +7030,35 @@ pub struct GetEventSourceMappingOutput {
     pub tumbling_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     #[doc(hidden)]
-    pub function_response_types:
-        std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    pub function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     #[doc(hidden)]
-    pub amazon_managed_kafka_event_source_config:
-        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    pub amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
     #[doc(hidden)]
-    pub self_managed_kafka_event_source_config:
-        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    pub self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl GetEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
-    pub fn uuid(&self) -> std::option::Option<&str> {
+    pub fn uuid(&self) -> std::option::Option<& str> {
         self.uuid.as_deref()
     }
     /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
@@ -7578,55 +7068,51 @@ impl GetEventSourceMappingOutput {
         self.parallelization_factor
     }
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The result of the last Lambda invocation of your function.</p>
-    pub fn last_processing_result(&self) -> std::option::Option<&str> {
+    pub fn last_processing_result(&self) -> std::option::Option<& str> {
         self.last_processing_result.as_deref()
     }
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+    pub fn state_transition_reason(&self) -> std::option::Option<& str> {
         self.state_transition_reason.as_deref()
     }
     /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>The name of the Kafka topic.</p>
-    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn topics(&self) -> std::option::Option<& [std::string::String]> {
         self.topics.as_deref()
     }
     /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queues(&self) -> std::option::Option<& [std::string::String]> {
         self.queues.as_deref()
     }
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-    pub fn source_access_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+    pub fn source_access_configurations(&self) -> std::option::Option<& [crate::model::SourceAccessConfiguration]> {
         self.source_access_configurations.as_deref()
     }
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-    pub fn self_managed_event_source(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+    pub fn self_managed_event_source(&self) -> std::option::Option<& crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
@@ -7646,27 +7132,21 @@ impl GetEventSourceMappingOutput {
         self.tumbling_window_in_seconds
     }
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn function_response_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+    pub fn function_response_types(&self) -> std::option::Option<& [crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-    pub fn amazon_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+    pub fn amazon_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::AmazonManagedKafkaEventSourceConfig> {
         self.amazon_managed_kafka_event_source_config.as_ref()
     }
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-    pub fn self_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+    pub fn self_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
 }
 /// See [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput).
 pub mod get_event_source_mapping_output {
-
+    
     /// A builder for [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7686,20 +7166,15 @@ pub mod get_event_source_mapping_output {
         pub(crate) destination_config: std::option::Option<crate::model::DestinationConfig>,
         pub(crate) topics: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) source_access_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        pub(crate) self_managed_event_source:
-            std::option::Option<crate::model::SelfManagedEventSource>,
+        pub(crate) source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+        pub(crate) self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
         pub(crate) bisect_batch_on_function_error: std::option::Option<bool>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
-        pub(crate) function_response_types:
-            std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        pub(crate) amazon_managed_kafka_event_source_config:
-            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        pub(crate) self_managed_kafka_event_source_config:
-            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -7709,8 +7184,7 @@ pub mod get_event_source_mapping_output {
         }
         /// <p>The identifier of the event source mapping.</p>
         pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uuid = input;
-            self
+            self.uuid = input; self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
@@ -7718,12 +7192,8 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-        pub fn set_starting_position(
-            mut self,
-            input: std::option::Option<crate::model::EventSourcePosition>,
-        ) -> Self {
-            self.starting_position = input;
-            self
+        pub fn set_starting_position(mut self, input: std::option::Option<crate::model::EventSourcePosition>) -> Self {
+            self.starting_position = input; self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7731,43 +7201,34 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-        pub fn set_starting_position_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.starting_position_timestamp = input;
-            self
+        pub fn set_starting_position_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.starting_position_timestamp = input; self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -7776,8 +7237,7 @@ pub mod get_event_source_mapping_output {
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = input;
-            self
+            self.parallelization_factor = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7785,12 +7245,8 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-        pub fn set_event_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_source_arn = input;
-            self
+        pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_source_arn = input; self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
@@ -7798,12 +7254,8 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-        pub fn set_filter_criteria(
-            mut self,
-            input: std::option::Option<crate::model::FilterCriteria>,
-        ) -> Self {
-            self.filter_criteria = input;
-            self
+        pub fn set_filter_criteria(mut self, input: std::option::Option<crate::model::FilterCriteria>) -> Self {
+            self.filter_criteria = input; self
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7812,8 +7264,7 @@ pub mod get_event_source_mapping_output {
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7821,12 +7272,8 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
         pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7834,12 +7281,8 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
-        pub fn set_last_processing_result(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_processing_result = input;
-            self
+        pub fn set_last_processing_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_processing_result = input; self
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7848,8 +7291,7 @@ pub mod get_event_source_mapping_output {
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
         pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7857,12 +7299,8 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-        pub fn set_state_transition_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_transition_reason = input;
-            self
+        pub fn set_state_transition_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_transition_reason = input; self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
@@ -7870,12 +7308,8 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Appends an item to `topics`.
         ///
@@ -7884,17 +7318,13 @@ pub mod get_event_source_mapping_output {
         /// <p>The name of the Kafka topic.</p>
         pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input.into());
-            self.topics = Some(v);
-            self
+                            v.push(input.into());
+                            self.topics = Some(v);
+                            self
         }
         /// <p>The name of the Kafka topic.</p>
-        pub fn set_topics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.topics = input;
-            self
+        pub fn set_topics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.topics = input; self
         }
         /// Appends an item to `queues`.
         ///
@@ -7903,55 +7333,37 @@ pub mod get_event_source_mapping_output {
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
         pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(input.into());
-            self.queues = Some(v);
-            self
+                            v.push(input.into());
+                            self.queues = Some(v);
+                            self
         }
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-        pub fn set_queues(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.queues = input;
-            self
+        pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.queues = input; self
         }
         /// Appends an item to `source_access_configurations`.
         ///
         /// To override the contents of this collection use [`set_source_access_configurations`](Self::set_source_access_configurations).
         ///
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn source_access_configurations(
-            mut self,
-            input: crate::model::SourceAccessConfiguration,
-        ) -> Self {
+        pub fn source_access_configurations(mut self, input: crate::model::SourceAccessConfiguration) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input);
-            self.source_access_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.source_access_configurations = Some(v);
+                            self
         }
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn set_source_access_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        ) -> Self {
-            self.source_access_configurations = input;
-            self
+        pub fn set_source_access_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>) -> Self {
+            self.source_access_configurations = input; self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn self_managed_event_source(
-            mut self,
-            input: crate::model::SelfManagedEventSource,
-        ) -> Self {
+        pub fn self_managed_event_source(mut self, input: crate::model::SelfManagedEventSource) -> Self {
             self.self_managed_event_source = Some(input);
             self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn set_self_managed_event_source(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedEventSource>,
-        ) -> Self {
-            self.self_managed_event_source = input;
-            self
+        pub fn set_self_managed_event_source(mut self, input: std::option::Option<crate::model::SelfManagedEventSource>) -> Self {
+            self.self_managed_event_source = input; self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -7959,12 +7371,8 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
-        pub fn set_maximum_record_age_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_record_age_in_seconds = input;
-            self
+        pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_record_age_in_seconds = input; self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
@@ -7972,12 +7380,8 @@ pub mod get_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-        pub fn set_bisect_batch_on_function_error(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.bisect_batch_on_function_error = input;
-            self
+        pub fn set_bisect_batch_on_function_error(mut self, input: std::option::Option<bool>) -> Self {
+            self.bisect_batch_on_function_error = input; self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -7986,8 +7390,7 @@ pub mod get_event_source_mapping_output {
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
@@ -7996,95 +7399,99 @@ pub mod get_event_source_mapping_output {
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.tumbling_window_in_seconds = input;
-            self
+            self.tumbling_window_in_seconds = input; self
         }
         /// Appends an item to `function_response_types`.
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn function_response_types(
-            mut self,
-            input: crate::model::FunctionResponseType,
-        ) -> Self {
+        pub fn function_response_types(mut self, input: crate::model::FunctionResponseType) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input);
-            self.function_response_types = Some(v);
-            self
+                            v.push(input);
+                            self.function_response_types = Some(v);
+                            self
         }
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn set_function_response_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        ) -> Self {
-            self.function_response_types = input;
-            self
+        pub fn set_function_response_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>) -> Self {
+            self.function_response_types = input; self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn amazon_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::AmazonManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn amazon_managed_kafka_event_source_config(mut self, input: crate::model::AmazonManagedKafkaEventSourceConfig) -> Self {
             self.amazon_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn set_amazon_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.amazon_managed_kafka_event_source_config = input;
-            self
+        pub fn set_amazon_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>) -> Self {
+            self.amazon_managed_kafka_event_source_config = input; self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn self_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::SelfManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn self_managed_kafka_event_source_config(mut self, input: crate::model::SelfManagedKafkaEventSourceConfig) -> Self {
             self.self_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn set_self_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.self_managed_kafka_event_source_config = input;
-            self
+        pub fn set_self_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>) -> Self {
+            self.self_managed_kafka_event_source_config = input; self
         }
         /// Consumes the builder and constructs a [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput).
         pub fn build(self) -> crate::output::GetEventSourceMappingOutput {
             crate::output::GetEventSourceMappingOutput {
-                uuid: self.uuid,
-                starting_position: self.starting_position,
-                starting_position_timestamp: self.starting_position_timestamp,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                parallelization_factor: self.parallelization_factor,
-                event_source_arn: self.event_source_arn,
-                filter_criteria: self.filter_criteria,
-                function_arn: self.function_arn,
-                last_modified: self.last_modified,
-                last_processing_result: self.last_processing_result,
-                state: self.state,
-                state_transition_reason: self.state_transition_reason,
-                destination_config: self.destination_config,
-                topics: self.topics,
-                queues: self.queues,
-                source_access_configurations: self.source_access_configurations,
-                self_managed_event_source: self.self_managed_event_source,
-                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-                bisect_batch_on_function_error: self.bisect_batch_on_function_error,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                tumbling_window_in_seconds: self.tumbling_window_in_seconds,
-                function_response_types: self.function_response_types,
-                amazon_managed_kafka_event_source_config: self
-                    .amazon_managed_kafka_event_source_config,
-                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                uuid: self.uuid
+                ,
+                starting_position: self.starting_position
+                ,
+                starting_position_timestamp: self.starting_position_timestamp
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                parallelization_factor: self.parallelization_factor
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                filter_criteria: self.filter_criteria
+                ,
+                function_arn: self.function_arn
+                ,
+                last_modified: self.last_modified
+                ,
+                last_processing_result: self.last_processing_result
+                ,
+                state: self.state
+                ,
+                state_transition_reason: self.state_transition_reason
+                ,
+                destination_config: self.destination_config
+                ,
+                topics: self.topics
+                ,
+                queues: self.queues
+                ,
+                source_access_configurations: self.source_access_configurations
+                ,
+                self_managed_event_source: self.self_managed_event_source
+                ,
+                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+                ,
+                bisect_batch_on_function_error: self.bisect_batch_on_function_error
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                tumbling_window_in_seconds: self.tumbling_window_in_seconds
+                ,
+                function_response_types: self.function_response_types
+                ,
+                amazon_managed_kafka_event_source_config: self.amazon_managed_kafka_event_source_config
+                ,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEventSourceMappingOutput {
     /// Creates a new builder-style object to manufacture [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput).
@@ -8096,20 +7503,20 @@ impl GetEventSourceMappingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCodeSigningConfigOutput {
+pub struct GetCodeSigningConfigOutput  {
     /// <p>The code signing configuration</p>
     #[doc(hidden)]
     pub code_signing_config: std::option::Option<crate::model::CodeSigningConfig>,
 }
 impl GetCodeSigningConfigOutput {
     /// <p>The code signing configuration</p>
-    pub fn code_signing_config(&self) -> std::option::Option<&crate::model::CodeSigningConfig> {
+    pub fn code_signing_config(&self) -> std::option::Option<& crate::model::CodeSigningConfig> {
         self.code_signing_config.as_ref()
     }
 }
 /// See [`GetCodeSigningConfigOutput`](crate::output::GetCodeSigningConfigOutput).
 pub mod get_code_signing_config_output {
-
+    
     /// A builder for [`GetCodeSigningConfigOutput`](crate::output::GetCodeSigningConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8122,20 +7529,19 @@ pub mod get_code_signing_config_output {
             self
         }
         /// <p>The code signing configuration</p>
-        pub fn set_code_signing_config(
-            mut self,
-            input: std::option::Option<crate::model::CodeSigningConfig>,
-        ) -> Self {
-            self.code_signing_config = input;
-            self
+        pub fn set_code_signing_config(mut self, input: std::option::Option<crate::model::CodeSigningConfig>) -> Self {
+            self.code_signing_config = input; self
         }
         /// Consumes the builder and constructs a [`GetCodeSigningConfigOutput`](crate::output::GetCodeSigningConfigOutput).
         pub fn build(self) -> crate::output::GetCodeSigningConfigOutput {
             crate::output::GetCodeSigningConfigOutput {
-                code_signing_config: self.code_signing_config,
+                code_signing_config: self.code_signing_config
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetCodeSigningConfigOutput`](crate::output::GetCodeSigningConfigOutput).
@@ -8147,7 +7553,7 @@ impl GetCodeSigningConfigOutput {
 /// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAliasOutput {
+pub struct GetAliasOutput  {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     #[doc(hidden)]
     pub alias_arn: std::option::Option<std::string::String>,
@@ -8169,33 +7575,33 @@ pub struct GetAliasOutput {
 }
 impl GetAliasOutput {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-    pub fn alias_arn(&self) -> std::option::Option<&str> {
+    pub fn alias_arn(&self) -> std::option::Option<& str> {
         self.alias_arn.as_deref()
     }
     /// <p>The name of the alias.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function version that the alias invokes.</p>
-    pub fn function_version(&self) -> std::option::Option<&str> {
+    pub fn function_version(&self) -> std::option::Option<& str> {
         self.function_version.as_deref()
     }
     /// <p>A description of the alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-    pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
+    pub fn routing_config(&self) -> std::option::Option<& crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
     /// <p>A unique identifier that changes when you update the alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`GetAliasOutput`](crate::output::GetAliasOutput).
 pub mod get_alias_output {
-
+    
     /// A builder for [`GetAliasOutput`](crate::output::GetAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8214,8 +7620,7 @@ pub mod get_alias_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the alias.</p>
         pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias_arn = input;
-            self
+            self.alias_arn = input; self
         }
         /// <p>The name of the alias.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8224,8 +7629,7 @@ pub mod get_alias_output {
         }
         /// <p>The name of the alias.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The function version that the alias invokes.</p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8233,12 +7637,8 @@ pub mod get_alias_output {
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn set_function_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_version = input;
-            self
+        pub fn set_function_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_version = input; self
         }
         /// <p>A description of the alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8247,8 +7647,7 @@ pub mod get_alias_output {
         }
         /// <p>A description of the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
@@ -8256,12 +7655,8 @@ pub mod get_alias_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-        pub fn set_routing_config(
-            mut self,
-            input: std::option::Option<crate::model::AliasRoutingConfiguration>,
-        ) -> Self {
-            self.routing_config = input;
-            self
+        pub fn set_routing_config(mut self, input: std::option::Option<crate::model::AliasRoutingConfiguration>) -> Self {
+            self.routing_config = input; self
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8270,21 +7665,28 @@ pub mod get_alias_output {
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`GetAliasOutput`](crate::output::GetAliasOutput).
         pub fn build(self) -> crate::output::GetAliasOutput {
             crate::output::GetAliasOutput {
-                alias_arn: self.alias_arn,
-                name: self.name,
-                function_version: self.function_version,
-                description: self.description,
-                routing_config: self.routing_config,
-                revision_id: self.revision_id,
+                alias_arn: self.alias_arn
+                ,
+                name: self.name
+                ,
+                function_version: self.function_version
+                ,
+                description: self.description
+                ,
+                routing_config: self.routing_config
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAliasOutput {
     /// Creates a new builder-style object to manufacture [`GetAliasOutput`](crate::output::GetAliasOutput).
@@ -8296,7 +7698,7 @@ impl GetAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountSettingsOutput {
+pub struct GetAccountSettingsOutput  {
     /// <p>Limits that are related to concurrency and code storage.</p>
     #[doc(hidden)]
     pub account_limit: std::option::Option<crate::model::AccountLimit>,
@@ -8306,17 +7708,17 @@ pub struct GetAccountSettingsOutput {
 }
 impl GetAccountSettingsOutput {
     /// <p>Limits that are related to concurrency and code storage.</p>
-    pub fn account_limit(&self) -> std::option::Option<&crate::model::AccountLimit> {
+    pub fn account_limit(&self) -> std::option::Option<& crate::model::AccountLimit> {
         self.account_limit.as_ref()
     }
     /// <p>The number of functions and amount of storage in use.</p>
-    pub fn account_usage(&self) -> std::option::Option<&crate::model::AccountUsage> {
+    pub fn account_usage(&self) -> std::option::Option<& crate::model::AccountUsage> {
         self.account_usage.as_ref()
     }
 }
 /// See [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
 pub mod get_account_settings_output {
-
+    
     /// A builder for [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8330,12 +7732,8 @@ pub mod get_account_settings_output {
             self
         }
         /// <p>Limits that are related to concurrency and code storage.</p>
-        pub fn set_account_limit(
-            mut self,
-            input: std::option::Option<crate::model::AccountLimit>,
-        ) -> Self {
-            self.account_limit = input;
-            self
+        pub fn set_account_limit(mut self, input: std::option::Option<crate::model::AccountLimit>) -> Self {
+            self.account_limit = input; self
         }
         /// <p>The number of functions and amount of storage in use.</p>
         pub fn account_usage(mut self, input: crate::model::AccountUsage) -> Self {
@@ -8343,21 +7741,21 @@ pub mod get_account_settings_output {
             self
         }
         /// <p>The number of functions and amount of storage in use.</p>
-        pub fn set_account_usage(
-            mut self,
-            input: std::option::Option<crate::model::AccountUsage>,
-        ) -> Self {
-            self.account_usage = input;
-            self
+        pub fn set_account_usage(mut self, input: std::option::Option<crate::model::AccountUsage>) -> Self {
+            self.account_usage = input; self
         }
         /// Consumes the builder and constructs a [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
         pub fn build(self) -> crate::output::GetAccountSettingsOutput {
             crate::output::GetAccountSettingsOutput {
-                account_limit: self.account_limit,
-                account_usage: self.account_usage,
+                account_limit: self.account_limit
+                ,
+                account_usage: self.account_usage
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
@@ -8369,19 +7767,24 @@ impl GetAccountSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProvisionedConcurrencyConfigOutput {}
+pub struct DeleteProvisionedConcurrencyConfigOutput  {
+}
 /// See [`DeleteProvisionedConcurrencyConfigOutput`](crate::output::DeleteProvisionedConcurrencyConfigOutput).
 pub mod delete_provisioned_concurrency_config_output {
-
+    
     /// A builder for [`DeleteProvisionedConcurrencyConfigOutput`](crate::output::DeleteProvisionedConcurrencyConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProvisionedConcurrencyConfigOutput`](crate::output::DeleteProvisionedConcurrencyConfigOutput).
         pub fn build(self) -> crate::output::DeleteProvisionedConcurrencyConfigOutput {
-            crate::output::DeleteProvisionedConcurrencyConfigOutput {}
+            crate::output::DeleteProvisionedConcurrencyConfigOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProvisionedConcurrencyConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisionedConcurrencyConfigOutput`](crate::output::DeleteProvisionedConcurrencyConfigOutput).
@@ -8393,19 +7796,24 @@ impl DeleteProvisionedConcurrencyConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLayerVersionOutput {}
+pub struct DeleteLayerVersionOutput  {
+}
 /// See [`DeleteLayerVersionOutput`](crate::output::DeleteLayerVersionOutput).
 pub mod delete_layer_version_output {
-
+    
     /// A builder for [`DeleteLayerVersionOutput`](crate::output::DeleteLayerVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLayerVersionOutput`](crate::output::DeleteLayerVersionOutput).
         pub fn build(self) -> crate::output::DeleteLayerVersionOutput {
-            crate::output::DeleteLayerVersionOutput {}
+            crate::output::DeleteLayerVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLayerVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLayerVersionOutput`](crate::output::DeleteLayerVersionOutput).
@@ -8417,19 +7825,24 @@ impl DeleteLayerVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFunctionUrlConfigOutput {}
+pub struct DeleteFunctionUrlConfigOutput  {
+}
 /// See [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput).
 pub mod delete_function_url_config_output {
-
+    
     /// A builder for [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput).
         pub fn build(self) -> crate::output::DeleteFunctionUrlConfigOutput {
-            crate::output::DeleteFunctionUrlConfigOutput {}
+            crate::output::DeleteFunctionUrlConfigOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFunctionUrlConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionUrlConfigOutput`](crate::output::DeleteFunctionUrlConfigOutput).
@@ -8441,19 +7854,24 @@ impl DeleteFunctionUrlConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFunctionEventInvokeConfigOutput {}
+pub struct DeleteFunctionEventInvokeConfigOutput  {
+}
 /// See [`DeleteFunctionEventInvokeConfigOutput`](crate::output::DeleteFunctionEventInvokeConfigOutput).
 pub mod delete_function_event_invoke_config_output {
-
+    
     /// A builder for [`DeleteFunctionEventInvokeConfigOutput`](crate::output::DeleteFunctionEventInvokeConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFunctionEventInvokeConfigOutput`](crate::output::DeleteFunctionEventInvokeConfigOutput).
         pub fn build(self) -> crate::output::DeleteFunctionEventInvokeConfigOutput {
-            crate::output::DeleteFunctionEventInvokeConfigOutput {}
+            crate::output::DeleteFunctionEventInvokeConfigOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFunctionEventInvokeConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionEventInvokeConfigOutput`](crate::output::DeleteFunctionEventInvokeConfigOutput).
@@ -8465,19 +7883,24 @@ impl DeleteFunctionEventInvokeConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFunctionConcurrencyOutput {}
+pub struct DeleteFunctionConcurrencyOutput  {
+}
 /// See [`DeleteFunctionConcurrencyOutput`](crate::output::DeleteFunctionConcurrencyOutput).
 pub mod delete_function_concurrency_output {
-
+    
     /// A builder for [`DeleteFunctionConcurrencyOutput`](crate::output::DeleteFunctionConcurrencyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFunctionConcurrencyOutput`](crate::output::DeleteFunctionConcurrencyOutput).
         pub fn build(self) -> crate::output::DeleteFunctionConcurrencyOutput {
-            crate::output::DeleteFunctionConcurrencyOutput {}
+            crate::output::DeleteFunctionConcurrencyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFunctionConcurrencyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionConcurrencyOutput`](crate::output::DeleteFunctionConcurrencyOutput).
@@ -8489,19 +7912,24 @@ impl DeleteFunctionConcurrencyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFunctionCodeSigningConfigOutput {}
+pub struct DeleteFunctionCodeSigningConfigOutput  {
+}
 /// See [`DeleteFunctionCodeSigningConfigOutput`](crate::output::DeleteFunctionCodeSigningConfigOutput).
 pub mod delete_function_code_signing_config_output {
-
+    
     /// A builder for [`DeleteFunctionCodeSigningConfigOutput`](crate::output::DeleteFunctionCodeSigningConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFunctionCodeSigningConfigOutput`](crate::output::DeleteFunctionCodeSigningConfigOutput).
         pub fn build(self) -> crate::output::DeleteFunctionCodeSigningConfigOutput {
-            crate::output::DeleteFunctionCodeSigningConfigOutput {}
+            crate::output::DeleteFunctionCodeSigningConfigOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFunctionCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionCodeSigningConfigOutput`](crate::output::DeleteFunctionCodeSigningConfigOutput).
@@ -8513,19 +7941,24 @@ impl DeleteFunctionCodeSigningConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFunctionOutput {}
+pub struct DeleteFunctionOutput  {
+}
 /// See [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput).
 pub mod delete_function_output {
-
+    
     /// A builder for [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput).
         pub fn build(self) -> crate::output::DeleteFunctionOutput {
-            crate::output::DeleteFunctionOutput {}
+            crate::output::DeleteFunctionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFunctionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput).
@@ -8537,7 +7970,7 @@ impl DeleteFunctionOutput {
 /// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventSourceMappingOutput {
+pub struct DeleteEventSourceMappingOutput  {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
     pub uuid: std::option::Option<std::string::String>,
@@ -8547,13 +7980,13 @@ pub struct DeleteEventSourceMappingOutput {
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     #[doc(hidden)]
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -8592,8 +8025,7 @@ pub struct DeleteEventSourceMappingOutput {
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     #[doc(hidden)]
-    pub source_access_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+    pub source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     #[doc(hidden)]
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
@@ -8611,38 +8043,35 @@ pub struct DeleteEventSourceMappingOutput {
     pub tumbling_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     #[doc(hidden)]
-    pub function_response_types:
-        std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    pub function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     #[doc(hidden)]
-    pub amazon_managed_kafka_event_source_config:
-        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    pub amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
     #[doc(hidden)]
-    pub self_managed_kafka_event_source_config:
-        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    pub self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl DeleteEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
-    pub fn uuid(&self) -> std::option::Option<&str> {
+    pub fn uuid(&self) -> std::option::Option<& str> {
         self.uuid.as_deref()
     }
     /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
@@ -8652,55 +8081,51 @@ impl DeleteEventSourceMappingOutput {
         self.parallelization_factor
     }
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The result of the last Lambda invocation of your function.</p>
-    pub fn last_processing_result(&self) -> std::option::Option<&str> {
+    pub fn last_processing_result(&self) -> std::option::Option<& str> {
         self.last_processing_result.as_deref()
     }
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+    pub fn state_transition_reason(&self) -> std::option::Option<& str> {
         self.state_transition_reason.as_deref()
     }
     /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>The name of the Kafka topic.</p>
-    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn topics(&self) -> std::option::Option<& [std::string::String]> {
         self.topics.as_deref()
     }
     /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queues(&self) -> std::option::Option<& [std::string::String]> {
         self.queues.as_deref()
     }
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-    pub fn source_access_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+    pub fn source_access_configurations(&self) -> std::option::Option<& [crate::model::SourceAccessConfiguration]> {
         self.source_access_configurations.as_deref()
     }
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-    pub fn self_managed_event_source(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+    pub fn self_managed_event_source(&self) -> std::option::Option<& crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
@@ -8720,27 +8145,21 @@ impl DeleteEventSourceMappingOutput {
         self.tumbling_window_in_seconds
     }
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn function_response_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+    pub fn function_response_types(&self) -> std::option::Option<& [crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-    pub fn amazon_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+    pub fn amazon_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::AmazonManagedKafkaEventSourceConfig> {
         self.amazon_managed_kafka_event_source_config.as_ref()
     }
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-    pub fn self_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+    pub fn self_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
 }
 /// See [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput).
 pub mod delete_event_source_mapping_output {
-
+    
     /// A builder for [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8760,20 +8179,15 @@ pub mod delete_event_source_mapping_output {
         pub(crate) destination_config: std::option::Option<crate::model::DestinationConfig>,
         pub(crate) topics: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) source_access_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        pub(crate) self_managed_event_source:
-            std::option::Option<crate::model::SelfManagedEventSource>,
+        pub(crate) source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+        pub(crate) self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
         pub(crate) bisect_batch_on_function_error: std::option::Option<bool>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
-        pub(crate) function_response_types:
-            std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        pub(crate) amazon_managed_kafka_event_source_config:
-            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        pub(crate) self_managed_kafka_event_source_config:
-            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -8783,8 +8197,7 @@ pub mod delete_event_source_mapping_output {
         }
         /// <p>The identifier of the event source mapping.</p>
         pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uuid = input;
-            self
+            self.uuid = input; self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
@@ -8792,12 +8205,8 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-        pub fn set_starting_position(
-            mut self,
-            input: std::option::Option<crate::model::EventSourcePosition>,
-        ) -> Self {
-            self.starting_position = input;
-            self
+        pub fn set_starting_position(mut self, input: std::option::Option<crate::model::EventSourcePosition>) -> Self {
+            self.starting_position = input; self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8805,43 +8214,34 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-        pub fn set_starting_position_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.starting_position_timestamp = input;
-            self
+        pub fn set_starting_position_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.starting_position_timestamp = input; self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -8850,8 +8250,7 @@ pub mod delete_event_source_mapping_output {
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = input;
-            self
+            self.parallelization_factor = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8859,12 +8258,8 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-        pub fn set_event_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_source_arn = input;
-            self
+        pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_source_arn = input; self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
@@ -8872,12 +8267,8 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-        pub fn set_filter_criteria(
-            mut self,
-            input: std::option::Option<crate::model::FilterCriteria>,
-        ) -> Self {
-            self.filter_criteria = input;
-            self
+        pub fn set_filter_criteria(mut self, input: std::option::Option<crate::model::FilterCriteria>) -> Self {
+            self.filter_criteria = input; self
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8886,8 +8277,7 @@ pub mod delete_event_source_mapping_output {
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8895,12 +8285,8 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
         pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8908,12 +8294,8 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
-        pub fn set_last_processing_result(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_processing_result = input;
-            self
+        pub fn set_last_processing_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_processing_result = input; self
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8922,8 +8304,7 @@ pub mod delete_event_source_mapping_output {
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
         pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8931,12 +8312,8 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-        pub fn set_state_transition_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_transition_reason = input;
-            self
+        pub fn set_state_transition_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_transition_reason = input; self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
@@ -8944,12 +8321,8 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Appends an item to `topics`.
         ///
@@ -8958,17 +8331,13 @@ pub mod delete_event_source_mapping_output {
         /// <p>The name of the Kafka topic.</p>
         pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input.into());
-            self.topics = Some(v);
-            self
+                            v.push(input.into());
+                            self.topics = Some(v);
+                            self
         }
         /// <p>The name of the Kafka topic.</p>
-        pub fn set_topics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.topics = input;
-            self
+        pub fn set_topics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.topics = input; self
         }
         /// Appends an item to `queues`.
         ///
@@ -8977,55 +8346,37 @@ pub mod delete_event_source_mapping_output {
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
         pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(input.into());
-            self.queues = Some(v);
-            self
+                            v.push(input.into());
+                            self.queues = Some(v);
+                            self
         }
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-        pub fn set_queues(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.queues = input;
-            self
+        pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.queues = input; self
         }
         /// Appends an item to `source_access_configurations`.
         ///
         /// To override the contents of this collection use [`set_source_access_configurations`](Self::set_source_access_configurations).
         ///
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn source_access_configurations(
-            mut self,
-            input: crate::model::SourceAccessConfiguration,
-        ) -> Self {
+        pub fn source_access_configurations(mut self, input: crate::model::SourceAccessConfiguration) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input);
-            self.source_access_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.source_access_configurations = Some(v);
+                            self
         }
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn set_source_access_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        ) -> Self {
-            self.source_access_configurations = input;
-            self
+        pub fn set_source_access_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>) -> Self {
+            self.source_access_configurations = input; self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn self_managed_event_source(
-            mut self,
-            input: crate::model::SelfManagedEventSource,
-        ) -> Self {
+        pub fn self_managed_event_source(mut self, input: crate::model::SelfManagedEventSource) -> Self {
             self.self_managed_event_source = Some(input);
             self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn set_self_managed_event_source(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedEventSource>,
-        ) -> Self {
-            self.self_managed_event_source = input;
-            self
+        pub fn set_self_managed_event_source(mut self, input: std::option::Option<crate::model::SelfManagedEventSource>) -> Self {
+            self.self_managed_event_source = input; self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -9033,12 +8384,8 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
-        pub fn set_maximum_record_age_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_record_age_in_seconds = input;
-            self
+        pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_record_age_in_seconds = input; self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
@@ -9046,12 +8393,8 @@ pub mod delete_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-        pub fn set_bisect_batch_on_function_error(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.bisect_batch_on_function_error = input;
-            self
+        pub fn set_bisect_batch_on_function_error(mut self, input: std::option::Option<bool>) -> Self {
+            self.bisect_batch_on_function_error = input; self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -9060,8 +8403,7 @@ pub mod delete_event_source_mapping_output {
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
@@ -9070,95 +8412,99 @@ pub mod delete_event_source_mapping_output {
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.tumbling_window_in_seconds = input;
-            self
+            self.tumbling_window_in_seconds = input; self
         }
         /// Appends an item to `function_response_types`.
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn function_response_types(
-            mut self,
-            input: crate::model::FunctionResponseType,
-        ) -> Self {
+        pub fn function_response_types(mut self, input: crate::model::FunctionResponseType) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input);
-            self.function_response_types = Some(v);
-            self
+                            v.push(input);
+                            self.function_response_types = Some(v);
+                            self
         }
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn set_function_response_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        ) -> Self {
-            self.function_response_types = input;
-            self
+        pub fn set_function_response_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>) -> Self {
+            self.function_response_types = input; self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn amazon_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::AmazonManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn amazon_managed_kafka_event_source_config(mut self, input: crate::model::AmazonManagedKafkaEventSourceConfig) -> Self {
             self.amazon_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn set_amazon_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.amazon_managed_kafka_event_source_config = input;
-            self
+        pub fn set_amazon_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>) -> Self {
+            self.amazon_managed_kafka_event_source_config = input; self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn self_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::SelfManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn self_managed_kafka_event_source_config(mut self, input: crate::model::SelfManagedKafkaEventSourceConfig) -> Self {
             self.self_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn set_self_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.self_managed_kafka_event_source_config = input;
-            self
+        pub fn set_self_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>) -> Self {
+            self.self_managed_kafka_event_source_config = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput).
         pub fn build(self) -> crate::output::DeleteEventSourceMappingOutput {
             crate::output::DeleteEventSourceMappingOutput {
-                uuid: self.uuid,
-                starting_position: self.starting_position,
-                starting_position_timestamp: self.starting_position_timestamp,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                parallelization_factor: self.parallelization_factor,
-                event_source_arn: self.event_source_arn,
-                filter_criteria: self.filter_criteria,
-                function_arn: self.function_arn,
-                last_modified: self.last_modified,
-                last_processing_result: self.last_processing_result,
-                state: self.state,
-                state_transition_reason: self.state_transition_reason,
-                destination_config: self.destination_config,
-                topics: self.topics,
-                queues: self.queues,
-                source_access_configurations: self.source_access_configurations,
-                self_managed_event_source: self.self_managed_event_source,
-                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-                bisect_batch_on_function_error: self.bisect_batch_on_function_error,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                tumbling_window_in_seconds: self.tumbling_window_in_seconds,
-                function_response_types: self.function_response_types,
-                amazon_managed_kafka_event_source_config: self
-                    .amazon_managed_kafka_event_source_config,
-                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                uuid: self.uuid
+                ,
+                starting_position: self.starting_position
+                ,
+                starting_position_timestamp: self.starting_position_timestamp
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                parallelization_factor: self.parallelization_factor
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                filter_criteria: self.filter_criteria
+                ,
+                function_arn: self.function_arn
+                ,
+                last_modified: self.last_modified
+                ,
+                last_processing_result: self.last_processing_result
+                ,
+                state: self.state
+                ,
+                state_transition_reason: self.state_transition_reason
+                ,
+                destination_config: self.destination_config
+                ,
+                topics: self.topics
+                ,
+                queues: self.queues
+                ,
+                source_access_configurations: self.source_access_configurations
+                ,
+                self_managed_event_source: self.self_managed_event_source
+                ,
+                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+                ,
+                bisect_batch_on_function_error: self.bisect_batch_on_function_error
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                tumbling_window_in_seconds: self.tumbling_window_in_seconds
+                ,
+                function_response_types: self.function_response_types
+                ,
+                amazon_managed_kafka_event_source_config: self.amazon_managed_kafka_event_source_config
+                ,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEventSourceMappingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput).
@@ -9170,19 +8516,24 @@ impl DeleteEventSourceMappingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCodeSigningConfigOutput {}
+pub struct DeleteCodeSigningConfigOutput  {
+}
 /// See [`DeleteCodeSigningConfigOutput`](crate::output::DeleteCodeSigningConfigOutput).
 pub mod delete_code_signing_config_output {
-
+    
     /// A builder for [`DeleteCodeSigningConfigOutput`](crate::output::DeleteCodeSigningConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCodeSigningConfigOutput`](crate::output::DeleteCodeSigningConfigOutput).
         pub fn build(self) -> crate::output::DeleteCodeSigningConfigOutput {
-            crate::output::DeleteCodeSigningConfigOutput {}
+            crate::output::DeleteCodeSigningConfigOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCodeSigningConfigOutput`](crate::output::DeleteCodeSigningConfigOutput).
@@ -9194,19 +8545,24 @@ impl DeleteCodeSigningConfigOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAliasOutput {}
+pub struct DeleteAliasOutput  {
+}
 /// See [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
 pub mod delete_alias_output {
-
+    
     /// A builder for [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
         pub fn build(self) -> crate::output::DeleteAliasOutput {
-            crate::output::DeleteAliasOutput {}
+            crate::output::DeleteAliasOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
@@ -9218,7 +8574,7 @@ impl DeleteAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFunctionUrlConfigOutput {
+pub struct CreateFunctionUrlConfigOutput  {
     /// <p>The HTTP URL endpoint for your function.</p>
     #[doc(hidden)]
     pub function_url: std::option::Option<std::string::String>,
@@ -9237,29 +8593,29 @@ pub struct CreateFunctionUrlConfigOutput {
 }
 impl CreateFunctionUrlConfigOutput {
     /// <p>The HTTP URL endpoint for your function.</p>
-    pub fn function_url(&self) -> std::option::Option<&str> {
+    pub fn function_url(&self) -> std::option::Option<& str> {
         self.function_url.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::model::FunctionUrlAuthType> {
+    pub fn auth_type(&self) -> std::option::Option<& crate::model::FunctionUrlAuthType> {
         self.auth_type.as_ref()
     }
     /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
-    pub fn cors(&self) -> std::option::Option<&crate::model::Cors> {
+    pub fn cors(&self) -> std::option::Option<& crate::model::Cors> {
         self.cors.as_ref()
     }
     /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
 }
 /// See [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput).
 pub mod create_function_url_config_output {
-
+    
     /// A builder for [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9277,8 +8633,7 @@ pub mod create_function_url_config_output {
         }
         /// <p>The HTTP URL endpoint for your function.</p>
         pub fn set_function_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_url = input;
-            self
+            self.function_url = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of your function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9287,8 +8642,7 @@ pub mod create_function_url_config_output {
         }
         /// <p>The Amazon Resource Name (ARN) of your function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
         pub fn auth_type(mut self, input: crate::model::FunctionUrlAuthType) -> Self {
@@ -9296,12 +8650,8 @@ pub mod create_function_url_config_output {
             self
         }
         /// <p>The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to create a public endpoint. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function URLs</a>.</p>
-        pub fn set_auth_type(
-            mut self,
-            input: std::option::Option<crate::model::FunctionUrlAuthType>,
-        ) -> Self {
-            self.auth_type = input;
-            self
+        pub fn set_auth_type(mut self, input: std::option::Option<crate::model::FunctionUrlAuthType>) -> Self {
+            self.auth_type = input; self
         }
         /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
         pub fn cors(mut self, input: crate::model::Cors) -> Self {
@@ -9310,8 +8660,7 @@ pub mod create_function_url_config_output {
         }
         /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your function URL.</p>
         pub fn set_cors(mut self, input: std::option::Option<crate::model::Cors>) -> Self {
-            self.cors = input;
-            self
+            self.cors = input; self
         }
         /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9319,24 +8668,27 @@ pub mod create_function_url_config_output {
             self
         }
         /// <p>When the function URL was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput).
         pub fn build(self) -> crate::output::CreateFunctionUrlConfigOutput {
             crate::output::CreateFunctionUrlConfigOutput {
-                function_url: self.function_url,
-                function_arn: self.function_arn,
-                auth_type: self.auth_type,
-                cors: self.cors,
-                creation_time: self.creation_time,
+                function_url: self.function_url
+                ,
+                function_arn: self.function_arn
+                ,
+                auth_type: self.auth_type
+                ,
+                cors: self.cors
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFunctionUrlConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionUrlConfigOutput`](crate::output::CreateFunctionUrlConfigOutput).
@@ -9348,7 +8700,7 @@ impl CreateFunctionUrlConfigOutput {
 /// <p>Details about a function's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFunctionOutput {
+pub struct CreateFunctionOutput  {
     /// <p>The name of the function.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -9426,8 +8778,7 @@ pub struct CreateFunctionOutput {
     pub last_update_status_reason: std::option::Option<std::string::String>,
     /// <p>The reason code for the last update that was performed on the function.</p>
     #[doc(hidden)]
-    pub last_update_status_reason_code:
-        std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+    pub last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     #[doc(hidden)]
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
@@ -9455,23 +8806,23 @@ pub struct CreateFunctionOutput {
 }
 impl CreateFunctionOutput {
     /// <p>The name of the function.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The function's Amazon Resource Name (ARN).</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The runtime environment for the Lambda function.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::model::Runtime> {
         self.runtime.as_ref()
     }
     /// <p>The function's execution role.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The function that Lambda calls to begin running your function.</p>
-    pub fn handler(&self) -> std::option::Option<&str> {
+    pub fn handler(&self) -> std::option::Option<& str> {
         self.handler.as_deref()
     }
     /// <p>The size of the function's deployment package, in bytes.</p>
@@ -9479,7 +8830,7 @@ impl CreateFunctionOutput {
         self.code_size
     }
     /// <p>The function's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
@@ -9491,111 +8842,109 @@ impl CreateFunctionOutput {
         self.memory_size
     }
     /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> std::option::Option<& str> {
         self.last_modified.as_deref()
     }
     /// <p>The SHA256 hash of the function's deployment package.</p>
-    pub fn code_sha256(&self) -> std::option::Option<&str> {
+    pub fn code_sha256(&self) -> std::option::Option<& str> {
         self.code_sha256.as_deref()
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The function's networking configuration.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfigResponse> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::model::VpcConfigResponse> {
         self.vpc_config.as_ref()
     }
     /// <p>The function's dead letter queue.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::model::EnvironmentResponse> {
+    pub fn environment(&self) -> std::option::Option<& crate::model::EnvironmentResponse> {
         self.environment.as_ref()
     }
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The function's X-Ray tracing configuration.</p>
-    pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfigResponse> {
+    pub fn tracing_config(&self) -> std::option::Option<& crate::model::TracingConfigResponse> {
         self.tracing_config.as_ref()
     }
     /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
-    pub fn master_arn(&self) -> std::option::Option<&str> {
+    pub fn master_arn(&self) -> std::option::Option<& str> {
         self.master_arn.as_deref()
     }
     /// <p>The latest updated revision of the function or alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-    pub fn layers(&self) -> std::option::Option<&[crate::model::Layer]> {
+    pub fn layers(&self) -> std::option::Option<& [crate::model::Layer]> {
         self.layers.as_deref()
     }
     /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
     /// <p>The reason for the function's current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-    pub fn state_reason_code(&self) -> std::option::Option<&crate::model::StateReasonCode> {
+    pub fn state_reason_code(&self) -> std::option::Option<& crate::model::StateReasonCode> {
         self.state_reason_code.as_ref()
     }
     /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-    pub fn last_update_status(&self) -> std::option::Option<&crate::model::LastUpdateStatus> {
+    pub fn last_update_status(&self) -> std::option::Option<& crate::model::LastUpdateStatus> {
         self.last_update_status.as_ref()
     }
     /// <p>The reason for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason(&self) -> std::option::Option<&str> {
+    pub fn last_update_status_reason(&self) -> std::option::Option<& str> {
         self.last_update_status_reason.as_deref()
     }
     /// <p>The reason code for the last update that was performed on the function.</p>
-    pub fn last_update_status_reason_code(
-        &self,
-    ) -> std::option::Option<&crate::model::LastUpdateStatusReasonCode> {
+    pub fn last_update_status_reason_code(&self) -> std::option::Option<& crate::model::LastUpdateStatusReasonCode> {
         self.last_update_status_reason_code.as_ref()
     }
     /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-    pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
+    pub fn file_system_configs(&self) -> std::option::Option<& [crate::model::FileSystemConfig]> {
         self.file_system_configs.as_deref()
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
+    pub fn package_type(&self) -> std::option::Option<& crate::model::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>The function's image configuration values.</p>
-    pub fn image_config_response(&self) -> std::option::Option<&crate::model::ImageConfigResponse> {
+    pub fn image_config_response(&self) -> std::option::Option<& crate::model::ImageConfigResponse> {
         self.image_config_response.as_ref()
     }
     /// <p>The ARN of the signing profile version.</p>
-    pub fn signing_profile_version_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_profile_version_arn(&self) -> std::option::Option<& str> {
         self.signing_profile_version_arn.as_deref()
     }
     /// <p>The ARN of the signing job.</p>
-    pub fn signing_job_arn(&self) -> std::option::Option<&str> {
+    pub fn signing_job_arn(&self) -> std::option::Option<& str> {
         self.signing_job_arn.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
+    pub fn architectures(&self) -> std::option::Option<& [crate::model::Architecture]> {
         self.architectures.as_deref()
     }
     /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> std::option::Option<& crate::model::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-    pub fn snap_start(&self) -> std::option::Option<&crate::model::SnapStartResponse> {
+    pub fn snap_start(&self) -> std::option::Option<& crate::model::SnapStartResponse> {
         self.snap_start.as_ref()
     }
 }
 /// See [`CreateFunctionOutput`](crate::output::CreateFunctionOutput).
 pub mod create_function_output {
-
+    
     /// A builder for [`CreateFunctionOutput`](crate::output::CreateFunctionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9624,10 +8973,8 @@ pub mod create_function_output {
         pub(crate) state_reason_code: std::option::Option<crate::model::StateReasonCode>,
         pub(crate) last_update_status: std::option::Option<crate::model::LastUpdateStatus>,
         pub(crate) last_update_status_reason: std::option::Option<std::string::String>,
-        pub(crate) last_update_status_reason_code:
-            std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        pub(crate) file_system_configs:
-            std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
+        pub(crate) last_update_status_reason_code: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
+        pub(crate) file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
         pub(crate) package_type: std::option::Option<crate::model::PackageType>,
         pub(crate) image_config_response: std::option::Option<crate::model::ImageConfigResponse>,
         pub(crate) signing_profile_version_arn: std::option::Option<std::string::String>,
@@ -9643,12 +8990,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn set_function_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_name = input;
-            self
+        pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_name = input; self
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9657,8 +9000,7 @@ pub mod create_function_output {
         }
         /// <p>The function's Amazon Resource Name (ARN).</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
@@ -9667,8 +9009,7 @@ pub mod create_function_output {
         }
         /// <p>The runtime environment for the Lambda function.</p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
-            self.runtime = input;
-            self
+            self.runtime = input; self
         }
         /// <p>The function's execution role.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9677,8 +9018,7 @@ pub mod create_function_output {
         }
         /// <p>The function's execution role.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9687,8 +9027,7 @@ pub mod create_function_output {
         }
         /// <p>The function that Lambda calls to begin running your function.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.handler = input;
-            self
+            self.handler = input; self
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn code_size(mut self, input: i64) -> Self {
@@ -9697,8 +9036,7 @@ pub mod create_function_output {
         }
         /// <p>The size of the function's deployment package, in bytes.</p>
         pub fn set_code_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.code_size = input;
-            self
+            self.code_size = input; self
         }
         /// <p>The function's description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9707,8 +9045,7 @@ pub mod create_function_output {
         }
         /// <p>The function's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn timeout(mut self, input: i32) -> Self {
@@ -9717,8 +9054,7 @@ pub mod create_function_output {
         }
         /// <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
@@ -9727,8 +9063,7 @@ pub mod create_function_output {
         }
         /// <p>The amount of memory available to the function at runtime.</p>
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_size = input;
-            self
+            self.memory_size = input; self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9736,12 +9071,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9750,8 +9081,7 @@ pub mod create_function_output {
         }
         /// <p>The SHA256 hash of the function's deployment package.</p>
         pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code_sha256 = input;
-            self
+            self.code_sha256 = input; self
         }
         /// <p>The version of the Lambda function.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9760,8 +9090,7 @@ pub mod create_function_output {
         }
         /// <p>The version of the Lambda function.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The function's networking configuration.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfigResponse) -> Self {
@@ -9769,12 +9098,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The function's networking configuration.</p>
-        pub fn set_vpc_config(
-            mut self,
-            input: std::option::Option<crate::model::VpcConfigResponse>,
-        ) -> Self {
-            self.vpc_config = input;
-            self
+        pub fn set_vpc_config(mut self, input: std::option::Option<crate::model::VpcConfigResponse>) -> Self {
+            self.vpc_config = input; self
         }
         /// <p>The function's dead letter queue.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -9782,12 +9107,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The function's dead letter queue.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
@@ -9795,12 +9116,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>. Omitted from CloudTrail logs.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentResponse>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<crate::model::EnvironmentResponse>) -> Self {
+            self.environment = input; self
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9809,8 +9126,7 @@ pub mod create_function_output {
         }
         /// <p>The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've configured a customer managed key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_arn = input;
-            self
+            self.kms_key_arn = input; self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
@@ -9818,12 +9134,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The function's X-Ray tracing configuration.</p>
-        pub fn set_tracing_config(
-            mut self,
-            input: std::option::Option<crate::model::TracingConfigResponse>,
-        ) -> Self {
-            self.tracing_config = input;
-            self
+        pub fn set_tracing_config(mut self, input: std::option::Option<crate::model::TracingConfigResponse>) -> Self {
+            self.tracing_config = input; self
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn master_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9832,8 +9144,7 @@ pub mod create_function_output {
         }
         /// <p>For Lambda@Edge functions, the ARN of the main function.</p>
         pub fn set_master_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.master_arn = input;
-            self
+            self.master_arn = input; self
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9842,8 +9153,7 @@ pub mod create_function_output {
         }
         /// <p>The latest updated revision of the function or alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Appends an item to `layers`.
         ///
@@ -9852,17 +9162,13 @@ pub mod create_function_output {
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
         pub fn layers(mut self, input: crate::model::Layer) -> Self {
             let mut v = self.layers.unwrap_or_default();
-            v.push(input);
-            self.layers = Some(v);
-            self
+                            v.push(input);
+                            self.layers = Some(v);
+                            self
         }
         /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.</p>
-        pub fn set_layers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Layer>>,
-        ) -> Self {
-            self.layers = input;
-            self
+        pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::model::Layer>>) -> Self {
+            self.layers = input; self
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -9871,8 +9177,7 @@ pub mod create_function_output {
         }
         /// <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The reason for the function's current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9881,8 +9186,7 @@ pub mod create_function_output {
         }
         /// <p>The reason for the function's current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
         pub fn state_reason_code(mut self, input: crate::model::StateReasonCode) -> Self {
@@ -9890,12 +9194,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
-        pub fn set_state_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::StateReasonCode>,
-        ) -> Self {
-            self.state_reason_code = input;
-            self
+        pub fn set_state_reason_code(mut self, input: std::option::Option<crate::model::StateReasonCode>) -> Self {
+            self.state_reason_code = input; self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
         pub fn last_update_status(mut self, input: crate::model::LastUpdateStatus) -> Self {
@@ -9903,12 +9203,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
-        pub fn set_last_update_status(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatus>,
-        ) -> Self {
-            self.last_update_status = input;
-            self
+        pub fn set_last_update_status(mut self, input: std::option::Option<crate::model::LastUpdateStatus>) -> Self {
+            self.last_update_status = input; self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
         pub fn last_update_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9916,28 +9212,17 @@ pub mod create_function_output {
             self
         }
         /// <p>The reason for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_update_status_reason = input;
-            self
+        pub fn set_last_update_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_update_status_reason = input; self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn last_update_status_reason_code(
-            mut self,
-            input: crate::model::LastUpdateStatusReasonCode,
-        ) -> Self {
+        pub fn last_update_status_reason_code(mut self, input: crate::model::LastUpdateStatusReasonCode) -> Self {
             self.last_update_status_reason_code = Some(input);
             self
         }
         /// <p>The reason code for the last update that was performed on the function.</p>
-        pub fn set_last_update_status_reason_code(
-            mut self,
-            input: std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-        ) -> Self {
-            self.last_update_status_reason_code = input;
-            self
+        pub fn set_last_update_status_reason_code(mut self, input: std::option::Option<crate::model::LastUpdateStatusReasonCode>) -> Self {
+            self.last_update_status_reason_code = input; self
         }
         /// Appends an item to `file_system_configs`.
         ///
@@ -9946,17 +9231,13 @@ pub mod create_function_output {
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
         pub fn file_system_configs(mut self, input: crate::model::FileSystemConfig) -> Self {
             let mut v = self.file_system_configs.unwrap_or_default();
-            v.push(input);
-            self.file_system_configs = Some(v);
-            self
+                            v.push(input);
+                            self.file_system_configs = Some(v);
+                            self
         }
         /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
-        pub fn set_file_system_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
-        ) -> Self {
-            self.file_system_configs = input;
-            self
+        pub fn set_file_system_configs(mut self, input: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>) -> Self {
+            self.file_system_configs = input; self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
         pub fn package_type(mut self, input: crate::model::PackageType) -> Self {
@@ -9964,12 +9245,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
-        pub fn set_package_type(
-            mut self,
-            input: std::option::Option<crate::model::PackageType>,
-        ) -> Self {
-            self.package_type = input;
-            self
+        pub fn set_package_type(mut self, input: std::option::Option<crate::model::PackageType>) -> Self {
+            self.package_type = input; self
         }
         /// <p>The function's image configuration values.</p>
         pub fn image_config_response(mut self, input: crate::model::ImageConfigResponse) -> Self {
@@ -9977,28 +9254,17 @@ pub mod create_function_output {
             self
         }
         /// <p>The function's image configuration values.</p>
-        pub fn set_image_config_response(
-            mut self,
-            input: std::option::Option<crate::model::ImageConfigResponse>,
-        ) -> Self {
-            self.image_config_response = input;
-            self
+        pub fn set_image_config_response(mut self, input: std::option::Option<crate::model::ImageConfigResponse>) -> Self {
+            self.image_config_response = input; self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn signing_profile_version_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn signing_profile_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_profile_version_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the signing profile version.</p>
-        pub fn set_signing_profile_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_profile_version_arn = input;
-            self
+        pub fn set_signing_profile_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_profile_version_arn = input; self
         }
         /// <p>The ARN of the signing job.</p>
         pub fn signing_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10006,12 +9272,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The ARN of the signing job.</p>
-        pub fn set_signing_job_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_job_arn = input;
-            self
+        pub fn set_signing_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_job_arn = input; self
         }
         /// Appends an item to `architectures`.
         ///
@@ -10020,17 +9282,13 @@ pub mod create_function_output {
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
-            v.push(input);
-            self.architectures = Some(v);
-            self
+                            v.push(input);
+                            self.architectures = Some(v);
+                            self
         }
         /// <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
-        pub fn set_architectures(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
-        ) -> Self {
-            self.architectures = input;
-            self
+        pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::model::Architecture>>) -> Self {
+            self.architectures = input; self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
         pub fn ephemeral_storage(mut self, input: crate::model::EphemeralStorage) -> Self {
@@ -10038,12 +9296,8 @@ pub mod create_function_output {
             self
         }
         /// <p>The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
-        pub fn set_ephemeral_storage(
-            mut self,
-            input: std::option::Option<crate::model::EphemeralStorage>,
-        ) -> Self {
-            self.ephemeral_storage = input;
-            self
+        pub fn set_ephemeral_storage(mut self, input: std::option::Option<crate::model::EphemeralStorage>) -> Self {
+            self.ephemeral_storage = input; self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
         pub fn snap_start(mut self, input: crate::model::SnapStartResponse) -> Self {
@@ -10051,53 +9305,86 @@ pub mod create_function_output {
             self
         }
         /// <p>Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Reducing startup time with Lambda SnapStart</a>.</p>
-        pub fn set_snap_start(
-            mut self,
-            input: std::option::Option<crate::model::SnapStartResponse>,
-        ) -> Self {
-            self.snap_start = input;
-            self
+        pub fn set_snap_start(mut self, input: std::option::Option<crate::model::SnapStartResponse>) -> Self {
+            self.snap_start = input; self
         }
         /// Consumes the builder and constructs a [`CreateFunctionOutput`](crate::output::CreateFunctionOutput).
         pub fn build(self) -> crate::output::CreateFunctionOutput {
             crate::output::CreateFunctionOutput {
-                function_name: self.function_name,
-                function_arn: self.function_arn,
-                runtime: self.runtime,
-                role: self.role,
-                handler: self.handler,
-                code_size: self.code_size.unwrap_or_default(),
-                description: self.description,
-                timeout: self.timeout,
-                memory_size: self.memory_size,
-                last_modified: self.last_modified,
-                code_sha256: self.code_sha256,
-                version: self.version,
-                vpc_config: self.vpc_config,
-                dead_letter_config: self.dead_letter_config,
-                environment: self.environment,
-                kms_key_arn: self.kms_key_arn,
-                tracing_config: self.tracing_config,
-                master_arn: self.master_arn,
-                revision_id: self.revision_id,
-                layers: self.layers,
-                state: self.state,
-                state_reason: self.state_reason,
-                state_reason_code: self.state_reason_code,
-                last_update_status: self.last_update_status,
-                last_update_status_reason: self.last_update_status_reason,
-                last_update_status_reason_code: self.last_update_status_reason_code,
-                file_system_configs: self.file_system_configs,
-                package_type: self.package_type,
-                image_config_response: self.image_config_response,
-                signing_profile_version_arn: self.signing_profile_version_arn,
-                signing_job_arn: self.signing_job_arn,
-                architectures: self.architectures,
-                ephemeral_storage: self.ephemeral_storage,
-                snap_start: self.snap_start,
+                function_name: self.function_name
+                ,
+                function_arn: self.function_arn
+                ,
+                runtime: self.runtime
+                ,
+                role: self.role
+                ,
+                handler: self.handler
+                ,
+                code_size: self.code_size
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                timeout: self.timeout
+                ,
+                memory_size: self.memory_size
+                ,
+                last_modified: self.last_modified
+                ,
+                code_sha256: self.code_sha256
+                ,
+                version: self.version
+                ,
+                vpc_config: self.vpc_config
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                environment: self.environment
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tracing_config: self.tracing_config
+                ,
+                master_arn: self.master_arn
+                ,
+                revision_id: self.revision_id
+                ,
+                layers: self.layers
+                ,
+                state: self.state
+                ,
+                state_reason: self.state_reason
+                ,
+                state_reason_code: self.state_reason_code
+                ,
+                last_update_status: self.last_update_status
+                ,
+                last_update_status_reason: self.last_update_status_reason
+                ,
+                last_update_status_reason_code: self.last_update_status_reason_code
+                ,
+                file_system_configs: self.file_system_configs
+                ,
+                package_type: self.package_type
+                ,
+                image_config_response: self.image_config_response
+                ,
+                signing_profile_version_arn: self.signing_profile_version_arn
+                ,
+                signing_job_arn: self.signing_job_arn
+                ,
+                architectures: self.architectures
+                ,
+                ephemeral_storage: self.ephemeral_storage
+                ,
+                snap_start: self.snap_start
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFunctionOutput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionOutput`](crate::output::CreateFunctionOutput).
@@ -10109,7 +9396,7 @@ impl CreateFunctionOutput {
 /// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <code>CreateEventSourceMapping</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventSourceMappingOutput {
+pub struct CreateEventSourceMappingOutput  {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
     pub uuid: std::option::Option<std::string::String>,
@@ -10119,13 +9406,13 @@ pub struct CreateEventSourceMappingOutput {
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     #[doc(hidden)]
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -10164,8 +9451,7 @@ pub struct CreateEventSourceMappingOutput {
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     #[doc(hidden)]
-    pub source_access_configurations:
-        std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+    pub source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     #[doc(hidden)]
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
@@ -10183,38 +9469,35 @@ pub struct CreateEventSourceMappingOutput {
     pub tumbling_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     #[doc(hidden)]
-    pub function_response_types:
-        std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+    pub function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     #[doc(hidden)]
-    pub amazon_managed_kafka_event_source_config:
-        std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+    pub amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
     #[doc(hidden)]
-    pub self_managed_kafka_event_source_config:
-        std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+    pub self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
 }
 impl CreateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
-    pub fn uuid(&self) -> std::option::Option<&str> {
+    pub fn uuid(&self) -> std::option::Option<& str> {
         self.uuid.as_deref()
     }
     /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-    pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+    /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
     /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
-    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+    /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+    /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
@@ -10224,55 +9507,51 @@ impl CreateEventSourceMappingOutput {
         self.parallelization_factor
     }
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The ARN of the Lambda function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
     /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The result of the last Lambda invocation of your function.</p>
-    pub fn last_processing_result(&self) -> std::option::Option<&str> {
+    pub fn last_processing_result(&self) -> std::option::Option<& str> {
         self.last_processing_result.as_deref()
     }
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+    pub fn state_transition_reason(&self) -> std::option::Option<& str> {
         self.state_transition_reason.as_deref()
     }
     /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-    pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
+    pub fn destination_config(&self) -> std::option::Option<& crate::model::DestinationConfig> {
         self.destination_config.as_ref()
     }
     /// <p>The name of the Kafka topic.</p>
-    pub fn topics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn topics(&self) -> std::option::Option<& [std::string::String]> {
         self.topics.as_deref()
     }
     /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queues(&self) -> std::option::Option<& [std::string::String]> {
         self.queues.as_deref()
     }
     /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-    pub fn source_access_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::SourceAccessConfiguration]> {
+    pub fn source_access_configurations(&self) -> std::option::Option<& [crate::model::SourceAccessConfiguration]> {
         self.source_access_configurations.as_deref()
     }
     /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-    pub fn self_managed_event_source(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedEventSource> {
+    pub fn self_managed_event_source(&self) -> std::option::Option<& crate::model::SelfManagedEventSource> {
         self.self_managed_event_source.as_ref()
     }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
@@ -10292,27 +9571,21 @@ impl CreateEventSourceMappingOutput {
         self.tumbling_window_in_seconds
     }
     /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-    pub fn function_response_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::FunctionResponseType]> {
+    pub fn function_response_types(&self) -> std::option::Option<& [crate::model::FunctionResponseType]> {
         self.function_response_types.as_deref()
     }
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-    pub fn amazon_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AmazonManagedKafkaEventSourceConfig> {
+    pub fn amazon_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::AmazonManagedKafkaEventSourceConfig> {
         self.amazon_managed_kafka_event_source_config.as_ref()
     }
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-    pub fn self_managed_kafka_event_source_config(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaEventSourceConfig> {
+    pub fn self_managed_kafka_event_source_config(&self) -> std::option::Option<& crate::model::SelfManagedKafkaEventSourceConfig> {
         self.self_managed_kafka_event_source_config.as_ref()
     }
 }
 /// See [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput).
 pub mod create_event_source_mapping_output {
-
+    
     /// A builder for [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10332,20 +9605,15 @@ pub mod create_event_source_mapping_output {
         pub(crate) destination_config: std::option::Option<crate::model::DestinationConfig>,
         pub(crate) topics: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) source_access_configurations:
-            std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        pub(crate) self_managed_event_source:
-            std::option::Option<crate::model::SelfManagedEventSource>,
+        pub(crate) source_access_configurations: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
+        pub(crate) self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
         pub(crate) bisect_batch_on_function_error: std::option::Option<bool>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) tumbling_window_in_seconds: std::option::Option<i32>,
-        pub(crate) function_response_types:
-            std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        pub(crate) amazon_managed_kafka_event_source_config:
-            std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        pub(crate) self_managed_kafka_event_source_config:
-            std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
+        pub(crate) function_response_types: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
+        pub(crate) amazon_managed_kafka_event_source_config: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
+        pub(crate) self_managed_kafka_event_source_config: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
     }
     impl Builder {
         /// <p>The identifier of the event source mapping.</p>
@@ -10355,8 +9623,7 @@ pub mod create_event_source_mapping_output {
         }
         /// <p>The identifier of the event source mapping.</p>
         pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uuid = input;
-            self
+            self.uuid = input; self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
@@ -10364,12 +9631,8 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
-        pub fn set_starting_position(
-            mut self,
-            input: std::option::Option<crate::model::EventSourcePosition>,
-        ) -> Self {
-            self.starting_position = input;
-            self
+        pub fn set_starting_position(mut self, input: std::option::Option<crate::model::EventSourcePosition>) -> Self {
+            self.starting_position = input; self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10377,43 +9640,34 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-        pub fn set_starting_position_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.starting_position_timestamp = input;
-            self
+        pub fn set_starting_position_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.starting_position_timestamp = input; self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
-        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p> 
+        /// <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p> 
         /// <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
         }
-        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p>
-        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p>
+        /// <p>The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in increments of seconds.</p> 
+        /// <p>For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To restore the default batching window, you must create a new event source mapping.</p> 
         /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -10422,8 +9676,7 @@ pub mod create_event_source_mapping_output {
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = input;
-            self
+            self.parallelization_factor = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10431,12 +9684,8 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
-        pub fn set_event_source_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_source_arn = input;
-            self
+        pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_source_arn = input; self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
@@ -10444,12 +9693,8 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
-        pub fn set_filter_criteria(
-            mut self,
-            input: std::option::Option<crate::model::FilterCriteria>,
-        ) -> Self {
-            self.filter_criteria = input;
-            self
+        pub fn set_filter_criteria(mut self, input: std::option::Option<crate::model::FilterCriteria>) -> Self {
+            self.filter_criteria = input; self
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10458,8 +9703,7 @@ pub mod create_event_source_mapping_output {
         }
         /// <p>The ARN of the Lambda function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.function_arn = input;
-            self
+            self.function_arn = input; self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -10467,12 +9711,8 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>The date that the event source mapping was last updated or that its state changed.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
         pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10480,12 +9720,8 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>The result of the last Lambda invocation of your function.</p>
-        pub fn set_last_processing_result(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_processing_result = input;
-            self
+        pub fn set_last_processing_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_processing_result = input; self
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10494,8 +9730,7 @@ pub mod create_event_source_mapping_output {
         }
         /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
         pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10503,12 +9738,8 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
-        pub fn set_state_transition_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_transition_reason = input;
-            self
+        pub fn set_state_transition_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_transition_reason = input; self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
@@ -10516,12 +9747,8 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
-        pub fn set_destination_config(
-            mut self,
-            input: std::option::Option<crate::model::DestinationConfig>,
-        ) -> Self {
-            self.destination_config = input;
-            self
+        pub fn set_destination_config(mut self, input: std::option::Option<crate::model::DestinationConfig>) -> Self {
+            self.destination_config = input; self
         }
         /// Appends an item to `topics`.
         ///
@@ -10530,17 +9757,13 @@ pub mod create_event_source_mapping_output {
         /// <p>The name of the Kafka topic.</p>
         pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(input.into());
-            self.topics = Some(v);
-            self
+                            v.push(input.into());
+                            self.topics = Some(v);
+                            self
         }
         /// <p>The name of the Kafka topic.</p>
-        pub fn set_topics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.topics = input;
-            self
+        pub fn set_topics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.topics = input; self
         }
         /// Appends an item to `queues`.
         ///
@@ -10549,55 +9772,37 @@ pub mod create_event_source_mapping_output {
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
         pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.queues.unwrap_or_default();
-            v.push(input.into());
-            self.queues = Some(v);
-            self
+                            v.push(input.into());
+                            self.queues = Some(v);
+                            self
         }
         /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
-        pub fn set_queues(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.queues = input;
-            self
+        pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.queues = input; self
         }
         /// Appends an item to `source_access_configurations`.
         ///
         /// To override the contents of this collection use [`set_source_access_configurations`](Self::set_source_access_configurations).
         ///
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn source_access_configurations(
-            mut self,
-            input: crate::model::SourceAccessConfiguration,
-        ) -> Self {
+        pub fn source_access_configurations(mut self, input: crate::model::SourceAccessConfiguration) -> Self {
             let mut v = self.source_access_configurations.unwrap_or_default();
-            v.push(input);
-            self.source_access_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.source_access_configurations = Some(v);
+                            self
         }
         /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
-        pub fn set_source_access_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-        ) -> Self {
-            self.source_access_configurations = input;
-            self
+        pub fn set_source_access_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>) -> Self {
+            self.source_access_configurations = input; self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn self_managed_event_source(
-            mut self,
-            input: crate::model::SelfManagedEventSource,
-        ) -> Self {
+        pub fn self_managed_event_source(mut self, input: crate::model::SelfManagedEventSource) -> Self {
             self.self_managed_event_source = Some(input);
             self
         }
         /// <p>The self-managed Apache Kafka cluster for your event source.</p>
-        pub fn set_self_managed_event_source(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedEventSource>,
-        ) -> Self {
-            self.self_managed_event_source = input;
-            self
+        pub fn set_self_managed_event_source(mut self, input: std::option::Option<crate::model::SelfManagedEventSource>) -> Self {
+            self.self_managed_event_source = input; self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -10605,12 +9810,8 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
-        pub fn set_maximum_record_age_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_record_age_in_seconds = input;
-            self
+        pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_record_age_in_seconds = input; self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
@@ -10618,12 +9819,8 @@ pub mod create_event_source_mapping_output {
             self
         }
         /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
-        pub fn set_bisect_batch_on_function_error(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.bisect_batch_on_function_error = input;
-            self
+        pub fn set_bisect_batch_on_function_error(mut self, input: std::option::Option<bool>) -> Self {
+            self.bisect_batch_on_function_error = input; self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -10632,8 +9829,7 @@ pub mod create_event_source_mapping_output {
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
@@ -10642,95 +9838,99 @@ pub mod create_event_source_mapping_output {
         }
         /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.tumbling_window_in_seconds = input;
-            self
+            self.tumbling_window_in_seconds = input; self
         }
         /// Appends an item to `function_response_types`.
         ///
         /// To override the contents of this collection use [`set_function_response_types`](Self::set_function_response_types).
         ///
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn function_response_types(
-            mut self,
-            input: crate::model::FunctionResponseType,
-        ) -> Self {
+        pub fn function_response_types(mut self, input: crate::model::FunctionResponseType) -> Self {
             let mut v = self.function_response_types.unwrap_or_default();
-            v.push(input);
-            self.function_response_types = Some(v);
-            self
+                            v.push(input);
+                            self.function_response_types = Some(v);
+                            self
         }
         /// <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
-        pub fn set_function_response_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
-        ) -> Self {
-            self.function_response_types = input;
-            self
+        pub fn set_function_response_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>) -> Self {
+            self.function_response_types = input; self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn amazon_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::AmazonManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn amazon_managed_kafka_event_source_config(mut self, input: crate::model::AmazonManagedKafkaEventSourceConfig) -> Self {
             self.amazon_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
-        pub fn set_amazon_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.amazon_managed_kafka_event_source_config = input;
-            self
+        pub fn set_amazon_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::AmazonManagedKafkaEventSourceConfig>) -> Self {
+            self.amazon_managed_kafka_event_source_config = input; self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn self_managed_kafka_event_source_config(
-            mut self,
-            input: crate::model::SelfManagedKafkaEventSourceConfig,
-        ) -> Self {
+        pub fn self_managed_kafka_event_source_config(mut self, input: crate::model::SelfManagedKafkaEventSourceConfig) -> Self {
             self.self_managed_kafka_event_source_config = Some(input);
             self
         }
         /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
-        pub fn set_self_managed_kafka_event_source_config(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>,
-        ) -> Self {
-            self.self_managed_kafka_event_source_config = input;
-            self
+        pub fn set_self_managed_kafka_event_source_config(mut self, input: std::option::Option<crate::model::SelfManagedKafkaEventSourceConfig>) -> Self {
+            self.self_managed_kafka_event_source_config = input; self
         }
         /// Consumes the builder and constructs a [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput).
         pub fn build(self) -> crate::output::CreateEventSourceMappingOutput {
             crate::output::CreateEventSourceMappingOutput {
-                uuid: self.uuid,
-                starting_position: self.starting_position,
-                starting_position_timestamp: self.starting_position_timestamp,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                parallelization_factor: self.parallelization_factor,
-                event_source_arn: self.event_source_arn,
-                filter_criteria: self.filter_criteria,
-                function_arn: self.function_arn,
-                last_modified: self.last_modified,
-                last_processing_result: self.last_processing_result,
-                state: self.state,
-                state_transition_reason: self.state_transition_reason,
-                destination_config: self.destination_config,
-                topics: self.topics,
-                queues: self.queues,
-                source_access_configurations: self.source_access_configurations,
-                self_managed_event_source: self.self_managed_event_source,
-                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-                bisect_batch_on_function_error: self.bisect_batch_on_function_error,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                tumbling_window_in_seconds: self.tumbling_window_in_seconds,
-                function_response_types: self.function_response_types,
-                amazon_managed_kafka_event_source_config: self
-                    .amazon_managed_kafka_event_source_config,
-                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config,
+                uuid: self.uuid
+                ,
+                starting_position: self.starting_position
+                ,
+                starting_position_timestamp: self.starting_position_timestamp
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                parallelization_factor: self.parallelization_factor
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                filter_criteria: self.filter_criteria
+                ,
+                function_arn: self.function_arn
+                ,
+                last_modified: self.last_modified
+                ,
+                last_processing_result: self.last_processing_result
+                ,
+                state: self.state
+                ,
+                state_transition_reason: self.state_transition_reason
+                ,
+                destination_config: self.destination_config
+                ,
+                topics: self.topics
+                ,
+                queues: self.queues
+                ,
+                source_access_configurations: self.source_access_configurations
+                ,
+                self_managed_event_source: self.self_managed_event_source
+                ,
+                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+                ,
+                bisect_batch_on_function_error: self.bisect_batch_on_function_error
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                tumbling_window_in_seconds: self.tumbling_window_in_seconds
+                ,
+                function_response_types: self.function_response_types
+                ,
+                amazon_managed_kafka_event_source_config: self.amazon_managed_kafka_event_source_config
+                ,
+                self_managed_kafka_event_source_config: self.self_managed_kafka_event_source_config
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEventSourceMappingOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput).
@@ -10742,20 +9942,20 @@ impl CreateEventSourceMappingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCodeSigningConfigOutput {
+pub struct CreateCodeSigningConfigOutput  {
     /// <p>The code signing configuration.</p>
     #[doc(hidden)]
     pub code_signing_config: std::option::Option<crate::model::CodeSigningConfig>,
 }
 impl CreateCodeSigningConfigOutput {
     /// <p>The code signing configuration.</p>
-    pub fn code_signing_config(&self) -> std::option::Option<&crate::model::CodeSigningConfig> {
+    pub fn code_signing_config(&self) -> std::option::Option<& crate::model::CodeSigningConfig> {
         self.code_signing_config.as_ref()
     }
 }
 /// See [`CreateCodeSigningConfigOutput`](crate::output::CreateCodeSigningConfigOutput).
 pub mod create_code_signing_config_output {
-
+    
     /// A builder for [`CreateCodeSigningConfigOutput`](crate::output::CreateCodeSigningConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10768,20 +9968,19 @@ pub mod create_code_signing_config_output {
             self
         }
         /// <p>The code signing configuration.</p>
-        pub fn set_code_signing_config(
-            mut self,
-            input: std::option::Option<crate::model::CodeSigningConfig>,
-        ) -> Self {
-            self.code_signing_config = input;
-            self
+        pub fn set_code_signing_config(mut self, input: std::option::Option<crate::model::CodeSigningConfig>) -> Self {
+            self.code_signing_config = input; self
         }
         /// Consumes the builder and constructs a [`CreateCodeSigningConfigOutput`](crate::output::CreateCodeSigningConfigOutput).
         pub fn build(self) -> crate::output::CreateCodeSigningConfigOutput {
             crate::output::CreateCodeSigningConfigOutput {
-                code_signing_config: self.code_signing_config,
+                code_signing_config: self.code_signing_config
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCodeSigningConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateCodeSigningConfigOutput`](crate::output::CreateCodeSigningConfigOutput).
@@ -10793,7 +9992,7 @@ impl CreateCodeSigningConfigOutput {
 /// <p>Provides configuration information about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAliasOutput {
+pub struct CreateAliasOutput  {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
     #[doc(hidden)]
     pub alias_arn: std::option::Option<std::string::String>,
@@ -10815,33 +10014,33 @@ pub struct CreateAliasOutput {
 }
 impl CreateAliasOutput {
     /// <p>The Amazon Resource Name (ARN) of the alias.</p>
-    pub fn alias_arn(&self) -> std::option::Option<&str> {
+    pub fn alias_arn(&self) -> std::option::Option<& str> {
         self.alias_arn.as_deref()
     }
     /// <p>The name of the alias.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function version that the alias invokes.</p>
-    pub fn function_version(&self) -> std::option::Option<&str> {
+    pub fn function_version(&self) -> std::option::Option<& str> {
         self.function_version.as_deref()
     }
     /// <p>A description of the alias.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-    pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
+    pub fn routing_config(&self) -> std::option::Option<& crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
     /// <p>A unique identifier that changes when you update the alias.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`CreateAliasOutput`](crate::output::CreateAliasOutput).
 pub mod create_alias_output {
-
+    
     /// A builder for [`CreateAliasOutput`](crate::output::CreateAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10860,8 +10059,7 @@ pub mod create_alias_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the alias.</p>
         pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias_arn = input;
-            self
+            self.alias_arn = input; self
         }
         /// <p>The name of the alias.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10870,8 +10068,7 @@ pub mod create_alias_output {
         }
         /// <p>The name of the alias.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The function version that the alias invokes.</p>
         pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10879,12 +10076,8 @@ pub mod create_alias_output {
             self
         }
         /// <p>The function version that the alias invokes.</p>
-        pub fn set_function_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.function_version = input;
-            self
+        pub fn set_function_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.function_version = input; self
         }
         /// <p>A description of the alias.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10893,8 +10086,7 @@ pub mod create_alias_output {
         }
         /// <p>A description of the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
@@ -10902,12 +10094,8 @@ pub mod create_alias_output {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
-        pub fn set_routing_config(
-            mut self,
-            input: std::option::Option<crate::model::AliasRoutingConfiguration>,
-        ) -> Self {
-            self.routing_config = input;
-            self
+        pub fn set_routing_config(mut self, input: std::option::Option<crate::model::AliasRoutingConfiguration>) -> Self {
+            self.routing_config = input; self
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10916,21 +10104,28 @@ pub mod create_alias_output {
         }
         /// <p>A unique identifier that changes when you update the alias.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateAliasOutput`](crate::output::CreateAliasOutput).
         pub fn build(self) -> crate::output::CreateAliasOutput {
             crate::output::CreateAliasOutput {
-                alias_arn: self.alias_arn,
-                name: self.name,
-                function_version: self.function_version,
-                description: self.description,
-                routing_config: self.routing_config,
-                revision_id: self.revision_id,
+                alias_arn: self.alias_arn
+                ,
+                name: self.name
+                ,
+                function_version: self.function_version
+                ,
+                description: self.description
+                ,
+                routing_config: self.routing_config
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateAliasOutput`](crate::output::CreateAliasOutput).
@@ -10942,20 +10137,20 @@ impl CreateAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddPermissionOutput {
+pub struct AddPermissionOutput  {
     /// <p>The permission statement that's added to the function policy.</p>
     #[doc(hidden)]
     pub statement: std::option::Option<std::string::String>,
 }
 impl AddPermissionOutput {
     /// <p>The permission statement that's added to the function policy.</p>
-    pub fn statement(&self) -> std::option::Option<&str> {
+    pub fn statement(&self) -> std::option::Option<& str> {
         self.statement.as_deref()
     }
 }
 /// See [`AddPermissionOutput`](crate::output::AddPermissionOutput).
 pub mod add_permission_output {
-
+    
     /// A builder for [`AddPermissionOutput`](crate::output::AddPermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10969,16 +10164,18 @@ pub mod add_permission_output {
         }
         /// <p>The permission statement that's added to the function policy.</p>
         pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.statement = input;
-            self
+            self.statement = input; self
         }
         /// Consumes the builder and constructs a [`AddPermissionOutput`](crate::output::AddPermissionOutput).
         pub fn build(self) -> crate::output::AddPermissionOutput {
             crate::output::AddPermissionOutput {
-                statement: self.statement,
+                statement: self.statement
+                ,
             }
         }
     }
+    
+    
 }
 impl AddPermissionOutput {
     /// Creates a new builder-style object to manufacture [`AddPermissionOutput`](crate::output::AddPermissionOutput).
@@ -10990,7 +10187,7 @@ impl AddPermissionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddLayerVersionPermissionOutput {
+pub struct AddLayerVersionPermissionOutput  {
     /// <p>The permission statement.</p>
     #[doc(hidden)]
     pub statement: std::option::Option<std::string::String>,
@@ -11000,17 +10197,17 @@ pub struct AddLayerVersionPermissionOutput {
 }
 impl AddLayerVersionPermissionOutput {
     /// <p>The permission statement.</p>
-    pub fn statement(&self) -> std::option::Option<&str> {
+    pub fn statement(&self) -> std::option::Option<& str> {
         self.statement.as_deref()
     }
     /// <p>A unique identifier for the current revision of the policy.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 /// See [`AddLayerVersionPermissionOutput`](crate::output::AddLayerVersionPermissionOutput).
 pub mod add_layer_version_permission_output {
-
+    
     /// A builder for [`AddLayerVersionPermissionOutput`](crate::output::AddLayerVersionPermissionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11025,8 +10222,7 @@ pub mod add_layer_version_permission_output {
         }
         /// <p>The permission statement.</p>
         pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.statement = input;
-            self
+            self.statement = input; self
         }
         /// <p>A unique identifier for the current revision of the policy.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11035,17 +10231,20 @@ pub mod add_layer_version_permission_output {
         }
         /// <p>A unique identifier for the current revision of the policy.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// Consumes the builder and constructs a [`AddLayerVersionPermissionOutput`](crate::output::AddLayerVersionPermissionOutput).
         pub fn build(self) -> crate::output::AddLayerVersionPermissionOutput {
             crate::output::AddLayerVersionPermissionOutput {
-                statement: self.statement,
-                revision_id: self.revision_id,
+                statement: self.statement
+                ,
+                revision_id: self.revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AddLayerVersionPermissionOutput {
     /// Creates a new builder-style object to manufacture [`AddLayerVersionPermissionOutput`](crate::output::AddLayerVersionPermissionOutput).
@@ -11053,3 +10252,4 @@ impl AddLayerVersionPermissionOutput {
         crate::output::add_layer_version_permission_output::Builder::default()
     }
 }
+

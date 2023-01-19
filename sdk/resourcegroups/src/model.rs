@@ -3,7 +3,7 @@
 /// <p>A mapping of a query attached to a resource group that determines the AWS resources that are members of the group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupQuery {
+pub struct GroupQuery  {
     /// <p>The name of the resource group that is associated with the specified resource query.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct GroupQuery {
 }
 impl GroupQuery {
     /// <p>The name of the resource group that is associated with the specified resource query.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The resource query that determines which AWS resources are members of the associated resource group.</p>
-    pub fn resource_query(&self) -> std::option::Option<&crate::model::ResourceQuery> {
+    pub fn resource_query(&self) -> std::option::Option<& crate::model::ResourceQuery> {
         self.resource_query.as_ref()
     }
 }
 /// See [`GroupQuery`](crate::model::GroupQuery).
 pub mod group_query {
-
+    
     /// A builder for [`GroupQuery`](crate::model::GroupQuery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod group_query {
         }
         /// <p>The name of the resource group that is associated with the specified resource query.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p>The resource query that determines which AWS resources are members of the associated resource group.</p>
         pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
@@ -47,21 +46,21 @@ pub mod group_query {
             self
         }
         /// <p>The resource query that determines which AWS resources are members of the associated resource group.</p>
-        pub fn set_resource_query(
-            mut self,
-            input: std::option::Option<crate::model::ResourceQuery>,
-        ) -> Self {
-            self.resource_query = input;
-            self
+        pub fn set_resource_query(mut self, input: std::option::Option<crate::model::ResourceQuery>) -> Self {
+            self.resource_query = input; self
         }
         /// Consumes the builder and constructs a [`GroupQuery`](crate::model::GroupQuery).
         pub fn build(self) -> crate::model::GroupQuery {
             crate::model::GroupQuery {
-                group_name: self.group_name,
-                resource_query: self.resource_query,
+                group_name: self.group_name
+                ,
+                resource_query: self.resource_query
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupQuery {
     /// Creates a new builder-style object to manufacture [`GroupQuery`](crate::model::GroupQuery).
@@ -70,42 +69,42 @@ impl GroupQuery {
     }
 }
 
-/// <p>The query that is used to define a resource group or a search for resources. A query specifies both a query type and a query string as a JSON object. See the examples section for example JSON strings.</p>
-/// <p>The examples that follow are shown as standard JSON strings. If you include such a string as a parameter to the AWS CLI or an SDK API, you might need to 'escape' the string into a single line. For example, see the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>AWS CLI User Guide</i>.</p>
-/// <p> <b>Example 1</b> </p>
-/// <p>The following generic example shows a resource query JSON string that includes only resources that meet the following criteria:</p>
-/// <ul>
-/// <li> <p>The resource type must be either <code>resource_type1</code> or <code>resource_type2</code>.</p> </li>
-/// <li> <p>The resource must have a tag <code>Key1</code> with a value of either <code>ValueA</code> or <code>ValueB</code>.</p> </li>
-/// <li> <p>The resource must have a tag <code>Key2</code> with a value of either <code>ValueC</code> or <code>ValueD</code>.</p> </li>
-/// </ul>
-/// <p> <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": [ "resource_type1", "resource_type2"], "TagFilters": [ { "Key": "Key1", "Values": ["ValueA","ValueB"] }, { "Key":"Key2", "Values":["ValueC","ValueD"] } ] } }</code> </p>
-/// <p>This has the equivalent "shortcut" syntax of the following:</p>
-/// <p> <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": [ "resource_type1", "resource_type2"], "TagFilters": [ { "Key1": ["ValueA","ValueB"] }, { "Key2": ["ValueC","ValueD"] } ] } }</code> </p>
-/// <p> <b>Example 2</b> </p>
-/// <p>The following example shows a resource query JSON string that includes only Amazon EC2 instances that are tagged <code>Stage</code> with a value of <code>Test</code>.</p>
-/// <p> <code>{ "Type": "TAG_FILTERS_1_0", "Query": "{ "ResourceTypeFilters": "AWS::EC2::Instance", "TagFilters": { "Stage": "Test" } } }</code> </p>
-/// <p> <b>Example 3</b> </p>
-/// <p>The following example shows a resource query JSON string that includes resource of any supported type as long as it is tagged <code>Stage</code> with a value of <code>Prod</code>.</p>
-/// <p> <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": "AWS::AllSupported", "TagFilters": { "Stage": "Prod" } } }</code> </p>
-/// <p> <b>Example 4</b> </p>
-/// <p>The following example shows a resource query JSON string that includes only Amazon EC2 instances and Amazon S3 buckets that are part of the specified AWS CloudFormation stack.</p>
+/// <p>The query that is used to define a resource group or a search for resources. A query specifies both a query type and a query string as a JSON object. See the examples section for example JSON strings.</p> 
+/// <p>The examples that follow are shown as standard JSON strings. If you include such a string as a parameter to the AWS CLI or an SDK API, you might need to 'escape' the string into a single line. For example, see the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-quoting-strings.html">Quoting strings</a> in the <i>AWS CLI User Guide</i>.</p> 
+/// <p> <b>Example 1</b> </p> 
+/// <p>The following generic example shows a resource query JSON string that includes only resources that meet the following criteria:</p> 
+/// <ul> 
+/// <li> <p>The resource type must be either <code>resource_type1</code> or <code>resource_type2</code>.</p> </li> 
+/// <li> <p>The resource must have a tag <code>Key1</code> with a value of either <code>ValueA</code> or <code>ValueB</code>.</p> </li> 
+/// <li> <p>The resource must have a tag <code>Key2</code> with a value of either <code>ValueC</code> or <code>ValueD</code>.</p> </li> 
+/// </ul> 
+/// <p> <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": [ "resource_type1", "resource_type2"], "TagFilters": [ { "Key": "Key1", "Values": ["ValueA","ValueB"] }, { "Key":"Key2", "Values":["ValueC","ValueD"] } ] } }</code> </p> 
+/// <p>This has the equivalent "shortcut" syntax of the following:</p> 
+/// <p> <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": [ "resource_type1", "resource_type2"], "TagFilters": [ { "Key1": ["ValueA","ValueB"] }, { "Key2": ["ValueC","ValueD"] } ] } }</code> </p> 
+/// <p> <b>Example 2</b> </p> 
+/// <p>The following example shows a resource query JSON string that includes only Amazon EC2 instances that are tagged <code>Stage</code> with a value of <code>Test</code>.</p> 
+/// <p> <code>{ "Type": "TAG_FILTERS_1_0", "Query": "{ "ResourceTypeFilters": "AWS::EC2::Instance", "TagFilters": { "Stage": "Test" } } }</code> </p> 
+/// <p> <b>Example 3</b> </p> 
+/// <p>The following example shows a resource query JSON string that includes resource of any supported type as long as it is tagged <code>Stage</code> with a value of <code>Prod</code>.</p> 
+/// <p> <code>{ "Type": "TAG_FILTERS_1_0", "Query": { "ResourceTypeFilters": "AWS::AllSupported", "TagFilters": { "Stage": "Prod" } } }</code> </p> 
+/// <p> <b>Example 4</b> </p> 
+/// <p>The following example shows a resource query JSON string that includes only Amazon EC2 instances and Amazon S3 buckets that are part of the specified AWS CloudFormation stack.</p> 
 /// <p> <code>{ "Type": "CLOUDFORMATION_STACK_1_0", "Query": { "ResourceTypeFilters": [ "AWS::EC2::Instance", "AWS::S3::Bucket" ], "StackIdentifier": "arn:aws:cloudformation:us-west-2:123456789012:stack/AWStestuseraccount/fb0d5000-aba8-00e8-aa9e-50d5cEXAMPLE" } }</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceQuery {
-    /// <p>The type of the query. You can use the following values:</p>
-    /// <ul>
-    /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i>Specifies that the <code>Query</code> contains an ARN for a CloudFormation stack.</p> </li>
-    /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i>Specifies that the <code>Query</code> parameter contains a JSON string that represents a collection of simple tag filters for resource types and tags. The JSON string uses a syntax similar to the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> </code> operation, but uses only the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a> </code> and <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a> </code> fields. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each:</p> <p> <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code> </p> <p>The results of this query could include the following.</p>
-    /// <ul>
-    /// <li> <p>An EC2 instance that has the following two tags: <code>{"Stage":"Deploy"}</code>, and <code>{"Version":"2"}</code> </p> </li>
-    /// <li> <p>An S3 bucket that has the following two tags: <code>{"Stage":"Test"}</code>, and <code>{"Version":"1"}</code> </p> </li>
-    /// </ul> <p>The query would not include the following items in the results, however. </p>
-    /// <ul>
-    /// <li> <p>An EC2 instance that has only the following tag: <code>{"Stage":"Deploy"}</code>.</p> <p>The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the results.</p> </li>
-    /// <li> <p>An RDS database that has the following two tags: <code>{"Stage":"Archived"}</code> and <code>{"Version":"4"}</code> </p> <p>The database has all of the tag keys, but none of those keys has an associated value that matches at least one of the specified values in the filter.</p> </li>
-    /// </ul> </li>
+pub struct ResourceQuery  {
+    /// <p>The type of the query. You can use the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i>Specifies that the <code>Query</code> contains an ARN for a CloudFormation stack.</p> </li> 
+    /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i>Specifies that the <code>Query</code> parameter contains a JSON string that represents a collection of simple tag filters for resource types and tags. The JSON string uses a syntax similar to the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> </code> operation, but uses only the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a> </code> and <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a> </code> fields. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each:</p> <p> <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code> </p> <p>The results of this query could include the following.</p> 
+    /// <ul> 
+    /// <li> <p>An EC2 instance that has the following two tags: <code>{"Stage":"Deploy"}</code>, and <code>{"Version":"2"}</code> </p> </li> 
+    /// <li> <p>An S3 bucket that has the following two tags: <code>{"Stage":"Test"}</code>, and <code>{"Version":"1"}</code> </p> </li> 
+    /// </ul> <p>The query would not include the following items in the results, however. </p> 
+    /// <ul> 
+    /// <li> <p>An EC2 instance that has only the following tag: <code>{"Stage":"Deploy"}</code>.</p> <p>The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the results.</p> </li> 
+    /// <li> <p>An RDS database that has the following two tags: <code>{"Stage":"Archived"}</code> and <code>{"Version":"4"}</code> </p> <p>The database has all of the tag keys, but none of those keys has an associated value that matches at least one of the specified values in the filter.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::QueryType>,
@@ -114,30 +113,30 @@ pub struct ResourceQuery {
     pub query: std::option::Option<std::string::String>,
 }
 impl ResourceQuery {
-    /// <p>The type of the query. You can use the following values:</p>
-    /// <ul>
-    /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i>Specifies that the <code>Query</code> contains an ARN for a CloudFormation stack.</p> </li>
-    /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i>Specifies that the <code>Query</code> parameter contains a JSON string that represents a collection of simple tag filters for resource types and tags. The JSON string uses a syntax similar to the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> </code> operation, but uses only the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a> </code> and <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a> </code> fields. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each:</p> <p> <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code> </p> <p>The results of this query could include the following.</p>
-    /// <ul>
-    /// <li> <p>An EC2 instance that has the following two tags: <code>{"Stage":"Deploy"}</code>, and <code>{"Version":"2"}</code> </p> </li>
-    /// <li> <p>An S3 bucket that has the following two tags: <code>{"Stage":"Test"}</code>, and <code>{"Version":"1"}</code> </p> </li>
-    /// </ul> <p>The query would not include the following items in the results, however. </p>
-    /// <ul>
-    /// <li> <p>An EC2 instance that has only the following tag: <code>{"Stage":"Deploy"}</code>.</p> <p>The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the results.</p> </li>
-    /// <li> <p>An RDS database that has the following two tags: <code>{"Stage":"Archived"}</code> and <code>{"Version":"4"}</code> </p> <p>The database has all of the tag keys, but none of those keys has an associated value that matches at least one of the specified values in the filter.</p> </li>
-    /// </ul> </li>
+    /// <p>The type of the query. You can use the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i>Specifies that the <code>Query</code> contains an ARN for a CloudFormation stack.</p> </li> 
+    /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i>Specifies that the <code>Query</code> parameter contains a JSON string that represents a collection of simple tag filters for resource types and tags. The JSON string uses a syntax similar to the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> </code> operation, but uses only the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a> </code> and <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a> </code> fields. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each:</p> <p> <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code> </p> <p>The results of this query could include the following.</p> 
+    /// <ul> 
+    /// <li> <p>An EC2 instance that has the following two tags: <code>{"Stage":"Deploy"}</code>, and <code>{"Version":"2"}</code> </p> </li> 
+    /// <li> <p>An S3 bucket that has the following two tags: <code>{"Stage":"Test"}</code>, and <code>{"Version":"1"}</code> </p> </li> 
+    /// </ul> <p>The query would not include the following items in the results, however. </p> 
+    /// <ul> 
+    /// <li> <p>An EC2 instance that has only the following tag: <code>{"Stage":"Deploy"}</code>.</p> <p>The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the results.</p> </li> 
+    /// <li> <p>An RDS database that has the following two tags: <code>{"Stage":"Archived"}</code> and <code>{"Version":"4"}</code> </p> <p>The database has all of the tag keys, but none of those keys has an associated value that matches at least one of the specified values in the filter.</p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::QueryType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::QueryType> {
         self.r#type.as_ref()
     }
     /// <p>The query that defines a group or a search.</p>
-    pub fn query(&self) -> std::option::Option<&str> {
+    pub fn query(&self) -> std::option::Option<& str> {
         self.query.as_deref()
     }
 }
 /// See [`ResourceQuery`](crate::model::ResourceQuery).
 pub mod resource_query {
-
+    
     /// A builder for [`ResourceQuery`](crate::model::ResourceQuery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -145,39 +144,38 @@ pub mod resource_query {
         pub(crate) query: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of the query. You can use the following values:</p>
-        /// <ul>
-        /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i>Specifies that the <code>Query</code> contains an ARN for a CloudFormation stack.</p> </li>
-        /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i>Specifies that the <code>Query</code> parameter contains a JSON string that represents a collection of simple tag filters for resource types and tags. The JSON string uses a syntax similar to the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> </code> operation, but uses only the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a> </code> and <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a> </code> fields. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each:</p> <p> <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code> </p> <p>The results of this query could include the following.</p>
-        /// <ul>
-        /// <li> <p>An EC2 instance that has the following two tags: <code>{"Stage":"Deploy"}</code>, and <code>{"Version":"2"}</code> </p> </li>
-        /// <li> <p>An S3 bucket that has the following two tags: <code>{"Stage":"Test"}</code>, and <code>{"Version":"1"}</code> </p> </li>
-        /// </ul> <p>The query would not include the following items in the results, however. </p>
-        /// <ul>
-        /// <li> <p>An EC2 instance that has only the following tag: <code>{"Stage":"Deploy"}</code>.</p> <p>The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the results.</p> </li>
-        /// <li> <p>An RDS database that has the following two tags: <code>{"Stage":"Archived"}</code> and <code>{"Version":"4"}</code> </p> <p>The database has all of the tag keys, but none of those keys has an associated value that matches at least one of the specified values in the filter.</p> </li>
-        /// </ul> </li>
+        /// <p>The type of the query. You can use the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i>Specifies that the <code>Query</code> contains an ARN for a CloudFormation stack.</p> </li> 
+        /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i>Specifies that the <code>Query</code> parameter contains a JSON string that represents a collection of simple tag filters for resource types and tags. The JSON string uses a syntax similar to the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> </code> operation, but uses only the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a> </code> and <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a> </code> fields. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each:</p> <p> <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code> </p> <p>The results of this query could include the following.</p> 
+        /// <ul> 
+        /// <li> <p>An EC2 instance that has the following two tags: <code>{"Stage":"Deploy"}</code>, and <code>{"Version":"2"}</code> </p> </li> 
+        /// <li> <p>An S3 bucket that has the following two tags: <code>{"Stage":"Test"}</code>, and <code>{"Version":"1"}</code> </p> </li> 
+        /// </ul> <p>The query would not include the following items in the results, however. </p> 
+        /// <ul> 
+        /// <li> <p>An EC2 instance that has only the following tag: <code>{"Stage":"Deploy"}</code>.</p> <p>The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the results.</p> </li> 
+        /// <li> <p>An RDS database that has the following two tags: <code>{"Stage":"Archived"}</code> and <code>{"Version":"4"}</code> </p> <p>The database has all of the tag keys, but none of those keys has an associated value that matches at least one of the specified values in the filter.</p> </li> 
+        /// </ul> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::QueryType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the query. You can use the following values:</p>
-        /// <ul>
-        /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i>Specifies that the <code>Query</code> contains an ARN for a CloudFormation stack.</p> </li>
-        /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i>Specifies that the <code>Query</code> parameter contains a JSON string that represents a collection of simple tag filters for resource types and tags. The JSON string uses a syntax similar to the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> </code> operation, but uses only the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a> </code> and <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a> </code> fields. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each:</p> <p> <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code> </p> <p>The results of this query could include the following.</p>
-        /// <ul>
-        /// <li> <p>An EC2 instance that has the following two tags: <code>{"Stage":"Deploy"}</code>, and <code>{"Version":"2"}</code> </p> </li>
-        /// <li> <p>An S3 bucket that has the following two tags: <code>{"Stage":"Test"}</code>, and <code>{"Version":"1"}</code> </p> </li>
-        /// </ul> <p>The query would not include the following items in the results, however. </p>
-        /// <ul>
-        /// <li> <p>An EC2 instance that has only the following tag: <code>{"Stage":"Deploy"}</code>.</p> <p>The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the results.</p> </li>
-        /// <li> <p>An RDS database that has the following two tags: <code>{"Stage":"Archived"}</code> and <code>{"Version":"4"}</code> </p> <p>The database has all of the tag keys, but none of those keys has an associated value that matches at least one of the specified values in the filter.</p> </li>
-        /// </ul> </li>
+        /// <p>The type of the query. You can use the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i>Specifies that the <code>Query</code> contains an ARN for a CloudFormation stack.</p> </li> 
+        /// <li> <p> <i> <code>TAG_FILTERS_1_0:</code> </i>Specifies that the <code>Query</code> parameter contains a JSON string that represents a collection of simple tag filters for resource types and tags. The JSON string uses a syntax similar to the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a> </code> operation, but uses only the <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"> ResourceTypeFilters</a> </code> and <code> <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-TagFiltersTagFilters">TagFilters</a> </code> fields. If you specify more than one tag key, only resources that match all tag keys, and at least one value of each specified tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.</p> <p>For example, consider the following sample query for resources that have two tags, <code>Stage</code> and <code>Version</code>, with two values each:</p> <p> <code>[{"Stage":["Test","Deploy"]},{"Version":["1","2"]}]</code> </p> <p>The results of this query could include the following.</p> 
+        /// <ul> 
+        /// <li> <p>An EC2 instance that has the following two tags: <code>{"Stage":"Deploy"}</code>, and <code>{"Version":"2"}</code> </p> </li> 
+        /// <li> <p>An S3 bucket that has the following two tags: <code>{"Stage":"Test"}</code>, and <code>{"Version":"1"}</code> </p> </li> 
+        /// </ul> <p>The query would not include the following items in the results, however. </p> 
+        /// <ul> 
+        /// <li> <p>An EC2 instance that has only the following tag: <code>{"Stage":"Deploy"}</code>.</p> <p>The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the results.</p> </li> 
+        /// <li> <p>An RDS database that has the following two tags: <code>{"Stage":"Archived"}</code> and <code>{"Version":"4"}</code> </p> <p>The database has all of the tag keys, but none of those keys has an associated value that matches at least one of the specified values in the filter.</p> </li> 
+        /// </ul> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::QueryType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The query that defines a group or a search.</p>
         pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,17 +184,20 @@ pub mod resource_query {
         }
         /// <p>The query that defines a group or a search.</p>
         pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.query = input;
-            self
+            self.query = input; self
         }
         /// Consumes the builder and constructs a [`ResourceQuery`](crate::model::ResourceQuery).
         pub fn build(self) -> crate::model::ResourceQuery {
             crate::model::ResourceQuery {
-                r#type: self.r#type,
-                query: self.query,
+                r#type: self.r#type
+                ,
+                query: self.query
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceQuery {
     /// Creates a new builder-style object to manufacture [`ResourceQuery`](crate::model::ResourceQuery).
@@ -211,9 +212,9 @@ impl ResourceQuery {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let querytype = unimplemented!();
 /// match querytype {
@@ -235,58 +236,52 @@ impl ResourceQuery {
 /// Specifically, when `querytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QueryType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum QueryType {
     #[allow(missing_docs)] // documentation missing in model
     CloudformationStack10,
     #[allow(missing_docs)] // documentation missing in model
     TagFilters10,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueryType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUDFORMATION_STACK_1_0" => QueryType::CloudformationStack10,
             "TAG_FILTERS_1_0" => QueryType::TagFilters10,
-            other => QueryType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => QueryType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for QueryType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QueryType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(QueryType::from(s))
+                }
+            }
 impl QueryType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueryType::CloudformationStack10 => "CLOUDFORMATION_STACK_1_0",
             QueryType::TagFilters10 => "TAG_FILTERS_1_0",
-            QueryType::Unknown(value) => value.as_str(),
+            QueryType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUDFORMATION_STACK_1_0", "TAG_FILTERS_1_0"]
+        &[
+            "CLOUDFORMATION_STACK_1_0", "TAG_FILTERS_1_0"
+        ]
     }
 }
 impl AsRef<str> for QueryType {
@@ -295,14 +290,14 @@ impl AsRef<str> for QueryType {
     }
 }
 
-/// <p>A resource group that contains AWS resources. You can assign resources to the group by associating either of the following elements with the group:</p>
-/// <ul>
-/// <li> <p> <code>ResourceQuery</code> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS Region and AWS account that have those keys with the same values are included in the group. You can add a resource query when you create the group, or later by using the <code>PutGroupConfiguration</code> operation.</p> </li>
-/// <li> <p> <code>GroupConfiguration</code> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.</p> </li>
+/// <p>A resource group that contains AWS resources. You can assign resources to the group by associating either of the following elements with the group:</p> 
+/// <ul> 
+/// <li> <p> <code>ResourceQuery</code> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS Region and AWS account that have those keys with the same values are included in the group. You can add a resource query when you create the group, or later by using the <code>PutGroupConfiguration</code> operation.</p> </li> 
+/// <li> <p> <code>GroupConfiguration</code> - Use a service configuration to associate the group with an AWS service. The configuration specifies which resource types can be included in the group.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Group {
+pub struct Group  {
     /// <p>The ARN of the resource group.</p>
     #[doc(hidden)]
     pub group_arn: std::option::Option<std::string::String>,
@@ -315,21 +310,21 @@ pub struct Group {
 }
 impl Group {
     /// <p>The ARN of the resource group.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
     /// <p>The name of the resource group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the resource group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`Group`](crate::model::Group).
 pub mod group {
-
+    
     /// A builder for [`Group`](crate::model::Group).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -345,8 +340,7 @@ pub mod group {
         }
         /// <p>The ARN of the resource group.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
+            self.group_arn = input; self
         }
         /// <p>The name of the resource group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -355,8 +349,7 @@ pub mod group {
         }
         /// <p>The name of the resource group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the resource group.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -365,18 +358,22 @@ pub mod group {
         }
         /// <p>The description of the resource group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`Group`](crate::model::Group).
         pub fn build(self) -> crate::model::Group {
             crate::model::Group {
-                group_arn: self.group_arn,
-                name: self.name,
-                description: self.description,
+                group_arn: self.group_arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl Group {
     /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
@@ -388,20 +385,20 @@ impl Group {
 /// <p>A structure that identifies a resource that is currently pending addition to the group as a member. Adding a resource to a resource group happens asynchronously as a background task and this one isn't completed yet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PendingResource {
+pub struct PendingResource  {
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl PendingResource {
     /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`PendingResource`](crate::model::PendingResource).
 pub mod pending_resource {
-
+    
     /// A builder for [`PendingResource`](crate::model::PendingResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -415,16 +412,18 @@ pub mod pending_resource {
         }
         /// <p>The Amazon resource name (ARN) of the resource that's in a pending state.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`PendingResource`](crate::model::PendingResource).
         pub fn build(self) -> crate::model::PendingResource {
             crate::model::PendingResource {
-                resource_arn: self.resource_arn,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PendingResource {
     /// Creates a new builder-style object to manufacture [`PendingResource`](crate::model::PendingResource).
@@ -436,7 +435,7 @@ impl PendingResource {
 /// <p>A resource that failed to be added to or removed from a group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedResource {
+pub struct FailedResource  {
     /// <p>The ARN of the resource that failed to be added or removed.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -449,21 +448,21 @@ pub struct FailedResource {
 }
 impl FailedResource {
     /// <p>The ARN of the resource that failed to be added or removed.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The error message text associated with the failure.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error code associated with the failure.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
 /// See [`FailedResource`](crate::model::FailedResource).
 pub mod failed_resource {
-
+    
     /// A builder for [`FailedResource`](crate::model::FailedResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -479,8 +478,7 @@ pub mod failed_resource {
         }
         /// <p>The ARN of the resource that failed to be added or removed.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The error message text associated with the failure.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -488,12 +486,8 @@ pub mod failed_resource {
             self
         }
         /// <p>The error message text associated with the failure.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The error code associated with the failure.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -502,18 +496,22 @@ pub mod failed_resource {
         }
         /// <p>The error code associated with the failure.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// Consumes the builder and constructs a [`FailedResource`](crate::model::FailedResource).
         pub fn build(self) -> crate::model::FailedResource {
             crate::model::FailedResource {
-                resource_arn: self.resource_arn,
-                error_message: self.error_message,
-                error_code: self.error_code,
+                resource_arn: self.resource_arn
+                ,
+                error_message: self.error_message
+                ,
+                error_code: self.error_code
+                ,
             }
         }
     }
+    
+    
 }
 impl FailedResource {
     /// Creates a new builder-style object to manufacture [`FailedResource`](crate::model::FailedResource).
@@ -525,7 +523,7 @@ impl FailedResource {
 /// <p>A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code> operations on CloudFormation stack-based queries. The error occurs if the CloudFormation stack on which the query is based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that AWS Resource Groups could not complete the operation, but the resulting group might have no member resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryError {
+pub struct QueryError  {
     /// <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::QueryErrorCode>,
@@ -535,17 +533,17 @@ pub struct QueryError {
 }
 impl QueryError {
     /// <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::QueryErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::QueryErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFormation stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`QueryError`](crate::model::QueryError).
 pub mod query_error {
-
+    
     /// A builder for [`QueryError`](crate::model::QueryError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -559,12 +557,8 @@ pub mod query_error {
             self
         }
         /// <p>Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::QueryErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::QueryErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFormation stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -573,17 +567,20 @@ pub mod query_error {
         }
         /// <p>A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically states that the CloudFormation stack has a status that is not (or no longer) active, such as <code>CREATE_FAILED</code>.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`QueryError`](crate::model::QueryError).
         pub fn build(self) -> crate::model::QueryError {
             crate::model::QueryError {
-                error_code: self.error_code,
-                message: self.message,
+                error_code: self.error_code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryError {
     /// Creates a new builder-style object to manufacture [`QueryError`](crate::model::QueryError).
@@ -598,9 +595,9 @@ impl QueryError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let queryerrorcode = unimplemented!();
 /// match queryerrorcode {
@@ -622,60 +619,51 @@ impl QueryError {
 /// Specifically, when `queryerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QueryErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum QueryErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     CloudformationStackInactive,
     #[allow(missing_docs)] // documentation missing in model
     CloudformationStackNotExisting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueryErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "CLOUDFORMATION_STACK_INACTIVE" => QueryErrorCode::CloudformationStackInactive,
             "CLOUDFORMATION_STACK_NOT_EXISTING" => QueryErrorCode::CloudformationStackNotExisting,
-            other => QueryErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => QueryErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for QueryErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QueryErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(QueryErrorCode::from(s))
+                }
+            }
 impl QueryErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QueryErrorCode::CloudformationStackInactive => "CLOUDFORMATION_STACK_INACTIVE",
             QueryErrorCode::CloudformationStackNotExisting => "CLOUDFORMATION_STACK_NOT_EXISTING",
-            QueryErrorCode::Unknown(value) => value.as_str(),
+            QueryErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CLOUDFORMATION_STACK_INACTIVE",
-            "CLOUDFORMATION_STACK_NOT_EXISTING",
+            "CLOUDFORMATION_STACK_INACTIVE", "CLOUDFORMATION_STACK_NOT_EXISTING"
         ]
     }
 }
@@ -688,7 +676,7 @@ impl AsRef<str> for QueryErrorCode {
 /// <p>A structure that contains the ARN of a resource and its resource type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceIdentifier {
+pub struct ResourceIdentifier  {
     /// <p>The ARN of a resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -698,17 +686,17 @@ pub struct ResourceIdentifier {
 }
 impl ResourceIdentifier {
     /// <p>The ARN of a resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 /// See [`ResourceIdentifier`](crate::model::ResourceIdentifier).
 pub mod resource_identifier {
-
+    
     /// A builder for [`ResourceIdentifier`](crate::model::ResourceIdentifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -723,8 +711,7 @@ pub mod resource_identifier {
         }
         /// <p>The ARN of a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -732,21 +719,21 @@ pub mod resource_identifier {
             self
         }
         /// <p>The resource type of a resource, such as <code>AWS::EC2::Instance</code>.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`ResourceIdentifier`](crate::model::ResourceIdentifier).
         pub fn build(self) -> crate::model::ResourceIdentifier {
             crate::model::ResourceIdentifier {
-                resource_arn: self.resource_arn,
-                resource_type: self.resource_type,
+                resource_arn: self.resource_arn
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceIdentifier {
     /// Creates a new builder-style object to manufacture [`ResourceIdentifier`](crate::model::ResourceIdentifier).
@@ -758,7 +745,7 @@ impl ResourceIdentifier {
 /// <p>An item in a group configuration. A group service configuration can have one or more items. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupConfigurationItem {
+pub struct GroupConfigurationItem  {
     /// <p>Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the list of types that you can specify for a configuration item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -768,23 +755,22 @@ pub struct GroupConfigurationItem {
 }
 impl GroupConfigurationItem {
     /// <p>Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the list of types that you can specify for a configuration item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A collection of parameters for this group configuration item. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::GroupConfigurationParameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::GroupConfigurationParameter]> {
         self.parameters.as_deref()
     }
 }
 /// See [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
 pub mod group_configuration_item {
-
+    
     /// A builder for [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) parameters:
-            std::option::Option<std::vec::Vec<crate::model::GroupConfigurationParameter>>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationParameter>>,
     }
     impl Builder {
         /// <p>Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the list of types that you can specify for a configuration item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
@@ -794,8 +780,7 @@ pub mod group_configuration_item {
         }
         /// <p>Specifies the type of group configuration item. Each item must have a unique value for <code>type</code>. For the list of types that you can specify for a configuration item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `parameters`.
         ///
@@ -804,26 +789,26 @@ pub mod group_configuration_item {
         /// <p>A collection of parameters for this group configuration item. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
         pub fn parameters(mut self, input: crate::model::GroupConfigurationParameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A collection of parameters for this group configuration item. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationParameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationParameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
         pub fn build(self) -> crate::model::GroupConfigurationItem {
             crate::model::GroupConfigurationItem {
-                r#type: self.r#type,
-                parameters: self.parameters,
+                r#type: self.r#type
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupConfigurationItem {
     /// Creates a new builder-style object to manufacture [`GroupConfigurationItem`](crate::model::GroupConfigurationItem).
@@ -835,7 +820,7 @@ impl GroupConfigurationItem {
 /// <p>A parameter for a group configuration item. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupConfigurationParameter {
+pub struct GroupConfigurationParameter  {
     /// <p>The name of the group configuration parameter. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -845,17 +830,17 @@ pub struct GroupConfigurationParameter {
 }
 impl GroupConfigurationParameter {
     /// <p>The name of the group configuration parameter. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value or values to be used for the specified parameter. For the list of values you can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
 pub mod group_configuration_parameter {
-
+    
     /// A builder for [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -870,8 +855,7 @@ pub mod group_configuration_parameter {
         }
         /// <p>The name of the group configuration parameter. For the list of parameters that you can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -880,26 +864,26 @@ pub mod group_configuration_parameter {
         /// <p>The value or values to be used for the specified parameter. For the list of values you can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value or values to be used for the specified parameter. For the list of values you can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported resource types and parameters</a>.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
         pub fn build(self) -> crate::model::GroupConfigurationParameter {
             crate::model::GroupConfigurationParameter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupConfigurationParameter {
     /// Creates a new builder-style object to manufacture [`GroupConfigurationParameter`](crate::model::GroupConfigurationParameter).
@@ -911,7 +895,7 @@ impl GroupConfigurationParameter {
 /// <p>The unique identifiers for a resource group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupIdentifier {
+pub struct GroupIdentifier  {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -921,17 +905,17 @@ pub struct GroupIdentifier {
 }
 impl GroupIdentifier {
     /// <p>The name of the resource group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The ARN of the resource group.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
 }
 /// See [`GroupIdentifier`](crate::model::GroupIdentifier).
 pub mod group_identifier {
-
+    
     /// A builder for [`GroupIdentifier`](crate::model::GroupIdentifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -946,8 +930,7 @@ pub mod group_identifier {
         }
         /// <p>The name of the resource group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p>The ARN of the resource group.</p>
         pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -956,17 +939,20 @@ pub mod group_identifier {
         }
         /// <p>The ARN of the resource group.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
+            self.group_arn = input; self
         }
         /// Consumes the builder and constructs a [`GroupIdentifier`](crate::model::GroupIdentifier).
         pub fn build(self) -> crate::model::GroupIdentifier {
             crate::model::GroupIdentifier {
-                group_name: self.group_name,
-                group_arn: self.group_arn,
+                group_name: self.group_name
+                ,
+                group_arn: self.group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupIdentifier {
     /// Creates a new builder-style object to manufacture [`GroupIdentifier`](crate::model::GroupIdentifier).
@@ -978,7 +964,7 @@ impl GroupIdentifier {
 /// <p>A filter collection that you can use to restrict the results from a <code>List</code> operation to only those you want to include.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupFilter {
+pub struct GroupFilter  {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::GroupFilterName>,
@@ -988,17 +974,17 @@ pub struct GroupFilter {
 }
 impl GroupFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::GroupFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::GroupFilterName> {
         self.name.as_ref()
     }
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`GroupFilter`](crate::model::GroupFilter).
 pub mod group_filter {
-
+    
     /// A builder for [`GroupFilter`](crate::model::GroupFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1012,12 +998,8 @@ pub mod group_filter {
             self
         }
         /// <p>The name of the filter. Filter names are case-sensitive.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::GroupFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::GroupFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1026,26 +1008,26 @@ pub mod group_filter {
         /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`GroupFilter`](crate::model::GroupFilter).
         pub fn build(self) -> crate::model::GroupFilter {
             crate::model::GroupFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupFilter {
     /// Creates a new builder-style object to manufacture [`GroupFilter`](crate::model::GroupFilter).
@@ -1060,9 +1042,9 @@ impl GroupFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let groupfiltername = unimplemented!();
 /// match groupfiltername {
@@ -1084,58 +1066,52 @@ impl GroupFilter {
 /// Specifically, when `groupfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GroupFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GroupFilterName {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationType,
     #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GroupFilterName {
     fn from(s: &str) -> Self {
         match s {
             "configuration-type" => GroupFilterName::ConfigurationType,
             "resource-type" => GroupFilterName::ResourceType,
-            other => GroupFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GroupFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GroupFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GroupFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GroupFilterName::from(s))
+                }
+            }
 impl GroupFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GroupFilterName::ConfigurationType => "configuration-type",
             GroupFilterName::ResourceType => "resource-type",
-            GroupFilterName::Unknown(value) => value.as_str(),
+            GroupFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["configuration-type", "resource-type"]
+        &[
+            "configuration-type", "resource-type"
+        ]
     }
 }
 impl AsRef<str> for GroupFilterName {
@@ -1147,31 +1123,31 @@ impl AsRef<str> for GroupFilterName {
 /// <p>A structure returned by the <code>ListGroupResources</code> operation that contains identity and group membership status information for one of the resources in the group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupResourcesItem {
+pub struct ListGroupResourcesItem  {
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
-    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note> 
+    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ResourceStatus>,
 }
 impl ListGroupResourcesItem {
     /// <p>A structure that contains the ARN of a resource and its resource type.</p>
-    pub fn identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
+    pub fn identifier(&self) -> std::option::Option<& crate::model::ResourceIdentifier> {
         self.identifier.as_ref()
     }
-    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
-    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
+    /// <p>A structure that contains the status of this resource's membership in the group.</p> <note> 
+    /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p> 
     /// </note>
-    pub fn status(&self) -> std::option::Option<&crate::model::ResourceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ResourceStatus> {
         self.status.as_ref()
     }
 }
 /// See [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
 pub mod list_group_resources_item {
-
+    
     /// A builder for [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1185,38 +1161,34 @@ pub mod list_group_resources_item {
             self
         }
         /// <p>A structure that contains the ARN of a resource and its resource type.</p>
-        pub fn set_identifier(
-            mut self,
-            input: std::option::Option<crate::model::ResourceIdentifier>,
-        ) -> Self {
-            self.identifier = input;
-            self
+        pub fn set_identifier(mut self, input: std::option::Option<crate::model::ResourceIdentifier>) -> Self {
+            self.identifier = input; self
         }
-        /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
-        /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
+        /// <p>A structure that contains the status of this resource's membership in the group.</p> <note> 
+        /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p> 
         /// </note>
         pub fn status(mut self, input: crate::model::ResourceStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>A structure that contains the status of this resource's membership in the group.</p> <note>
-        /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p>
+        /// <p>A structure that contains the status of this resource's membership in the group.</p> <note> 
+        /// <p>This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.</p> 
         /// </note>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ResourceStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
         pub fn build(self) -> crate::model::ListGroupResourcesItem {
             crate::model::ListGroupResourcesItem {
-                identifier: self.identifier,
-                status: self.status,
+                identifier: self.identifier
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupResourcesItem {
     /// Creates a new builder-style object to manufacture [`ListGroupResourcesItem`](crate::model::ListGroupResourcesItem).
@@ -1228,20 +1200,20 @@ impl ListGroupResourcesItem {
 /// <p>A structure that identifies the current group membership status for a resource. Adding a resource to a resource group is performed asynchronously as a background task. A <code>PENDING</code> status indicates, for this resource, that the process isn't completed yet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceStatus {
+pub struct ResourceStatus  {
     /// <p>The current status.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ResourceStatusValue>,
 }
 impl ResourceStatus {
     /// <p>The current status.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ResourceStatusValue> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ResourceStatusValue> {
         self.name.as_ref()
     }
 }
 /// See [`ResourceStatus`](crate::model::ResourceStatus).
 pub mod resource_status {
-
+    
     /// A builder for [`ResourceStatus`](crate::model::ResourceStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1254,18 +1226,19 @@ pub mod resource_status {
             self
         }
         /// <p>The current status.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ResourceStatusValue>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ResourceStatusValue>) -> Self {
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ResourceStatus`](crate::model::ResourceStatus).
         pub fn build(self) -> crate::model::ResourceStatus {
-            crate::model::ResourceStatus { name: self.name }
+            crate::model::ResourceStatus {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl ResourceStatus {
     /// Creates a new builder-style object to manufacture [`ResourceStatus`](crate::model::ResourceStatus).
@@ -1280,9 +1253,9 @@ impl ResourceStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcestatusvalue = unimplemented!();
 /// match resourcestatusvalue {
@@ -1303,56 +1276,48 @@ impl ResourceStatus {
 /// Specifically, when `resourcestatusvalue` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceStatusValue::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceStatusValue {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceStatusValue {
     fn from(s: &str) -> Self {
         match s {
             "PENDING" => ResourceStatusValue::Pending,
-            other => {
-                ResourceStatusValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceStatusValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceStatusValue {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceStatusValue::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceStatusValue::from(s))
+                }
+            }
 impl ResourceStatusValue {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceStatusValue::Pending => "PENDING",
-            ResourceStatusValue::Unknown(value) => value.as_str(),
+            ResourceStatusValue::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PENDING"]
+        &[
+            "PENDING"
+        ]
     }
 }
 impl AsRef<str> for ResourceStatusValue {
@@ -1364,7 +1329,7 @@ impl AsRef<str> for ResourceStatusValue {
 /// <p>A filter name and value pair that is used to obtain more specific results from a list of resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceFilter {
+pub struct ResourceFilter  {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ResourceFilterName>,
@@ -1374,17 +1339,17 @@ pub struct ResourceFilter {
 }
 impl ResourceFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ResourceFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ResourceFilterName> {
         self.name.as_ref()
     }
     /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`ResourceFilter`](crate::model::ResourceFilter).
 pub mod resource_filter {
-
+    
     /// A builder for [`ResourceFilter`](crate::model::ResourceFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1398,12 +1363,8 @@ pub mod resource_filter {
             self
         }
         /// <p>The name of the filter. Filter names are case-sensitive.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ResourceFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ResourceFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1412,26 +1373,26 @@ pub mod resource_filter {
         /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>One or more filter values. Allowed filter values vary by resource filter name, and are case-sensitive.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`ResourceFilter`](crate::model::ResourceFilter).
         pub fn build(self) -> crate::model::ResourceFilter {
             crate::model::ResourceFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceFilter {
     /// Creates a new builder-style object to manufacture [`ResourceFilter`](crate::model::ResourceFilter).
@@ -1446,9 +1407,9 @@ impl ResourceFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcefiltername = unimplemented!();
 /// match resourcefiltername {
@@ -1469,56 +1430,48 @@ impl ResourceFilter {
 /// Specifically, when `resourcefiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceFilterName {
     #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceFilterName {
     fn from(s: &str) -> Self {
         match s {
             "resource-type" => ResourceFilterName::ResourceType,
-            other => {
-                ResourceFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResourceFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceFilterName::from(s))
+                }
+            }
 impl ResourceFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceFilterName::ResourceType => "resource-type",
-            ResourceFilterName::Unknown(value) => value.as_str(),
+            ResourceFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["resource-type"]
+        &[
+            "resource-type"
+        ]
     }
 }
 impl AsRef<str> for ResourceFilterName {
@@ -1530,14 +1483,13 @@ impl AsRef<str> for ResourceFilterName {
 /// <p>A service configuration associated with a resource group. The configuration options are determined by the AWS service that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service configuration when you create the group by using <code>CreateGroup</code>, or later by using the <code>PutGroupConfiguration</code> operation. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupConfiguration {
+pub struct GroupConfiguration  {
     /// <p>The configuration currently associated with the group and in effect.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
     /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
     #[doc(hidden)]
-    pub proposed_configuration:
-        std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
+    pub proposed_configuration: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
     /// <p>The current status of an attempt to update the group configuration.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::GroupConfigurationStatus>,
@@ -1547,34 +1499,30 @@ pub struct GroupConfiguration {
 }
 impl GroupConfiguration {
     /// <p>The configuration currently associated with the group and in effect.</p>
-    pub fn configuration(&self) -> std::option::Option<&[crate::model::GroupConfigurationItem]> {
+    pub fn configuration(&self) -> std::option::Option<& [crate::model::GroupConfigurationItem]> {
         self.configuration.as_deref()
     }
     /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
-    pub fn proposed_configuration(
-        &self,
-    ) -> std::option::Option<&[crate::model::GroupConfigurationItem]> {
+    pub fn proposed_configuration(&self) -> std::option::Option<& [crate::model::GroupConfigurationItem]> {
         self.proposed_configuration.as_deref()
     }
     /// <p>The current status of an attempt to update the group configuration.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GroupConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GroupConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`GroupConfiguration`](crate::model::GroupConfiguration).
 pub mod group_configuration {
-
+    
     /// A builder for [`GroupConfiguration`](crate::model::GroupConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configuration:
-            std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
-        pub(crate) proposed_configuration:
-            std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
+        pub(crate) configuration: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
+        pub(crate) proposed_configuration: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
         pub(crate) status: std::option::Option<crate::model::GroupConfigurationStatus>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
@@ -1586,39 +1534,28 @@ pub mod group_configuration {
         /// <p>The configuration currently associated with the group and in effect.</p>
         pub fn configuration(mut self, input: crate::model::GroupConfigurationItem) -> Self {
             let mut v = self.configuration.unwrap_or_default();
-            v.push(input);
-            self.configuration = Some(v);
-            self
+                            v.push(input);
+                            self.configuration = Some(v);
+                            self
         }
         /// <p>The configuration currently associated with the group and in effect.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>) -> Self {
+            self.configuration = input; self
         }
         /// Appends an item to `proposed_configuration`.
         ///
         /// To override the contents of this collection use [`set_proposed_configuration`](Self::set_proposed_configuration).
         ///
         /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
-        pub fn proposed_configuration(
-            mut self,
-            input: crate::model::GroupConfigurationItem,
-        ) -> Self {
+        pub fn proposed_configuration(mut self, input: crate::model::GroupConfigurationItem) -> Self {
             let mut v = self.proposed_configuration.unwrap_or_default();
-            v.push(input);
-            self.proposed_configuration = Some(v);
-            self
+                            v.push(input);
+                            self.proposed_configuration = Some(v);
+                            self
         }
         /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
-        pub fn set_proposed_configuration(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>,
-        ) -> Self {
-            self.proposed_configuration = input;
-            self
+        pub fn set_proposed_configuration(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupConfigurationItem>>) -> Self {
+            self.proposed_configuration = input; self
         }
         /// <p>The current status of an attempt to update the group configuration.</p>
         pub fn status(mut self, input: crate::model::GroupConfigurationStatus) -> Self {
@@ -1626,12 +1563,8 @@ pub mod group_configuration {
             self
         }
         /// <p>The current status of an attempt to update the group configuration.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::GroupConfigurationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::GroupConfigurationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>If present, the reason why a request to update the group configuration failed.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1639,23 +1572,25 @@ pub mod group_configuration {
             self
         }
         /// <p>If present, the reason why a request to update the group configuration failed.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`GroupConfiguration`](crate::model::GroupConfiguration).
         pub fn build(self) -> crate::model::GroupConfiguration {
             crate::model::GroupConfiguration {
-                configuration: self.configuration,
-                proposed_configuration: self.proposed_configuration,
-                status: self.status,
-                failure_reason: self.failure_reason,
+                configuration: self.configuration
+                ,
+                proposed_configuration: self.proposed_configuration
+                ,
+                status: self.status
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupConfiguration {
     /// Creates a new builder-style object to manufacture [`GroupConfiguration`](crate::model::GroupConfiguration).
@@ -1670,9 +1605,9 @@ impl GroupConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let groupconfigurationstatus = unimplemented!();
 /// match groupconfigurationstatus {
@@ -1695,22 +1630,14 @@ impl GroupConfiguration {
 /// Specifically, when `groupconfigurationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GroupConfigurationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GroupConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateComplete,
@@ -1719,7 +1646,7 @@ pub enum GroupConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GroupConfigurationStatus {
     fn from(s: &str) -> Self {
@@ -1727,19 +1654,17 @@ impl std::convert::From<&str> for GroupConfigurationStatus {
             "UPDATE_COMPLETE" => GroupConfigurationStatus::UpdateComplete,
             "UPDATE_FAILED" => GroupConfigurationStatus::UpdateFailed,
             "UPDATING" => GroupConfigurationStatus::Updating,
-            other => GroupConfigurationStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => GroupConfigurationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GroupConfigurationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GroupConfigurationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GroupConfigurationStatus::from(s))
+                }
+            }
 impl GroupConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1747,12 +1672,14 @@ impl GroupConfigurationStatus {
             GroupConfigurationStatus::UpdateComplete => "UPDATE_COMPLETE",
             GroupConfigurationStatus::UpdateFailed => "UPDATE_FAILED",
             GroupConfigurationStatus::Updating => "UPDATING",
-            GroupConfigurationStatus::Unknown(value) => value.as_str(),
+            GroupConfigurationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"]
+        &[
+            "UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for GroupConfigurationStatus {
@@ -1760,3 +1687,4 @@ impl AsRef<str> for GroupConfigurationStatus {
         self.as_str()
     }
 }
+

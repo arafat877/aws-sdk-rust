@@ -30,8 +30,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.53.0"
-aws-sdk-rds = "0.23.0"
+aws-config = "0.54.0"
+aws-sdk-rds = "0.0.0-local"
 tokio = { version = "1", features = ["full"] }
 ```
 

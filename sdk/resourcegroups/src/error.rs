@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateGroupQueryError {
     /// Kind of error that occurred.
-    pub kind: UpdateGroupQueryErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateGroupQueryErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateGroupQueryError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -32,26 +32,40 @@ pub enum UpdateGroupQueryErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGroupQueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGroupQueryErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateGroupQueryErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateGroupQueryErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateGroupQueryErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            UpdateGroupQueryErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateGroupQueryErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateGroupQueryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateGroupQueryErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupQueryErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupQueryErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupQueryErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupQueryErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupQueryErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupQueryErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -65,52 +79,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateGroupQueryError {
 }
 impl UpdateGroupQueryError {
     /// Creates a new `UpdateGroupQueryError`.
-    pub fn new(kind: UpdateGroupQueryErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateGroupQueryError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateGroupQueryError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateGroupQueryErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateGroupQueryError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateGroupQueryError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGroupQueryErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateGroupQueryErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -118,17 +129,11 @@ impl UpdateGroupQueryError {
     }
     /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGroupQueryErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateGroupQueryErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGroupQueryErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, UpdateGroupQueryErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -136,22 +141,33 @@ impl UpdateGroupQueryError {
     }
     /// Returns `true` if the error kind is `UpdateGroupQueryErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGroupQueryErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateGroupQueryErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateGroupQueryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGroupQueryErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateGroupQueryErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateGroupQueryErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateGroupQueryErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            UpdateGroupQueryErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateGroupQueryErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateGroupQueryErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateGroupQueryErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupQueryErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupQueryErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupQueryErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupQueryErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupQueryErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupQueryErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -159,22 +175,20 @@ impl std::error::Error for UpdateGroupQueryError {
 /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyRequestsException {
+pub struct TooManyRequestsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyRequestsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRequestsException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -184,7 +198,7 @@ impl std::fmt::Display for TooManyRequestsException {
 impl std::error::Error for TooManyRequestsException {}
 /// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
 pub mod too_many_requests_exception {
-
+    
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -198,16 +212,18 @@ pub mod too_many_requests_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException).
         pub fn build(self) -> crate::error::TooManyRequestsException {
             crate::error::TooManyRequestsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyRequestsException {
     /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
@@ -219,22 +235,20 @@ impl TooManyRequestsException {
 /// <p>One or more of the specified resources don't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -244,7 +258,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -258,16 +272,18 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -279,22 +295,20 @@ impl NotFoundException {
 /// <p>The request uses an HTTP method that isn't allowed for the specified resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MethodNotAllowedException {
+pub struct MethodNotAllowedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MethodNotAllowedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MethodNotAllowedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MethodNotAllowedException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -304,7 +318,7 @@ impl std::fmt::Display for MethodNotAllowedException {
 impl std::error::Error for MethodNotAllowedException {}
 /// See [`MethodNotAllowedException`](crate::error::MethodNotAllowedException).
 pub mod method_not_allowed_exception {
-
+    
     /// A builder for [`MethodNotAllowedException`](crate::error::MethodNotAllowedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -318,16 +332,18 @@ pub mod method_not_allowed_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MethodNotAllowedException`](crate::error::MethodNotAllowedException).
         pub fn build(self) -> crate::error::MethodNotAllowedException {
             crate::error::MethodNotAllowedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MethodNotAllowedException {
     /// Creates a new builder-style object to manufacture [`MethodNotAllowedException`](crate::error::MethodNotAllowedException).
@@ -339,22 +355,20 @@ impl MethodNotAllowedException {
 /// <p>An internal error occurred while processing the request. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerErrorException {
+pub struct InternalServerErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerErrorException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -364,7 +378,7 @@ impl std::fmt::Display for InternalServerErrorException {
 impl std::error::Error for InternalServerErrorException {}
 /// See [`InternalServerErrorException`](crate::error::InternalServerErrorException).
 pub mod internal_server_error_exception {
-
+    
     /// A builder for [`InternalServerErrorException`](crate::error::InternalServerErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -378,16 +392,18 @@ pub mod internal_server_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::error::InternalServerErrorException).
         pub fn build(self) -> crate::error::InternalServerErrorException {
             crate::error::InternalServerErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerErrorException {
     /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::error::InternalServerErrorException).
@@ -399,22 +415,20 @@ impl InternalServerErrorException {
 /// <p>The caller isn't authorized to make the request. Check permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForbiddenException {
+pub struct ForbiddenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ForbiddenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ForbiddenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ForbiddenException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -424,7 +438,7 @@ impl std::fmt::Display for ForbiddenException {
 impl std::error::Error for ForbiddenException {}
 /// See [`ForbiddenException`](crate::error::ForbiddenException).
 pub mod forbidden_exception {
-
+    
     /// A builder for [`ForbiddenException`](crate::error::ForbiddenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -438,16 +452,18 @@ pub mod forbidden_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ForbiddenException`](crate::error::ForbiddenException).
         pub fn build(self) -> crate::error::ForbiddenException {
             crate::error::ForbiddenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ForbiddenException {
     /// Creates a new builder-style object to manufacture [`ForbiddenException`](crate::error::ForbiddenException).
@@ -459,22 +475,20 @@ impl ForbiddenException {
 /// <p>The request includes one or more parameters that violate validation rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException {
+pub struct BadRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -484,7 +498,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
-
+    
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -498,16 +512,18 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
@@ -521,15 +537,15 @@ impl BadRequestException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateGroupError {
     /// Kind of error that occurred.
-    pub kind: UpdateGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -549,26 +565,40 @@ pub enum UpdateGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UpdateGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UpdateGroupErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UpdateGroupErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            UpdateGroupErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateGroupErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UpdateGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateGroupErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -582,46 +612,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateGroupError {
 }
 impl UpdateGroupError {
     /// Creates a new `UpdateGroupError`.
-    pub fn new(kind: UpdateGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateGroupErrorKind::BadRequestException(_))
@@ -632,17 +662,11 @@ impl UpdateGroupError {
     }
     /// Returns `true` if the error kind is `UpdateGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGroupErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UpdateGroupErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateGroupErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGroupErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, UpdateGroupErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `UpdateGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -650,22 +674,33 @@ impl UpdateGroupError {
     }
     /// Returns `true` if the error kind is `UpdateGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateGroupErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateGroupErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateGroupErrorKind::BadRequestException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UpdateGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateGroupErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -675,15 +710,15 @@ impl std::error::Error for UpdateGroupError {
 #[derive(std::fmt::Debug)]
 pub struct UntagError {
     /// Kind of error that occurred.
-    pub kind: UntagErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -703,26 +738,40 @@ pub enum UntagErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UntagErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UntagErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UntagErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            UntagErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UntagErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UntagErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -736,46 +785,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagError {
 }
 impl UntagError {
     /// Creates a new `UntagError`.
-    pub fn new(kind: UntagErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagErrorKind::BadRequestException(_))
@@ -804,13 +853,27 @@ impl UntagError {
 impl std::error::Error for UntagError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagErrorKind::BadRequestException(_inner) => Some(_inner),
-            UntagErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UntagErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UntagErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            UntagErrorKind::NotFoundException(_inner) => Some(_inner),
-            UntagErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UntagErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UntagErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UntagErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            UntagErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UntagErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -820,15 +883,15 @@ impl std::error::Error for UntagError {
 #[derive(std::fmt::Debug)]
 pub struct UngroupResourcesError {
     /// Kind of error that occurred.
-    pub kind: UngroupResourcesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UngroupResourcesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UngroupResourcesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UngroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -848,26 +911,40 @@ pub enum UngroupResourcesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UngroupResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UngroupResourcesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UngroupResourcesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            UngroupResourcesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            UngroupResourcesErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            UngroupResourcesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UngroupResourcesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UngroupResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UngroupResourcesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UngroupResourcesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UngroupResourcesErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UngroupResourcesErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UngroupResourcesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UngroupResourcesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UngroupResourcesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -881,52 +958,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for UngroupResourcesError {
 }
 impl UngroupResourcesError {
     /// Creates a new `UngroupResourcesError`.
-    pub fn new(kind: UngroupResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UngroupResourcesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UngroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UngroupResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UngroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UngroupResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UngroupResourcesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UngroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UngroupResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UngroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UngroupResourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UngroupResourcesErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UngroupResourcesErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UngroupResourcesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -934,17 +1008,11 @@ impl UngroupResourcesError {
     }
     /// Returns `true` if the error kind is `UngroupResourcesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UngroupResourcesErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, UngroupResourcesErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `UngroupResourcesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UngroupResourcesErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, UngroupResourcesErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `UngroupResourcesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -952,22 +1020,33 @@ impl UngroupResourcesError {
     }
     /// Returns `true` if the error kind is `UngroupResourcesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UngroupResourcesErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UngroupResourcesErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UngroupResourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UngroupResourcesErrorKind::BadRequestException(_inner) => Some(_inner),
-            UngroupResourcesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            UngroupResourcesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            UngroupResourcesErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            UngroupResourcesErrorKind::NotFoundException(_inner) => Some(_inner),
-            UngroupResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UngroupResourcesErrorKind::Unhandled(_inner) => Some(_inner),
+            UngroupResourcesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UngroupResourcesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            UngroupResourcesErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UngroupResourcesErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            UngroupResourcesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UngroupResourcesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UngroupResourcesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -977,15 +1056,15 @@ impl std::error::Error for UngroupResourcesError {
 #[derive(std::fmt::Debug)]
 pub struct TagError {
     /// Kind of error that occurred.
-    pub kind: TagErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1005,26 +1084,40 @@ pub enum TagErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            TagErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            TagErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            TagErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            TagErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            TagErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            TagErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1038,46 +1131,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagError {
 }
 impl TagError {
     /// Creates a new `TagError`.
-    pub fn new(kind: TagErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagErrorKind::BadRequestException(_))
@@ -1106,13 +1199,27 @@ impl TagError {
 impl std::error::Error for TagError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagErrorKind::BadRequestException(_inner) => Some(_inner),
-            TagErrorKind::ForbiddenException(_inner) => Some(_inner),
-            TagErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            TagErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            TagErrorKind::NotFoundException(_inner) => Some(_inner),
-            TagErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TagErrorKind::Unhandled(_inner) => Some(_inner),
+            TagErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            TagErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            TagErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            TagErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            TagErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            TagErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1122,15 +1229,15 @@ impl std::error::Error for TagError {
 #[derive(std::fmt::Debug)]
 pub struct SearchResourcesError {
     /// Kind of error that occurred.
-    pub kind: SearchResourcesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SearchResourcesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SearchResourcesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SearchResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1150,26 +1257,40 @@ pub enum SearchResourcesErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SearchResourcesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            SearchResourcesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            SearchResourcesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            SearchResourcesErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            SearchResourcesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            SearchResourcesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
-            SearchResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            SearchResourcesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchResourcesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchResourcesErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchResourcesErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchResourcesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchResourcesErrorKind::UnauthorizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SearchResourcesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1183,46 +1304,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for SearchResourcesError {
 }
 impl SearchResourcesError {
     /// Creates a new `SearchResourcesError`.
-    pub fn new(kind: SearchResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SearchResourcesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SearchResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SearchResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SearchResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SearchResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SearchResourcesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SearchResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SearchResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SearchResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SearchResourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, SearchResourcesErrorKind::BadRequestException(_))
@@ -1233,43 +1354,45 @@ impl SearchResourcesError {
     }
     /// Returns `true` if the error kind is `SearchResourcesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchResourcesErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, SearchResourcesErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `SearchResourcesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchResourcesErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, SearchResourcesErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `SearchResourcesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchResourcesErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, SearchResourcesErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `SearchResourcesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SearchResourcesErrorKind::UnauthorizedException(_)
-        )
+        matches!(&self.kind, SearchResourcesErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for SearchResourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SearchResourcesErrorKind::BadRequestException(_inner) => Some(_inner),
-            SearchResourcesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            SearchResourcesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            SearchResourcesErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            SearchResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            SearchResourcesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            SearchResourcesErrorKind::Unhandled(_inner) => Some(_inner),
+            SearchResourcesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            SearchResourcesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            SearchResourcesErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            SearchResourcesErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            SearchResourcesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            SearchResourcesErrorKind::UnauthorizedException(_inner) =>
+            Some(_inner)
+            ,
+            SearchResourcesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1277,22 +1400,20 @@ impl std::error::Error for SearchResourcesError {
 /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnauthorizedException {
+pub struct UnauthorizedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnauthorizedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnauthorizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnauthorizedException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -1302,7 +1423,7 @@ impl std::fmt::Display for UnauthorizedException {
 impl std::error::Error for UnauthorizedException {}
 /// See [`UnauthorizedException`](crate::error::UnauthorizedException).
 pub mod unauthorized_exception {
-
+    
     /// A builder for [`UnauthorizedException`](crate::error::UnauthorizedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1316,16 +1437,18 @@ pub mod unauthorized_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnauthorizedException`](crate::error::UnauthorizedException).
         pub fn build(self) -> crate::error::UnauthorizedException {
             crate::error::UnauthorizedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnauthorizedException {
     /// Creates a new builder-style object to manufacture [`UnauthorizedException`](crate::error::UnauthorizedException).
@@ -1339,15 +1462,15 @@ impl UnauthorizedException {
 #[derive(std::fmt::Debug)]
 pub struct PutGroupConfigurationError {
     /// Kind of error that occurred.
-    pub kind: PutGroupConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutGroupConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutGroupConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1367,26 +1490,40 @@ pub enum PutGroupConfigurationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutGroupConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutGroupConfigurationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            PutGroupConfigurationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            PutGroupConfigurationErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            PutGroupConfigurationErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            PutGroupConfigurationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            PutGroupConfigurationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            PutGroupConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutGroupConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutGroupConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutGroupConfigurationErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutGroupConfigurationErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutGroupConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutGroupConfigurationErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutGroupConfigurationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1400,103 +1537,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutGroupConfigurationError {
 }
 impl PutGroupConfigurationError {
     /// Creates a new `PutGroupConfigurationError`.
-    pub fn new(kind: PutGroupConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutGroupConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutGroupConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutGroupConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutGroupConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutGroupConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutGroupConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, PutGroupConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutGroupConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, PutGroupConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutGroupConfigurationErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, PutGroupConfigurationErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutGroupConfigurationErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, PutGroupConfigurationErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutGroupConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, PutGroupConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutGroupConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutGroupConfigurationErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, PutGroupConfigurationErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for PutGroupConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutGroupConfigurationErrorKind::BadRequestException(_inner) => Some(_inner),
-            PutGroupConfigurationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            PutGroupConfigurationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            PutGroupConfigurationErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            PutGroupConfigurationErrorKind::NotFoundException(_inner) => Some(_inner),
-            PutGroupConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutGroupConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
+            PutGroupConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            PutGroupConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            PutGroupConfigurationErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            PutGroupConfigurationErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            PutGroupConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutGroupConfigurationErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            PutGroupConfigurationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1506,15 +1635,15 @@ impl std::error::Error for PutGroupConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct ListGroupsError {
     /// Kind of error that occurred.
-    pub kind: ListGroupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListGroupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListGroupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1532,25 +1661,37 @@ pub enum ListGroupsErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGroupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGroupsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListGroupsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListGroupsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListGroupsErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            ListGroupsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListGroupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListGroupsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupsErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupsErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1564,46 +1705,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListGroupsError {
 }
 impl ListGroupsError {
     /// Creates a new `ListGroupsError`.
-    pub fn new(kind: ListGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListGroupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListGroupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListGroupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListGroupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListGroupsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, ListGroupsErrorKind::BadRequestException(_))
@@ -1614,17 +1755,11 @@ impl ListGroupsError {
     }
     /// Returns `true` if the error kind is `ListGroupsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGroupsErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListGroupsErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListGroupsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGroupsErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, ListGroupsErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `ListGroupsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -1634,12 +1769,24 @@ impl ListGroupsError {
 impl std::error::Error for ListGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGroupsErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListGroupsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListGroupsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListGroupsErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            ListGroupsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListGroupsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListGroupsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupsErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupsErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1649,15 +1796,15 @@ impl std::error::Error for ListGroupsError {
 #[derive(std::fmt::Debug)]
 pub struct ListGroupResourcesError {
     /// Kind of error that occurred.
-    pub kind: ListGroupResourcesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListGroupResourcesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListGroupResourcesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListGroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1679,27 +1826,43 @@ pub enum ListGroupResourcesErrorKind {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGroupResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGroupResourcesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListGroupResourcesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            ListGroupResourcesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            ListGroupResourcesErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            ListGroupResourcesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListGroupResourcesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListGroupResourcesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
-            ListGroupResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListGroupResourcesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupResourcesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupResourcesErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupResourcesErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupResourcesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupResourcesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupResourcesErrorKind::UnauthorizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGroupResourcesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1713,107 +1876,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListGroupResourcesError {
 }
 impl ListGroupResourcesError {
     /// Creates a new `ListGroupResourcesError`.
-    pub fn new(kind: ListGroupResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListGroupResourcesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListGroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListGroupResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListGroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListGroupResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListGroupResourcesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListGroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListGroupResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListGroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGroupResourcesErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListGroupResourcesErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGroupResourcesErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, ListGroupResourcesErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGroupResourcesErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, ListGroupResourcesErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGroupResourcesErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, ListGroupResourcesErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGroupResourcesErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListGroupResourcesErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGroupResourcesErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListGroupResourcesErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `ListGroupResourcesErrorKind::UnauthorizedException`.
     pub fn is_unauthorized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGroupResourcesErrorKind::UnauthorizedException(_)
-        )
+        matches!(&self.kind, ListGroupResourcesErrorKind::UnauthorizedException(_))
     }
 }
 impl std::error::Error for ListGroupResourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGroupResourcesErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListGroupResourcesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            ListGroupResourcesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            ListGroupResourcesErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            ListGroupResourcesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListGroupResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListGroupResourcesErrorKind::UnauthorizedException(_inner) => Some(_inner),
-            ListGroupResourcesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListGroupResourcesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupResourcesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupResourcesErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupResourcesErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupResourcesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupResourcesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupResourcesErrorKind::UnauthorizedException(_inner) =>
+            Some(_inner)
+            ,
+            ListGroupResourcesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1823,15 +1981,15 @@ impl std::error::Error for ListGroupResourcesError {
 #[derive(std::fmt::Debug)]
 pub struct GroupResourcesError {
     /// Kind of error that occurred.
-    pub kind: GroupResourcesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GroupResourcesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GroupResourcesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1851,26 +2009,40 @@ pub enum GroupResourcesErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GroupResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GroupResourcesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GroupResourcesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GroupResourcesErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            GroupResourcesErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            GroupResourcesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GroupResourcesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            GroupResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GroupResourcesErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GroupResourcesErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GroupResourcesErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GroupResourcesErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GroupResourcesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GroupResourcesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GroupResourcesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1884,46 +2056,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GroupResourcesError {
 }
 impl GroupResourcesError {
     /// Creates a new `GroupResourcesError`.
-    pub fn new(kind: GroupResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GroupResourcesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GroupResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GroupResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GroupResourcesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GroupResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GroupResourcesErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GroupResourcesErrorKind::BadRequestException(_))
@@ -1934,17 +2106,11 @@ impl GroupResourcesError {
     }
     /// Returns `true` if the error kind is `GroupResourcesErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GroupResourcesErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, GroupResourcesErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `GroupResourcesErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GroupResourcesErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, GroupResourcesErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `GroupResourcesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -1952,22 +2118,33 @@ impl GroupResourcesError {
     }
     /// Returns `true` if the error kind is `GroupResourcesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GroupResourcesErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, GroupResourcesErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GroupResourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GroupResourcesErrorKind::BadRequestException(_inner) => Some(_inner),
-            GroupResourcesErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GroupResourcesErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            GroupResourcesErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            GroupResourcesErrorKind::NotFoundException(_inner) => Some(_inner),
-            GroupResourcesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GroupResourcesErrorKind::Unhandled(_inner) => Some(_inner),
+            GroupResourcesErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GroupResourcesErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GroupResourcesErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GroupResourcesErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            GroupResourcesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GroupResourcesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            GroupResourcesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1977,15 +2154,15 @@ impl std::error::Error for GroupResourcesError {
 #[derive(std::fmt::Debug)]
 pub struct GetTagsError {
     /// Kind of error that occurred.
-    pub kind: GetTagsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetTagsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetTagsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2005,26 +2182,40 @@ pub enum GetTagsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetTagsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetTagsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTagsErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTagsErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTagsErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTagsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTagsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetTagsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2038,46 +2229,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetTagsError {
 }
 impl GetTagsError {
     /// Creates a new `GetTagsError`.
-    pub fn new(kind: GetTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetTagsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetTagsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetTagsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::BadRequestException(_))
@@ -2088,10 +2279,7 @@ impl GetTagsError {
     }
     /// Returns `true` if the error kind is `GetTagsErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetTagsErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, GetTagsErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `GetTagsErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
@@ -2109,13 +2297,27 @@ impl GetTagsError {
 impl std::error::Error for GetTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetTagsErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetTagsErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetTagsErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            GetTagsErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            GetTagsErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetTagsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetTagsErrorKind::Unhandled(_inner) => Some(_inner),
+            GetTagsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetTagsErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetTagsErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetTagsErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            GetTagsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetTagsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            GetTagsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2125,15 +2327,15 @@ impl std::error::Error for GetTagsError {
 #[derive(std::fmt::Debug)]
 pub struct GetGroupQueryError {
     /// Kind of error that occurred.
-    pub kind: GetGroupQueryErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetGroupQueryErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetGroupQueryError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2153,26 +2355,40 @@ pub enum GetGroupQueryErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupQueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetGroupQueryErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetGroupQueryErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetGroupQueryErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            GetGroupQueryErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            GetGroupQueryErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetGroupQueryErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            GetGroupQueryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetGroupQueryErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupQueryErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupQueryErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupQueryErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupQueryErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupQueryErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupQueryErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2186,46 +2402,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetGroupQueryError {
 }
 impl GetGroupQueryError {
     /// Creates a new `GetGroupQueryError`.
-    pub fn new(kind: GetGroupQueryErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetGroupQueryError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetGroupQueryError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetGroupQueryErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetGroupQueryError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetGroupQueryError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetGroupQueryErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetGroupQueryErrorKind::BadRequestException(_))
@@ -2236,17 +2452,11 @@ impl GetGroupQueryError {
     }
     /// Returns `true` if the error kind is `GetGroupQueryErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupQueryErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, GetGroupQueryErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `GetGroupQueryErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupQueryErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, GetGroupQueryErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `GetGroupQueryErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -2254,22 +2464,33 @@ impl GetGroupQueryError {
     }
     /// Returns `true` if the error kind is `GetGroupQueryErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupQueryErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, GetGroupQueryErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GetGroupQueryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetGroupQueryErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetGroupQueryErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetGroupQueryErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            GetGroupQueryErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            GetGroupQueryErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetGroupQueryErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetGroupQueryErrorKind::Unhandled(_inner) => Some(_inner),
+            GetGroupQueryErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupQueryErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupQueryErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupQueryErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupQueryErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupQueryErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupQueryErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2279,15 +2500,15 @@ impl std::error::Error for GetGroupQueryError {
 #[derive(std::fmt::Debug)]
 pub struct GetGroupConfigurationError {
     /// Kind of error that occurred.
-    pub kind: GetGroupConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetGroupConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetGroupConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2307,26 +2528,40 @@ pub enum GetGroupConfigurationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetGroupConfigurationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetGroupConfigurationErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetGroupConfigurationErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            GetGroupConfigurationErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            GetGroupConfigurationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetGroupConfigurationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            GetGroupConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetGroupConfigurationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupConfigurationErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupConfigurationErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupConfigurationErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupConfigurationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupConfigurationErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupConfigurationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2340,103 +2575,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetGroupConfigurationError {
 }
 impl GetGroupConfigurationError {
     /// Creates a new `GetGroupConfigurationError`.
-    pub fn new(kind: GetGroupConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetGroupConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetGroupConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetGroupConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetGroupConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetGroupConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupConfigurationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetGroupConfigurationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupConfigurationErrorKind::ForbiddenException(_)
-        )
+        matches!(&self.kind, GetGroupConfigurationErrorKind::ForbiddenException(_))
     }
     /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupConfigurationErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, GetGroupConfigurationErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupConfigurationErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, GetGroupConfigurationErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupConfigurationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetGroupConfigurationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetGroupConfigurationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupConfigurationErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, GetGroupConfigurationErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GetGroupConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetGroupConfigurationErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetGroupConfigurationErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetGroupConfigurationErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            GetGroupConfigurationErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            GetGroupConfigurationErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetGroupConfigurationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetGroupConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
+            GetGroupConfigurationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupConfigurationErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupConfigurationErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupConfigurationErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupConfigurationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupConfigurationErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupConfigurationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2446,15 +2673,15 @@ impl std::error::Error for GetGroupConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct GetGroupError {
     /// Kind of error that occurred.
-    pub kind: GetGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2474,26 +2701,40 @@ pub enum GetGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            GetGroupErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            GetGroupErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            GetGroupErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetGroupErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            GetGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetGroupErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2507,46 +2748,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetGroupError {
 }
 impl GetGroupError {
     /// Creates a new `GetGroupError`.
-    pub fn new(kind: GetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetGroupErrorKind::BadRequestException(_))
@@ -2557,10 +2798,7 @@ impl GetGroupError {
     }
     /// Returns `true` if the error kind is `GetGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGroupErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, GetGroupErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `GetGroupErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
@@ -2578,13 +2816,27 @@ impl GetGroupError {
 impl std::error::Error for GetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetGroupErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
-            GetGroupErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            GetGroupErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            GetGroupErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            GetGroupErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            GetGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2594,15 +2846,15 @@ impl std::error::Error for GetGroupError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteGroupError {
     /// Kind of error that occurred.
-    pub kind: DeleteGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2622,26 +2874,40 @@ pub enum DeleteGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            DeleteGroupErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            DeleteGroupErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            DeleteGroupErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteGroupErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteGroupErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGroupErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGroupErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGroupErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGroupErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGroupErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2655,46 +2921,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteGroupError {
 }
 impl DeleteGroupError {
     /// Creates a new `DeleteGroupError`.
-    pub fn new(kind: DeleteGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteGroupErrorKind::BadRequestException(_))
@@ -2705,17 +2971,11 @@ impl DeleteGroupError {
     }
     /// Returns `true` if the error kind is `DeleteGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGroupErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, DeleteGroupErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteGroupErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGroupErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, DeleteGroupErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `DeleteGroupErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -2723,22 +2983,33 @@ impl DeleteGroupError {
     }
     /// Returns `true` if the error kind is `DeleteGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGroupErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteGroupErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteGroupErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteGroupErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGroupErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGroupErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGroupErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGroupErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGroupErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2748,15 +3019,15 @@ impl std::error::Error for DeleteGroupError {
 #[derive(std::fmt::Debug)]
 pub struct CreateGroupError {
     /// Kind of error that occurred.
-    pub kind: CreateGroupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateGroupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateGroupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2774,25 +3045,37 @@ pub enum CreateGroupErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGroupErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateGroupErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
-            CreateGroupErrorKind::InternalServerErrorException(_inner) => _inner.fmt(f),
-            CreateGroupErrorKind::MethodNotAllowedException(_inner) => _inner.fmt(f),
-            CreateGroupErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateGroupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateGroupErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGroupErrorKind::ForbiddenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGroupErrorKind::InternalServerErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGroupErrorKind::MethodNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGroupErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGroupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2806,46 +3089,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateGroupError {
 }
 impl CreateGroupError {
     /// Creates a new `CreateGroupError`.
-    pub fn new(kind: CreateGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateGroupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateGroupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateGroupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateGroupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateGroupErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateGroupErrorKind::BadRequestException(_))
@@ -2856,64 +3139,68 @@ impl CreateGroupError {
     }
     /// Returns `true` if the error kind is `CreateGroupErrorKind::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGroupErrorKind::InternalServerErrorException(_)
-        )
+        matches!(&self.kind, CreateGroupErrorKind::InternalServerErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateGroupErrorKind::MethodNotAllowedException`.
     pub fn is_method_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGroupErrorKind::MethodNotAllowedException(_)
-        )
+        matches!(&self.kind, CreateGroupErrorKind::MethodNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `CreateGroupErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGroupErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateGroupErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGroupErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateGroupErrorKind::ForbiddenException(_inner) => Some(_inner),
-            CreateGroupErrorKind::InternalServerErrorException(_inner) => Some(_inner),
-            CreateGroupErrorKind::MethodNotAllowedException(_inner) => Some(_inner),
-            CreateGroupErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateGroupErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateGroupErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGroupErrorKind::ForbiddenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGroupErrorKind::InternalServerErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGroupErrorKind::MethodNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGroupErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGroupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+
